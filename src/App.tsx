@@ -1,27 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { MainBody } from './sections/main-body'
+import { Sidebar } from './sections/sidebar'
+import { UnitList } from './components/units/unit-list'
+import { UnitItem } from './components/units/unit-item'
 
-function App() {
+export default function App (): React.ReactElement {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1>askdjhaskjd</h1>
-      </header>
-    </div>
-  );
+    <MainBody>
+      <Sidebar />
+      <UnitList>
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
+      </UnitList>
+    </MainBody>
+  )
 }
-
-export default App;
