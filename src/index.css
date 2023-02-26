@@ -11,3 +11,7 @@ ul::-webkit-scrollbar-thumb {
     @apply bg-opacity-100;
     border-radius: 5px;
 }
+
+.shadow-black {
+    box-shadow: 4px 4px rgb(41, 41, 41);
+  }
