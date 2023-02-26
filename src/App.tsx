@@ -13,6 +13,11 @@ export default function App (): React.ReactElement {
         <UnitItem />
         <UnitItem />
         <UnitItem />
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
+        <UnitItem />
       </UnitList>
     </MainBody>
   )
