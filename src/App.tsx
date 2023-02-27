@@ -3,7 +3,7 @@ import { MainBody } from './sections/main-body'
 import { Sidebar } from './sections/sidebar'
 import { UnitList } from './components/units/unit-list'
 import { UnitItem } from './components/units/unit-item'
-// import { ModalBase } from './components/modals/modal-base'
+import { ModalBase } from './components/modals/modal-base'
 
 export default function App (): React.ReactElement {
   return (
@@ -20,7 +20,7 @@ export default function App (): React.ReactElement {
         <UnitItem />
         <UnitItem />
       </UnitList>
-      {/* <ModalBase /> */}
+      <ModalBase />
     </MainBody>
   )
 }
