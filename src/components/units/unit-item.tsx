@@ -1,29 +1,28 @@
 import clsx from 'clsx'
 import React, { useState } from 'react'
 import { FaRegEdit, FaChevronRight, FaCheck, FaPlayCircle, FaTrashAlt } from 'react-icons/fa'
-import { MdFamilyRestroom } from 'react-icons/md'
+import { type UnitSerialized } from '../../managers/units/unit-serialized'
 
-export const UnitItem = (): React.ReactElement => {
+type UnitItemProps = UnitSerialized
+export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
+  const { title, svgAvatar: SvgAvatar, flags, description } = props
   const [isShowExercise, setIsShowExercise] = useState<boolean>(false)
 
   return (
     <li className="py-4 px-6 space-y-4 w-full bg-white rounded-lg shadow-md border hover:shadow-lg transition-all duration-500">
       <div className="flex items-center w-full gap-x-6">
         <div className="min-w-[40px] min-h-[40px] rounded-sm bg-gray-100 flex-1 flex items-center justify-center drop-shadow">
-          <MdFamilyRestroom className='text-xl text-sky-600'/>
+          {flags.isSvgAvatar && SvgAvatar != null && <SvgAvatar className='text-xl text-sky-600'/>}
         </div>
         <div className="max-w-full">
           <div className='flex items-center justify-between'>
             <h2 className="capitalize font-semibold text-lg">
-              Inclide state change
+              {title}
             </h2>
             <FaPlayCircle className='text-green-400 text-xl cursor-pointer transition-all duration-200 hover:text-green-500 hover:scale-125 active:text-green-600'/>
           </div>
           <p className="line-clamp-1">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            quos, maxime impedit, voluptate vel recusandae molestias error
-            deleniti eaque a aliquid minus nihil? Quod amet pariatur non maiores
-            eos deserunt?
+            {description}
           </p>
         </div>
       </div>
