@@ -1,15 +1,14 @@
-import React from 'react'
-import { MainBody } from './sections/main-body'
-import { Sidebar } from './sections/sidebar'
-import { UnitList } from './components/units/unit-list'
-// import { ModalBase } from './components/modals/modal-base'
+import React from 'react';
 
-export default function App (): React.ReactElement {
+import { UnitList } from './components/units/unit-list';
+import { MainBody } from './sections/main-body';
+import { Sidebar } from './sections/sidebar';
+
+export default function App(): React.ReactElement {
   return (
     <MainBody>
       <Sidebar />
       <UnitList />
-      {/* <ModalBase /> */}
     </MainBody>
-  )
+  );
 }
