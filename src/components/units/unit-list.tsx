@@ -6,6 +6,7 @@ import { fromApiToUnit } from '../../managers/units/unit-serialized'
 
 const data: UnitState[] = [
   {
+    unitId: '0',
     title: 'The family',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae alias voluptates illum expedita, a dolorum, optio natus magnam, incidunt possimus fugiat minima eaque reiciendis! Sit sed voluptatem quam deserunt earum!',
     svgAvatar: MdFamilyRestroom,
@@ -21,6 +22,7 @@ const data: UnitState[] = [
     ]
   },
   {
+    unitId: '1',
     title: 'The family 2',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae alias voluptates illum expedita, a dolorum, optio natus magnam, incidunt possimus fugiat minima eaque reiciendis! Sit sed voluptatem quam deserunt earum!',
     svgAvatar: MdFamilyRestroom,
@@ -48,8 +50,8 @@ export const UnitList = (): React.ReactElement => {
       </div>
       <div className="w-full">
         <ul className="w-full space-y-6 h-screen overflow-y-auto">
-          {units.map(unit => (
-            <UnitItem {...unit}/>
+          {units.map((unit, index) => (
+            <UnitItem {...unit} unitIndex={index + 1} key={unit.unitId}/>
           ))}
         </ul>
       </div>
