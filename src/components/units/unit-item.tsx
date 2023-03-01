@@ -1,20 +1,31 @@
-import clsx from 'clsx'
-import React, { useState } from 'react'
+import { useModal } from '@ebay/nice-modal-react';
+import clsx from 'clsx';
+import React, { useState } from 'react';
 import {
-  FaRegEdit,
-  FaChevronRight,
   FaCheck,
+  FaChevronRight,
   FaPlayCircle,
-  FaTrashAlt
-} from 'react-icons/fa'
-import { type UnitSerialized } from '../../managers/units/unit-serialized'
+  FaRegEdit,
+  FaTrashAlt,
+} from 'react-icons/fa';
+
+import { type UnitSerialized } from '../../managers/units/unit-serialized';
+import { ModalVocabulary } from '../modals/modal-vocabulary/modal-vocabulary';
 
 interface UnitItemProps extends UnitSerialized {
-  unitIndex: number
+  unitIndex: number;
 }
 export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
-  const { title, svgAvatar: SvgAvatar, flags, description, exercises, unitIndex } = props
-  const [isShowExercise, setIsShowExercise] = useState<boolean>(false)
+  const {
+    title,
+    svgAvatar: SvgAvatar,
+    flags,
+    description,
+    exercises,
+    unitIndex,
+  } = props;
+  const [isShowExercise, setIsShowExercise] = useState<boolean>(false);
+  const { show } = useModal(ModalVocabulary);
 
   return (
     <li className="py-4 px-6 space-y-4 w-full bg-white rounded-lg shadow-md border hover:shadow-lg transition-all duration-500">
@@ -41,11 +52,11 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
         <div>
           <FaChevronRight
             onClick={() => {
-              setIsShowExercise((prev) => !prev)
+              setIsShowExercise((prev) => !prev);
             }}
             className={clsx(
               'hover:text-blue-700 transition-all duration-200 cursor-pointer',
-              isShowExercise && 'rotate-90'
+              isShowExercise && 'rotate-90',
             )}
           />
         </div>
@@ -55,7 +66,13 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
           <h2 className="font-semibold text-lg">Exercises</h2>
           <ul>
             {exercises.map((exercise, index) => (
-              <li key={exercise.exerciseId} className="cursor-pointer hover:text-blue-600 transition-colors duration-200 flex items-center justify-between">
+              <li
+                key={exercise.exerciseId}
+                onClick={() => {
+                  show();
+                }}
+                className="cursor-pointer hover:text-blue-600 transition-colors duration-200 flex items-center justify-between"
+              >
                 <p>
                   {unitIndex}.{index + 1}: {exercise.title}
                 </p>
@@ -66,5 +83,5 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
         </div>
       )}
     </li>
-  )
-}
+  );
+};

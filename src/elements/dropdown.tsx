@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const Dropdown = (): React.ReactElement => {
-  return <div>Dropdown</div>
-}
+  return <div>Dropdown</div>;
+};

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const Sidebar = (): React.ReactElement => {
   return (
@@ -17,5 +17,5 @@ export const Sidebar = (): React.ReactElement => {
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
