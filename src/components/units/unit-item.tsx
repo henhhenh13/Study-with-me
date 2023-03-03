@@ -1,6 +1,6 @@
 import { useModal } from '@ebay/nice-modal-react';
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   FaCheck,
   FaChevronRight,
@@ -9,6 +9,8 @@ import {
   FaTrashAlt,
 } from 'react-icons/fa';
 
+import { useActiveExercise } from '../../managers/active-exercise/use-active-exercise';
+import { useExerciseManager } from '../../managers/exercise/exercise-manager';
 import { type UnitSerialized } from '../../managers/units/unit-serialized';
 import { ModalVocabulary } from '../modals/modal-vocabulary/modal-vocabulary';
 
@@ -16,6 +18,8 @@ interface UnitItemProps extends UnitSerialized {
   unitIndex: number;
 }
 export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
+  const { getVbrByExerciseId } = useExerciseManager();
+  const { updateActiveExerciseId } = useActiveExercise();
   const {
     title,
     svgAvatar: SvgAvatar,
@@ -69,6 +73,8 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
               <li
                 key={exercise.exerciseId}
                 onClick={() => {
+                  getVbrByExerciseId('1');
+                  updateActiveExerciseId('1');
                   show();
                 }}
                 className="cursor-pointer hover:text-blue-600 transition-colors duration-200 flex items-center justify-between"

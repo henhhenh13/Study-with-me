@@ -1,0 +1,16 @@
+[
+    {
+        "vocabularyId": "0",
+        "vocabulary": "important",
+        "translations": {
+            "vn": "Quan trọng"
+        }
+    },
+    {
+        "vocabularyId": "1",
+        "vocabulary": "beach",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    }
+]

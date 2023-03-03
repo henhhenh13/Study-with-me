@@ -3,10 +3,12 @@ import React from 'react';
 import { AiOutlineArrowRight, AiOutlineCloseCircle } from 'react-icons/ai';
 import { TbVocabulary } from 'react-icons/tb';
 
+import { useActiveExercise } from '../../../managers/active-exercise/use-active-exercise';
 import { ModalWrapper } from '../modal-wrapper/modal-wrapper';
 
 export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
   const { visible, hide, remove } = useModal();
+  const { activeExercise } = useActiveExercise();
   return (
     <ModalWrapper
       isShow={visible}

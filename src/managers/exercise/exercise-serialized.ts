@@ -1,3 +1,4 @@
+import { VocabularyState } from '../vocabulary/vocabulary-state';
 import { type ExerciseState } from './exercise-state';
 
 export interface ExerciseSerialized {
@@ -8,6 +9,14 @@ export interface ExerciseSerialized {
   exerciseId: ExerciseState['exerciseId'];
 }
 
+export interface ExericiseVocabularyState extends ExerciseState {
+  vocabularys: VocabularyState[];
+}
+
+export interface ExericiseVocabularySerialized extends ExerciseSerialized {
+  vocabularys: VocabularyState[];
+}
+
 export const fromApiToExercise = (raw: ExerciseState): ExerciseSerialized => {
   const { title, index, exerciseType, exerciseId, unitId } = raw;
   return {
@@ -16,5 +25,19 @@ export const fromApiToExercise = (raw: ExerciseState): ExerciseSerialized => {
     unitId,
     exerciseId,
     index: Number(index),
+  };
+};
+
+export const fromApiToExerciseVocabulary = (
+  raw: ExericiseVocabularyState,
+): ExericiseVocabularySerialized => {
+  const { title, index, exerciseType, exerciseId, unitId, vocabularys } = raw;
+  return {
+    title,
+    exerciseType,
+    unitId,
+    exerciseId,
+    index: Number(index),
+    vocabularys,
   };
 };
