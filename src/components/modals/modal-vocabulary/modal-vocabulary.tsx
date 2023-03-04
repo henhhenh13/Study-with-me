@@ -81,15 +81,26 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
         const value = inputRef.current.value.trim();
         const isCorrectAnswer = checkCorrectAnswer(value);
         const isCompletedExercise = isCorrectAnswer && isLastVbr;
-        if (isCorrectAnswer) {
-          increaseVbrIndex();
-          clearAndFocusInput();
-          successToast();
-          setIsError(false);
-          setIsCompletedExercise(isCompletedExercise);
-        } else {
-          errorToast();
-          setIsError(true);
+
+        switch (true) {
+          case isCorrectAnswer: {
+            if (isCompletedExercise) {
+              successToast('You was completed exercise!');
+              setIsCompletedExercise(isCompletedExercise);
+            } else {
+              increaseVbrIndex();
+              clearAndFocusInput();
+              successToast();
+            }
+            break;
+          }
+          case !isCorrectAnswer: {
+            errorToast();
+            setIsError(true);
+            break;
+          }
+          default:
+            return;
         }
       }
     },
@@ -144,6 +155,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
               </ul> */}
                 <form onSubmit={submitAnswer}>
                   <input
+                    onChange={() => setIsError(false)}
                     ref={inputRef}
                     type="text"
                     className={clsx(
