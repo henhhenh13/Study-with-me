@@ -12,6 +12,7 @@ import { TbVocabulary } from 'react-icons/tb';
 
 import { Button } from '../../../elements/button';
 import { useActiveExercise } from '../../../managers/active-exercise/use-active-exercise';
+import { useToastManager } from '../../../managers/toast-manager.tsx/use-toat-manager';
 import { VocabularyState } from '../../../managers/vocabulary/vocabulary-state';
 import { ModalWrapper } from '../modal-wrapper/modal-wrapper';
 
@@ -23,6 +24,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
   const [isError, setIsError] = useState<boolean>(false);
   const [isCompletedExercise, setIsCompletedExercise] =
     useState<boolean>(false);
+  const { successToast, errorToast } = useToastManager();
 
   const vocabularys = useMemo(() => {
     return activeExercise?.vocabularys || [];
@@ -82,8 +84,13 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
         if (isCorrectAnswer) {
           increaseVbrIndex();
           clearAndFocusInput();
+          successToast();
+          setIsError(false);
           setIsCompletedExercise(isCompletedExercise);
-        } else setIsError(true);
+        } else {
+          errorToast();
+          setIsError(true);
+        }
       }
     },
     [checkCorrectAnswer, isLastVbr],
@@ -109,7 +116,10 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
           <div className="flex items-center justify-center space-x-2">
             <h2>Time Remaining:</h2>
             <span>06:15</span>
-            <AiOutlineCloseCircle className="!ml-10 transition-all cursor-pointer text-gray-100 hover:scale-125 hover:text-blue-300 active:text-blue-500" />
+            <AiOutlineCloseCircle
+              onClick={hide}
+              className="!ml-10 transition-all cursor-pointer text-gray-100 hover:scale-125 hover:text-blue-300 active:text-blue-500"
+            />
           </div>
         </div>
         {!!vocabularys?.length && (

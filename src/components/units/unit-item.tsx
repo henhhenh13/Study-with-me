@@ -32,7 +32,12 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
   const { show } = useModal(ModalVocabulary);
 
   return (
-    <li className="py-4 px-6 space-y-4 w-full bg-white rounded-lg shadow-md border hover:shadow-lg transition-all duration-500">
+    <li
+      className={clsx(
+        'py-4 px-6 space-y-4 w-full bg-white rounded-lg shadow-md border hover:shadow-lg transition-all duration-500',
+        isShowExercise && '!shadow-lg',
+      )}
+    >
       <div className="flex items-center w-full gap-x-6">
         <div className="min-w-[40px] min-h-[40px] rounded-sm bg-gray-100 flex-1 flex items-center justify-center drop-shadow">
           {flags.isSvgAvatar && SvgAvatar != null && (
@@ -62,7 +67,7 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
           <FaChevronRight
             className={clsx(
               'group-hover:text-blue-700 group-hover:scale-125 transition-all duration-200 ml-auto',
-              isShowExercise && 'rotate-90',
+              isShowExercise && 'rotate-90 scale-125 text-blue-700',
             )}
           />
         </button>

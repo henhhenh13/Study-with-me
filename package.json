@@ -18,6 +18,7 @@
     "react-icons": "^4.7.1",
     "react-scripts": "5.0.1",
     "recoil": "^0.7.6",
+    "sonner": "^0.1.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
