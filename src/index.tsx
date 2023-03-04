@@ -3,6 +3,7 @@ import './index.css';
 import NiceModal from '@ebay/nice-modal-react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -12,9 +13,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <NiceModal.Provider>
-      <App />
-    </NiceModal.Provider>
+    <RecoilRoot>
+      <NiceModal.Provider>
+        <App />
+      </NiceModal.Provider>
+    </RecoilRoot>
   </React.StrictMode>,
 );
 
