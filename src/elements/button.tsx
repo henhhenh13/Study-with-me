@@ -1,7 +1,7 @@
-import React, { type HTMLAttributes, type PropsWithChildren } from 'react';
+import React, { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  variants: 'primary' | 'danger';
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variants: 'primary' | 'danger' | 'common';
 }
 
 export const Button = ({

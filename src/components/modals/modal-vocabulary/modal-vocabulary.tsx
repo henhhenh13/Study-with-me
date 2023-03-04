@@ -1,14 +1,86 @@
 import NiceModal, { useModal } from '@ebay/nice-modal-react';
-import React from 'react';
+import clsx from 'clsx';
+import React, {
+  FormEvent,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { AiOutlineArrowRight, AiOutlineCloseCircle } from 'react-icons/ai';
 import { TbVocabulary } from 'react-icons/tb';
 
+import { Button } from '../../../elements/button';
 import { useActiveExercise } from '../../../managers/active-exercise/use-active-exercise';
+import { VocabularyState } from '../../../managers/vocabulary/vocabulary-state';
 import { ModalWrapper } from '../modal-wrapper/modal-wrapper';
 
 export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
   const { visible, hide, remove } = useModal();
   const { activeExercise } = useActiveExercise();
+  const [vocabularyIndex, setVocabularyIndex] = useState<number>(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [isCompletedExercise, setIsCompletedExercise] =
+    useState<boolean>(false);
+
+  const vocabularys = useMemo(() => {
+    return activeExercise?.vocabularys || [];
+  }, [activeExercise?.vocabularys]);
+
+  const activeVbr = useMemo<VocabularyState>(() => {
+    return vocabularys[vocabularyIndex];
+  }, [vocabularys, vocabularyIndex]);
+
+  const isLastVbr = useMemo(() => {
+    return vocabularyIndex === vocabularys.length - 1;
+  }, [vocabularyIndex, vocabularys.length]);
+
+  const increaseVbrIndex = () => {
+    setVocabularyIndex((prev) =>
+      prev + 1 > vocabularys.length - 1 ? prev : prev + 1,
+    );
+  };
+
+  const dereaseVbrIndex = () => {
+    setVocabularyIndex((prev) => (prev - 1 < 0 ? prev : prev - 1));
+  };
+
+  const clearAndFocusInput = useCallback(() => {
+    if (inputRef.current) {
+      inputRef.current.value = '';
+      inputRef.current.focus();
+    }
+  }, []);
+
+  const checkCorrectAnswer = useCallback(
+    (answer: string) => {
+      return answer === activeVbr?.vocabulary;
+    },
+    [activeVbr.vocabulary],
+  );
+
+  const submitAnswer = useCallback(
+    (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (inputRef.current) {
+        const value = inputRef.current.value.trim();
+        const isCorrectAnswer = checkCorrectAnswer(value);
+        const isCompletedExercise = isCorrectAnswer && isLastVbr;
+        if (isCorrectAnswer) {
+          increaseVbrIndex();
+          clearAndFocusInput();
+          setIsCompletedExercise(isCompletedExercise);
+        } else setIsError(true);
+      }
+    },
+    [checkCorrectAnswer, isLastVbr],
+  );
+
+  if (isCompletedExercise) {
+    console.log('Succesfull exercise!');
+  }
+
   return (
     <ModalWrapper
       isShow={visible}
@@ -20,7 +92,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
         <div className="w-full h-[55px] bg-blue-600 rounded-t flex items-center text-2xl text-gray-100 justify-around">
           <div className="flex items-center space-x-2">
             <TbVocabulary className="mt-1 text-3xl" />
-            <h2>Vocabulary Test 1</h2>
+            <h2>Vocabulary Test {vocabularyIndex + 1}</h2>
           </div>
           <div className="flex items-center justify-center space-x-2">
             <h2>Time Remaining:</h2>
@@ -28,44 +100,65 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
             <AiOutlineCloseCircle className="!ml-10 transition-all cursor-pointer text-gray-100 hover:scale-125 hover:text-blue-300 active:text-blue-500" />
           </div>
         </div>
-        <div className="w-[65%] mx-auto text-center h-[calc(100%-100px)] pt-20">
-          <div className="space-y-2.5">
-            <h2 className="text-2xl text-green-500 uppercase">Question</h2>
-            <h3>What is the meaning of:</h3>
-            <hr />
-          </div>
-          <h2 className="text-4xl font-semibold text-blue-600 py-8">
-            Quan trọng
-          </h2>
-          <hr />
-          <div className="mt-10">
-            <h2 className="text-red-500 text-2xl">Answer</h2>
-            {/* <ul className='mt-4 space-y-4'>
+        {!!vocabularys?.length && (
+          <>
+            <div className="w-[65%] mx-auto text-center h-[calc(100%-100px)] pt-20">
+              <div className="space-y-2.5">
+                <h2 className="text-2xl text-green-500 uppercase">Question</h2>
+                <h3>What is the meaning of:</h3>
+                <hr />
+              </div>
+              <h2 className="text-4xl font-semibold text-blue-600 py-8">
+                {activeVbr.translations.vn}
+              </h2>
+              <hr />
+              <div className="mt-10">
+                <h2 className="text-red-500 text-2xl">Answer</h2>
+                {/* <ul className='mt-4 space-y-4'>
                 <li className='py-2 shadow w-full border border-gray-300 select-none bg-gray-100 text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-gray-200 active:bg-gray-300'>Important</li>
                 <li className='py-2 shadow w-full border border-gray-300 select-none bg-gray-100 text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-gray-200 active:bg-gray-300'>Important</li>
                 <li className='py-2 shadow w-full border border-gray-300 select-none bg-gray-100 text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-gray-200 active:bg-gray-300'>Important</li>
                 <li className='py-2 shadow w-full border border-gray-300 select-none bg-gray-100 text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-gray-200 active:bg-gray-300'>Important</li>
               </ul> */}
-            <input
-              type="text"
-              className="border border-gray-300 outline-none w-2/4 mt-4 py-2 px-4 text-xl rounded-lg shadow-lg text-center focus:ring-blue-500 focus:ring-1"
-            />
-            <p className="mt-4 text-xs italic">
-              Tip: When you enter correct answer, input will transform to green
-              color.
-            </p>
-          </div>
-        </div>
-        <div className="w-full h-[45px] bg-green-600 rounded-b flex items-center justify-center">
-          <div className="space-x-16 text-white flex items-center">
-            <button className="hover:underline flex items-center">
-              PREVIOUS
-            </button>
-            <button className="hover:underline flex items-center">
-              NEXT <AiOutlineArrowRight className="ml-3 mt-0.5" />
-            </button>
-          </div>
-        </div>
+                <form onSubmit={submitAnswer}>
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    className={clsx(
+                      'border border-gray-300 outline-none w-2/4 mt-4 py-2 px-4 text-xl rounded-lg shadow-lg text-center  focus:ring-1',
+                      isError ? 'focus:ring-red-500' : 'focus:ring-blue-500',
+                    )}
+                  />
+                </form>
+
+                <p className="mt-4 text-xs italic">
+                  Tip: When you enter correct answer, input will transform to
+                  green color.
+                </p>
+              </div>
+            </div>
+            <div className="w-full h-[45px] bg-green-600 rounded-b flex items-center justify-center">
+              <div className="space-x-16 text-white flex items-center">
+                <Button
+                  disabled={vocabularyIndex === 0}
+                  variants="common"
+                  onClick={dereaseVbrIndex}
+                  className="hover:underline flex items-center disabled:cursor-not-allowed disabled:hover:no-underline"
+                >
+                  PREVIOUS
+                </Button>
+                <Button
+                  variants="common"
+                  onClick={increaseVbrIndex}
+                  className="hover:underline flex items-center disabled:cursor-not-allowed disabled:hover:no-underline"
+                  disabled={isLastVbr}
+                >
+                  NEXT <AiOutlineArrowRight className="ml-3 mt-0.5" />
+                </Button>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </ModalWrapper>
   );
