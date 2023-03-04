@@ -53,6 +53,18 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
     }
   }, []);
 
+  const navigationVbr = useCallback(
+    (type: 'prev' | 'next') => {
+      if (type === 'prev') {
+        dereaseVbrIndex();
+      } else {
+        increaseVbrIndex();
+      }
+      clearAndFocusInput();
+    },
+    [clearAndFocusInput],
+  );
+
   const checkCorrectAnswer = useCallback(
     (answer: string) => {
       return answer === activeVbr?.vocabulary;
@@ -142,14 +154,14 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
                 <Button
                   disabled={vocabularyIndex === 0}
                   variants="common"
-                  onClick={dereaseVbrIndex}
+                  onClick={() => navigationVbr('prev')}
                   className="hover:underline flex items-center disabled:cursor-not-allowed disabled:hover:no-underline"
                 >
                   PREVIOUS
                 </Button>
                 <Button
                   variants="common"
-                  onClick={increaseVbrIndex}
+                  onClick={() => navigationVbr('next')}
                   className="hover:underline flex items-center disabled:cursor-not-allowed disabled:hover:no-underline"
                   disabled={isLastVbr}
                 >

@@ -53,17 +53,19 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
           <FaRegEdit className="cursor-pointer text-blue-500 transition-all duration-200 hover:scale-125 hover:text-blue-600 active:text-blue-700" />
           <FaTrashAlt className="cursor-pointer text-red-500 transition-all duration-200 hover:scale-125 hover:text-red-600 active:text-red-700" />
         </div>
-        <div>
+        <button
+          className="flex-1 flex group cursor-pointer"
+          onClick={() => {
+            setIsShowExercise((prev) => !prev);
+          }}
+        >
           <FaChevronRight
-            onClick={() => {
-              setIsShowExercise((prev) => !prev);
-            }}
             className={clsx(
-              'hover:text-blue-700 transition-all duration-200 cursor-pointer',
+              'group-hover:text-blue-700 group-hover:scale-125 transition-all duration-200 ml-auto',
               isShowExercise && 'rotate-90',
             )}
           />
-        </div>
+        </button>
       </div>
       {isShowExercise && (
         <div>
