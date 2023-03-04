@@ -174,18 +174,18 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
             <div className="w-full h-[45px] bg-green-600 rounded-b flex items-center justify-center">
               <div className="space-x-16 text-white flex items-center">
                 <Button
+                  color="common"
+                  variants="text"
                   disabled={vocabularyIndex === 0}
-                  variants="common"
                   onClick={() => navigationVbr('prev')}
-                  className="hover:underline flex items-center disabled:cursor-not-allowed disabled:hover:no-underline"
                 >
                   PREVIOUS
                 </Button>
                 <Button
-                  variants="common"
-                  onClick={() => navigationVbr('next')}
-                  className="hover:underline flex items-center disabled:cursor-not-allowed disabled:hover:no-underline"
+                  color="common"
+                  variants="text"
                   disabled={isLastVbr}
+                  onClick={() => navigationVbr('next')}
                 >
                   NEXT <AiOutlineArrowRight className="ml-3 mt-0.5" />
                 </Button>

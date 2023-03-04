@@ -1,14 +1,189 @@
 [
     {
         "vocabularyId": "0",
-        "vocabulary": "important",
+        "vocabulary": "children",
+        "themeId": "0",
+        "theme": "The family",
         "translations": {
             "vn": "Quan trọng"
         }
     },
     {
         "vocabularyId": "1",
-        "vocabulary": "beach",
+        "vocabulary": "husband",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "2",
+        "vocabulary": "wife",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "3",
+        "vocabulary": "mother",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "4",
+        "vocabulary": "father",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "5",
+        "vocabulary": "parents",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "6",
+        "vocabulary": "daughter",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "7",
+        "vocabulary": "son",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "8",
+        "vocabulary": "brother",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "9",
+        "vocabulary": "sister",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "10",
+        "vocabulary": "grandfather",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "11",
+        "vocabulary": "grandmother",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "12",
+        "vocabulary": "grandparents",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "13",
+        "vocabulary": "granddaughter",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "14",
+        "vocabulary": "grandson",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "15",
+        "vocabulary": "uncle",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "16",
+        "vocabulary": "aunts",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "17",
+        "vocabulary": "aunt",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "18",
+        "vocabulary": "niece",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "19",
+        "vocabulary": "nephew",
+        "themeId": "0",
+        "theme": "The family",
+        "translations": {
+            "vn": "Bãi biển"
+        }
+    },
+    {
+        "vocabularyId": "20",
+        "vocabulary": "cousins",
+        "themeId": "0",
+        "theme": "The family",
         "translations": {
             "vn": "Bãi biển"
         }
