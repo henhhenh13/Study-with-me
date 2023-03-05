@@ -17,10 +17,17 @@ export const VocabularyItem = ({
   const [newTransltionVocabulary, setNewTransltionVocabulary] =
     useState<string>('');
   const listRef = useRef<HTMLUListElement>(null);
+  const firstInput = useRef<HTMLInputElement>(null);
 
   const onClearInput = useCallback(() => {
     setNewTransltionVocabulary('');
     setNewVocabulary('');
+  }, []);
+
+  const focusFirstInput = useCallback(() => {
+    if (firstInput) {
+      firstInput.current?.focus();
+    }
   }, []);
 
   const scrollBottomList = useCallback(() => {
@@ -39,7 +46,7 @@ export const VocabularyItem = ({
       {vocabularys &&
         vocabularys.map(({ vocabularyId, vocabulary, translations }) => (
           <li
-            key={vocabularyId}
+            key={`${vocabulary}-${vocabularyId}`}
             className="w-full flex items-center justify-between py-1"
           >
             <div>
@@ -60,6 +67,7 @@ export const VocabularyItem = ({
       <li className="flex items-center justify-between py-1.5">
         <div className="flex">
           <input
+            ref={firstInput}
             value={newVocabulary}
             onChange={(e) => setNewVocabulary(e.target.value)}
             className="outline-none max-w-[110px] text-left font-bold"
@@ -82,6 +90,7 @@ export const VocabularyItem = ({
             );
             onClearInput();
             scrollBottomList();
+            focusFirstInput();
           }}
           variants="background"
           color="primary"

@@ -6,6 +6,14 @@
     {
         "themeId": "1",
         "theme": "Birth, marriage and death"
+    },
+    {
+        "themeId": "2",
+        "theme": "Clothes"
+    },
+    {
+        "themeId": "3",
+        "theme": "Others"
     }
     
 ]

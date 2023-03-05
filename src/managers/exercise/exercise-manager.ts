@@ -23,6 +23,7 @@ const dataTemp: ExericiseVocabularyState = {
     {
       vocabularyId: '0',
       vocabulary: 'important',
+      themeId: '0,',
       translations: {
         vn: 'Quan trọng',
       },
@@ -30,6 +31,7 @@ const dataTemp: ExericiseVocabularyState = {
     {
       vocabularyId: '1',
       vocabulary: 'beach',
+      themeId: '0,',
       translations: {
         vn: 'Bãi biển',
       },
