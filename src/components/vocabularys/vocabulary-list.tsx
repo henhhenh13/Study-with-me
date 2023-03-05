@@ -12,6 +12,7 @@ export const VocabularyList = (): React.ReactElement => {
         vbrThemes.map(({ themeId, vocabularys, theme }) => (
           <VocabularyCard
             key={themeId}
+            themeId={themeId}
             vocabularys={vocabularys}
             theme={theme}
           />

@@ -16,7 +16,9 @@ const textButtonClassNames = {
 };
 
 const bgButtonClassNames = {
-  primary: 'hover:bg-blue-600 active:bg-blue-700' + transition,
+  primary:
+    'hover:bg-blue-600 active:bg-blue-700 bg-blue-500 text-white rounded-lg' +
+    transition,
   danger: 'hover:text-red-500 hover:underline' + transition,
   common: 'hover:underline' + transition,
 };

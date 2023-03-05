@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil';
 
 import vocabularyThemeJson from '../../data/vocabulary-theme.json';
 import vocabularysJson from '../../data/vocabularys.json';
+import { VocabularyState } from '../vocabulary/vocabulary-state';
 import {
   VOCABULARY_THEME_STATE,
   VocabularyThemeState,
@@ -11,6 +12,11 @@ import {
 interface UseVocabularyThemeManager {
   vbrThemes: VocabularyThemeState[];
   getVocabularyTheme: () => void;
+  addVocabularyInTheme: (
+    themeId: string,
+    vocabulary: string,
+    translationVn: string,
+  ) => void;
 }
 export const useVocabularyThemeManager = (): UseVocabularyThemeManager => {
   const [vbrThemeState, setVbrThemeState] = useRecoilState(
@@ -31,5 +37,33 @@ export const useVocabularyThemeManager = (): UseVocabularyThemeManager => {
     setVbrThemeState(newMaps);
   }, [setVbrThemeState]);
 
-  return { vbrThemes: Array.from(vbrThemeState.values()), getVocabularyTheme };
+  const addVocabularyInTheme = useCallback(
+    (themeId: string, vocabulary: string, translationVn: string) => {
+      setVbrThemeState((prevState) => {
+        const newState = new Map(prevState);
+        const prevTheme = newState.get(themeId);
+        if (prevTheme && prevTheme.vocabularys) {
+          const newVbr: VocabularyState = {
+            vocabularyId: String(prevTheme.vocabularys.length),
+            vocabulary,
+            translations: {
+              vn: translationVn,
+            },
+          };
+          newState.set(themeId, {
+            ...prevTheme,
+            vocabularys: [...prevTheme.vocabularys, newVbr],
+          });
+        }
+        return newState;
+      });
+    },
+    [setVbrThemeState],
+  );
+
+  return {
+    vbrThemes: Array.from(vbrThemeState.values()),
+    getVocabularyTheme,
+    addVocabularyInTheme,
+  };
 };

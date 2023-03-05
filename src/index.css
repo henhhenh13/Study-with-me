@@ -3,15 +3,30 @@
 @tailwind utilities;
 
 ul::-webkit-scrollbar {
-    width: 7px;
+    width: 15px
+}
+ul::-webkit-scrollbar-track {
+    background-color: #D1D2D4;
+    border: 7px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    margin-block: 0
 }
 
 ul::-webkit-scrollbar-thumb {
-    @apply bg-gray-400;
-    @apply bg-opacity-100;
-    border-radius: 5px;
+    background: #999ba0;
+    min-height: 50px;
+    border-radius: 10px;
+    border: 6px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+}
+
+ul::-webkit-scrollbar-thumb:hover{
+    background: #999ba0;
+    border-radius: 10px;
+    border: 6px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
 }
 
 .shadow-black {
     box-shadow: 4px 4px rgb(41, 41, 41);
-  }
+}
