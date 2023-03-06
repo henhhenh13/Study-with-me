@@ -1,16 +1,373 @@
 [
     {
-        "vocabularyId": "0",
-        "vocabulary": "important",
-        "translations": {
-            "vn": "Quan trọng"
-        }
+       "vocabularyId":"0",
+       "vocabulary":"children",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Quan trọng"
+       }
     },
     {
-        "vocabularyId": "1",
-        "vocabulary": "beach",
-        "translations": {
-            "vn": "Bãi biển"
-        }
+       "vocabularyId":"1",
+       "vocabulary":"husband",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"2",
+       "vocabulary":"wife",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"3",
+       "vocabulary":"mother",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"4",
+       "vocabulary":"father",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"5",
+       "vocabulary":"parents",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"6",
+       "vocabulary":"daughter",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"7",
+       "vocabulary":"son",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"8",
+       "vocabulary":"brother",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"9",
+       "vocabulary":"sister",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"10",
+       "vocabulary":"grandfather",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"11",
+       "vocabulary":"grandmother",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"12",
+       "vocabulary":"grandparents",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"13",
+       "vocabulary":"granddaughter",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"14",
+       "vocabulary":"grandson",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"15",
+       "vocabulary":"uncle",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"16",
+       "vocabulary":"aunts",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"17",
+       "vocabulary":"aunt",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"18",
+       "vocabulary":"niece",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"19",
+       "vocabulary":"nephew",
+       "themeId":"0",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"20",
+       "vocabulary":"cousins",
+       "themeId":"2",
+       "theme":"The family",
+       "translations":{
+          "vn":"Bãi biển"
+       }
+    },
+    {
+       "vocabularyId":"21",
+       "vocabulary":"hat",
+       "themeId":"2",
+       "translations":{
+          "vn":"mũ"
+       }
+    },
+    {
+       "vocabularyId":"22",
+       "vocabulary":"coat",
+       "translations":{
+          "vn":"áo choàng"
+       }
+    },
+    {
+       "vocabularyId":"23",
+       "themeId":"2",
+       "vocabulary":"scarf",
+       "translations":{
+          "vn":"khăng quàng cổ"
+       }
+    },
+    {
+       "vocabularyId":"24",
+       "themeId":"2",
+       "vocabulary":"gloves",
+       "translations":{
+          "vn":"găng tay"
+       }
+    },
+    {
+       "vocabularyId":"25",
+       "themeId":"2",
+       "vocabulary":"shoes",
+       "translations":{
+          "vn":"giày"
+       }
+    },
+    {
+       "vocabularyId":"26",
+       "themeId":"2",
+       "vocabulary":"trainers",
+       "translations":{
+          "vn":"giày thể thao"
+       }
+    },
+    {
+       "vocabularyId":"27",
+       "themeId":"2",
+       "vocabulary":"boots",
+       "translations":{
+          "vn":"giày bốt"
+       }
+    },
+    {
+       "vocabularyId":"28",
+       "themeId":"2",
+       "vocabulary":"suit",
+       "translations":{
+          "vn":"suit"
+       }
+    },
+    {
+       "vocabularyId":"29",
+       "themeId":"2",
+       "vocabulary":"socks",
+       "translations":{
+          "vn":"tất chân"
+       }
+    },
+    {
+       "vocabularyId":"30",
+       "themeId":"2",
+       "vocabulary":"watch",
+       "translations":{
+          "vn":"đồng hồ"
+       }
+    },
+    {
+       "vocabularyId":"31",
+       "themeId":"2",
+       "vocabulary":"dress",
+       "translations":{
+          "vn":"đầm"
+       }
+    },
+    {
+       "vocabularyId":"32",
+       "themeId":"2",
+       "vocabulary":"ring",
+       "translations":{
+          "vn":"nhẫn"
+       }
+    },
+    {
+       "vocabularyId":"33",
+       "themeId":"2",
+       "vocabulary":"skirt",
+       "translations":{
+          "vn":"váy"
+       }
+    },
+    {
+       "vocabularyId":"34",
+       "themeId":"2",
+       "vocabulary":"tie",
+       "translations":{
+          "vn":"cà vạt"
+       }
+    },
+    {
+       "vocabularyId":"35",
+       "themeId":"2",
+       "vocabulary":"sweater",
+       "translations":{
+          "vn":"áo ấm"
+       }
+    },
+    {
+       "vocabularyId":"36",
+       "vocabulary":"jumper",
+       "translations":{
+          "vn":"quần dài"
+       }
+    },
+    {
+       "vocabularyId":"37",
+       "vocabulary":"plural",
+       "themeId":"3",
+       "translations":{
+          "vn":"số nhiều"
+       }
+    },
+    {
+       "vocabularyId":"38",
+       "vocabulary":"trousers",
+       "themeId":"2",
+       "translations":{
+          "vn":"quần dài"
+       }
+    },
+    {
+       "vocabularyId":"39",
+       "vocabulary":"jeans",
+       "themeId":"2",
+       "translations":{
+          "vn":"quần jeans"
+       }
+    },
+    {
+       "vocabularyId":"40",
+       "vocabulary":"shorts",
+       "themeId":"2",
+       "translations":{
+          "vn":"váy ngắn"
+       }
+    },
+    {
+       "vocabularyId":"41",
+       "vocabulary":"tights",
+       "themeId":"2",
+       "translations":{
+          "vn":"quần bó"
+       }
+    },
+    {
+       "vocabularyId":"42",
+       "vocabulary":"glasses",
+       "themeId":"2",
+       "translations":{
+          "vn":"kính"
+       }
+    },
+    {
+       "vocabularyId":"43",
+       "vocabulary":"pyjimas",
+       "themeId":"2",
+       "translations":{
+          "vn":"pyjimas"
+       }
     }
-]
+ ]
