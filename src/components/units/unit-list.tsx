@@ -9,6 +9,7 @@ const data: UnitState[] = [
   {
     unitId: '0',
     title: 'The family',
+    themeId: '0',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae alias voluptates illum expedita, a dolorum, optio natus magnam, incidunt possimus fugiat minima eaque reiciendis! Sit sed voluptatem quam deserunt earum!',
     svgAvatar: MdFamilyRestroom,
@@ -26,7 +27,8 @@ const data: UnitState[] = [
   },
   {
     unitId: '1',
-    title: 'The family 2',
+    title: 'Pasts of body',
+    themeId: '1',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae alias voluptates illum expedita, a dolorum, optio natus magnam, incidunt possimus fugiat minima eaque reiciendis! Sit sed voluptatem quam deserunt earum!',
     svgAvatar: MdFamilyRestroom,
@@ -35,7 +37,7 @@ const data: UnitState[] = [
       {
         unitId: '1',
         index: '0',
-        exerciseId: '0',
+        exerciseId: '1',
         exerciseType: 'vocabulary',
         title:
           'Look at the family tree on the opposite page. Complete the sentense.',
