@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 
-import vocabularyThemeJson from '../../data/vocabulary-theme.json';
+import vocabularyThemeJson from '../../data/themes.json';
 import vocabularysJson from '../../data/vocabularys.json';
 import { useVocabulary } from '../vocabulary/use-vocabulary';
 import { VocabularyState } from '../vocabulary/vocabulary-state';
