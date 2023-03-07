@@ -6,7 +6,7 @@ import { EXERCISE_STATE } from './exercise-state';
 
 interface UseExerciseManager {
   exercises: ActiveExerciseState[] | undefined;
-  getVbrsByExerciseId: (
+  getVbrsByThemeId: (
     exercise: ActiveExerciseState,
     themeIdTemp: string,
   ) => void;
@@ -15,16 +15,19 @@ interface UseExerciseManager {
 export const useExerciseManager = (): UseExerciseManager => {
   const [exerciseState, setExerciseState] = useRecoilState(EXERCISE_STATE);
 
-  const getVbrsByExerciseId = useRecoilCallback(
+  const getVbrsByThemeId = useRecoilCallback(
     ({ snapshot }) =>
       (exercise: ActiveExerciseState, themeIdTemp: string) => {
         const release = snapshot.retain();
-        const vbrState = snapshot.getLoadable(VOCABULARYS_STATE).getValue();
-        const vbrs = Array.from(vbrState.values());
-        const exerciseVbr = vbrs.filter(
-          ({ themeId }) => themeId === themeIdTemp,
-        );
+        const exercisesState = snapshot.getLoadable(EXERCISE_STATE).getValue();
+        if (exercisesState.has(exercise.exerciseId)) return;
+
         setExerciseState((prev) => {
+          const vbrState = snapshot.getLoadable(VOCABULARYS_STATE).getValue();
+          const vbrs = Array.from(vbrState.values());
+          const exerciseVbr = vbrs.filter(
+            ({ themeId }) => themeId === themeIdTemp,
+          );
           new Map(prev);
           prev.set(exercise.exerciseId, {
             ...exercise,
@@ -41,6 +44,6 @@ export const useExerciseManager = (): UseExerciseManager => {
 
   return {
     exercises: Array.from(exerciseState.values()),
-    getVbrsByExerciseId,
+    getVbrsByThemeId,
   };
 };

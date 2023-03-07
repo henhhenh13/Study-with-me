@@ -7,7 +7,7 @@ export const VocabularyList = (): React.ReactElement => {
   const { vbrThemes } = useVocabularyThemeManager();
 
   return (
-    <div className="w-[836px] h-[85vh] overflow-y-auto grid grid-cols-2 gap-4">
+    <div className="w-[836px] h-[85vh] overflow-y-auto grid grid-cols-2 gap-4 custom-scrollbar">
       {!!vbrThemes.length &&
         vbrThemes.map(({ themeId, vocabularys, theme }) => (
           <VocabularyCard
