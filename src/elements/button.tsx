@@ -33,7 +33,7 @@ export const Button = ({
   return (
     <button
       className={clsx(
-        'disabled:cursor-not-allowed flex items-center',
+        'disabled:cursor-not-allowed flex items-center justify-center',
         variants === 'background'
           ? bgButtonClassNames[color]
           : textButtonClassNames[color],

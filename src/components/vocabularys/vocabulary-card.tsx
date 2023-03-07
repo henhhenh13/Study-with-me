@@ -13,7 +13,7 @@ export const VocabularyCard = (
 ): React.ReactElement => {
   const { theme, vocabularys } = props;
   return (
-    <div className="w-[400px] max-h-[calc(100vh-112px)] bg-white border-4 border-blue-500">
+    <div className="w-[400px] h-full max-h-[calc(100vh-112px)] bg-white border-4 border-blue-500">
       <h2 className="text-center py-8 text-2xl italic font-semibold">
         {theme}
       </h2>

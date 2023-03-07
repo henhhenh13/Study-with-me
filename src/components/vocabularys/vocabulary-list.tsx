@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useVocabularyThemeManager } from '../../managers/vocabulary-theme/use-vocabulary-theme-manager';
+import { AddVocabularyCard } from './add-vocabulary-card';
 import { VocabularyCard } from './vocabulary-card';
 
 export const VocabularyList = (): React.ReactElement => {
@@ -17,6 +18,7 @@ export const VocabularyList = (): React.ReactElement => {
             theme={theme}
           />
         ))}
+      <AddVocabularyCard />
     </div>
   );
 };
