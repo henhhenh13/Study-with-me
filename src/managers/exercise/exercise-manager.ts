@@ -1,61 +1,46 @@
-import { useCallback } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilCallback, useRecoilState } from 'recoil';
 
 import { ActiveExerciseState } from '../active-exercise/active-exercise-state';
-import {
-  ExericiseVocabularyState,
-  fromApiToExerciseVocabulary,
-} from './exercise-serialized';
+import { VOCABULARYS_STATE } from '../vocabulary/vocabulary-state';
 import { EXERCISE_STATE } from './exercise-state';
 
 interface UseExerciseManager {
   exercises: ActiveExerciseState[] | undefined;
-  getVbrByExerciseId: (exerciseId: string) => void;
+  getVbrsByExerciseId: (
+    exercise: ActiveExerciseState,
+    themeIdTemp: string,
+  ) => void;
 }
-
-const dataTemp: ExericiseVocabularyState = {
-  unitId: '0',
-  index: '1',
-  title: 'The family',
-  exerciseId: '0',
-  exerciseType: 'vocabulary',
-  vocabularys: [
-    {
-      vocabularyId: '0',
-      vocabulary: 'important',
-      themeId: '0,',
-      translations: {
-        vn: 'Quan trọng',
-      },
-    },
-    {
-      vocabularyId: '1',
-      vocabulary: 'beach',
-      themeId: '0,',
-      translations: {
-        vn: 'Bãi biển',
-      },
-    },
-  ],
-};
 
 export const useExerciseManager = (): UseExerciseManager => {
   const [exerciseState, setExerciseState] = useRecoilState(EXERCISE_STATE);
 
-  const getVbrByExerciseId = useCallback(
-    (exerciseId: string) => {
-      setExerciseState((prev) => {
-        const exercises = prev;
-        const serialized = fromApiToExerciseVocabulary(dataTemp);
-        exercises?.set(exerciseId, serialized);
-        return exercises;
-      });
-    },
+  const getVbrsByExerciseId = useRecoilCallback(
+    ({ snapshot }) =>
+      (exercise: ActiveExerciseState, themeIdTemp: string) => {
+        const release = snapshot.retain();
+        const vbrState = snapshot.getLoadable(VOCABULARYS_STATE).getValue();
+        const vbrs = Array.from(vbrState.values());
+        const exerciseVbr = vbrs.filter(
+          ({ themeId }) => themeId === themeIdTemp,
+        );
+        setExerciseState((prev) => {
+          new Map(prev);
+          prev.set(exercise.exerciseId, {
+            ...exercise,
+            vocabularys: exerciseVbr,
+          });
+
+          return prev;
+        });
+
+        release();
+      },
     [setExerciseState],
   );
 
   return {
     exercises: Array.from(exerciseState.values()),
-    getVbrByExerciseId,
+    getVbrsByExerciseId,
   };
 };

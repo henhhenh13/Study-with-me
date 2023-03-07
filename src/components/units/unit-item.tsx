@@ -1,25 +1,19 @@
-import { useModal } from '@ebay/nice-modal-react';
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
-  FaCheck,
   FaChevronRight,
   FaPlayCircle,
   FaRegEdit,
   FaTrashAlt,
 } from 'react-icons/fa';
 
-import { useActiveExercise } from '../../managers/active-exercise/use-active-exercise';
-import { useExerciseManager } from '../../managers/exercise/exercise-manager';
 import { type UnitSerialized } from '../../managers/units/unit-serialized';
-import { ModalVocabulary } from '../modals/modal-vocabulary/modal-vocabulary';
+import { UnitExerciseItem } from './unit-exercise-item';
 
 interface UnitItemProps extends UnitSerialized {
   unitIndex: number;
 }
 export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
-  const { getVbrByExerciseId } = useExerciseManager();
-  const { updateActiveExerciseId } = useActiveExercise();
   const {
     title,
     svgAvatar: SvgAvatar,
@@ -27,9 +21,9 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
     description,
     exercises,
     unitIndex,
+    themeId,
   } = props;
   const [isShowExercise, setIsShowExercise] = useState<boolean>(false);
-  const { show } = useModal(ModalVocabulary);
 
   return (
     <li
@@ -77,20 +71,13 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
           <h2 className="font-semibold text-lg">Exercises</h2>
           <ul>
             {exercises.map((exercise, index) => (
-              <li
-                key={exercise.exerciseId}
-                onClick={() => {
-                  getVbrByExerciseId('1');
-                  updateActiveExerciseId('1');
-                  show();
-                }}
-                className="cursor-pointer hover:text-blue-600 transition-colors duration-200 flex items-center justify-between"
-              >
-                <p>
-                  {unitIndex}.{index + 1}: {exercise.title}
-                </p>
-                <FaCheck className="text-green-400" />
-              </li>
+              <UnitExerciseItem
+                key={index}
+                exercise={exercise}
+                index={index}
+                themeId={themeId}
+                unitIndex={unitIndex}
+              />
             ))}
           </ul>
         </div>

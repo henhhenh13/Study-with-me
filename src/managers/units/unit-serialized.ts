@@ -11,6 +11,7 @@ export interface UnitSerialized {
   avatar: UnitState['avatar'];
   svgAvatar: UnitState['svgAvatar'];
   exercises: ExerciseSerialized[];
+  themeId: UnitState['themeId'];
   flags: {
     isSvgAvatar: boolean;
     isAvatar: boolean;
@@ -18,13 +19,15 @@ export interface UnitSerialized {
 }
 
 export const fromApiToUnit = (raw: UnitState): UnitSerialized => {
-  const { unitId, title, description, avatar, svgAvatar, exercises } = raw;
+  const { unitId, title, description, avatar, svgAvatar, exercises, themeId } =
+    raw;
   const exercisesSerialized = exercises.map((exercise) =>
     fromApiToExercise(exercise),
   );
   return {
     unitId,
     title,
+    themeId,
     description,
     avatar,
     svgAvatar,

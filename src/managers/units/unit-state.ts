@@ -6,6 +6,7 @@ export interface UnitState {
   unitId: string;
   title: string;
   description: string;
+  themeId: string;
   avatar: string | null;
   svgAvatar: IconType | null;
   exercises: ExerciseState[];
