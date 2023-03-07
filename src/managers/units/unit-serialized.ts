@@ -1,3 +1,5 @@
+import { MdFamilyRestroom } from 'react-icons/md';
+
 import {
   type ExerciseSerialized,
   fromApiToExercise,
@@ -30,10 +32,10 @@ export const fromApiToUnit = (raw: UnitState): UnitSerialized => {
     themeId,
     description,
     avatar,
-    svgAvatar,
+    svgAvatar: MdFamilyRestroom,
     exercises: exercisesSerialized,
     flags: {
-      isSvgAvatar: Boolean(svgAvatar),
+      isSvgAvatar: true,
       isAvatar: Boolean(avatar),
     },
   };

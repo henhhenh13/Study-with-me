@@ -1,53 +1,13 @@
 import React, { useMemo } from 'react';
-import { MdFamilyRestroom } from 'react-icons/md';
 
+import unitsJson from '../../data/units.json';
 import { fromApiToUnit } from '../../managers/units/unit-serialized';
-import { type UnitState } from '../../managers/units/unit-state';
+import { UnitState } from '../../managers/units/unit-state';
 import { UnitItem } from './unit-item';
-
-const data: UnitState[] = [
-  {
-    unitId: '0',
-    title: 'The family',
-    themeId: '0',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae alias voluptates illum expedita, a dolorum, optio natus magnam, incidunt possimus fugiat minima eaque reiciendis! Sit sed voluptatem quam deserunt earum!',
-    svgAvatar: MdFamilyRestroom,
-    avatar: null,
-    exercises: [
-      {
-        unitId: '1',
-        index: '0',
-        exerciseId: '0',
-        exerciseType: 'vocabulary',
-        title:
-          'Look at the family tree on the opposite page. Complete the sentense.',
-      },
-    ],
-  },
-  {
-    unitId: '1',
-    title: 'Pasts of body',
-    themeId: '1',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae alias voluptates illum expedita, a dolorum, optio natus magnam, incidunt possimus fugiat minima eaque reiciendis! Sit sed voluptatem quam deserunt earum!',
-    svgAvatar: MdFamilyRestroom,
-    avatar: null,
-    exercises: [
-      {
-        unitId: '1',
-        index: '0',
-        exerciseId: '1',
-        exerciseType: 'vocabulary',
-        title:
-          'Look at the family tree on the opposite page. Complete the sentense.',
-      },
-    ],
-  },
-];
 
 export const UnitList = (): React.ReactElement => {
   const units = useMemo(() => {
+    const data = unitsJson as unknown as UnitState[];
     return data.map((unit) => fromApiToUnit(unit));
   }, []);
   return (

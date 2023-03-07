@@ -2,7 +2,7 @@
    {
       "vocabularyId":"0",
       "vocabulary":"children",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Những đứa trẻ"
@@ -11,7 +11,7 @@
    {
       "vocabularyId":"1",
       "vocabulary":"husband",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Chồng"
@@ -20,7 +20,7 @@
    {
       "vocabularyId":"2",
       "vocabulary":"wife",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Vợ"
@@ -29,7 +29,7 @@
    {
       "vocabularyId":"3",
       "vocabulary":"mother",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Mẹ"
@@ -38,7 +38,7 @@
    {
       "vocabularyId":"4",
       "vocabulary":"father",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Cha"
@@ -47,7 +47,7 @@
    {
       "vocabularyId":"5",
       "vocabulary":"parents",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Cha mẹ"
@@ -56,7 +56,7 @@
    {
       "vocabularyId":"6",
       "vocabulary":"daughter",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Con gái"
@@ -65,7 +65,7 @@
    {
       "vocabularyId":"7",
       "vocabulary":"son",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Con trai"
@@ -74,7 +74,7 @@
    {
       "vocabularyId":"8",
       "vocabulary":"brother",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Anh trai"
@@ -83,7 +83,7 @@
    {
       "vocabularyId":"9",
       "vocabulary":"sister",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Em gái"
@@ -92,7 +92,7 @@
    {
       "vocabularyId":"10",
       "vocabulary":"grandfather",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Ông"
@@ -101,7 +101,7 @@
    {
       "vocabularyId":"11",
       "vocabulary":"grandmother",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Bà"
@@ -110,7 +110,7 @@
    {
       "vocabularyId":"12",
       "vocabulary":"grandparents",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"Ông bà"
@@ -119,7 +119,7 @@
    {
       "vocabularyId":"13",
       "vocabulary":"granddaughter",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"cháu gái"
@@ -128,7 +128,7 @@
    {
       "vocabularyId":"14",
       "vocabulary":"grandson",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"cháu trai"
@@ -137,7 +137,7 @@
    {
       "vocabularyId":"15",
       "vocabulary":"uncle",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"chú"
@@ -146,7 +146,7 @@
    {
       "vocabularyId":"16",
       "vocabulary":"aunts",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"những người cô"
@@ -155,7 +155,7 @@
    {
       "vocabularyId":"17",
       "vocabulary":"aunt",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"cô"
@@ -164,7 +164,7 @@
    {
       "vocabularyId":"18",
       "vocabulary":"niece",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"cháu gái"
@@ -173,7 +173,7 @@
    {
       "vocabularyId":"19",
       "vocabulary":"nephew",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"cháu trai"
@@ -182,7 +182,7 @@
    {
       "vocabularyId":"20",
       "vocabulary":"cousins",
-      "themeId":"0",
+      "themeId":"0d5345d0-75b5-4b18-b71b-173eddedab49",
       "theme":"The family",
       "translations":{
          "vn":"anh em họ"
@@ -191,21 +191,14 @@
    {
       "vocabularyId":"21",
       "vocabulary":"hat",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"mũ"
       }
    },
    {
-      "vocabularyId":"22",
-      "vocabulary":"coat",
-      "translations":{
-         "vn":"áo choàng"
-      }
-   },
-   {
       "vocabularyId":"23",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"scarf",
       "translations":{
          "vn":"khăng quàng cổ"
@@ -213,7 +206,7 @@
    },
    {
       "vocabularyId":"24",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"gloves",
       "translations":{
          "vn":"găng tay"
@@ -221,7 +214,7 @@
    },
    {
       "vocabularyId":"25",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"shoes",
       "translations":{
          "vn":"giày"
@@ -229,7 +222,7 @@
    },
    {
       "vocabularyId":"26",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"trainers",
       "translations":{
          "vn":"giày thể thao"
@@ -237,7 +230,7 @@
    },
    {
       "vocabularyId":"27",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"boots",
       "translations":{
          "vn":"giày bốt"
@@ -245,7 +238,7 @@
    },
    {
       "vocabularyId":"28",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"suit",
       "translations":{
          "vn":"suit"
@@ -253,7 +246,7 @@
    },
    {
       "vocabularyId":"29",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"socks",
       "translations":{
          "vn":"tất chân"
@@ -261,7 +254,7 @@
    },
    {
       "vocabularyId":"30",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"watch",
       "translations":{
          "vn":"đồng hồ"
@@ -269,7 +262,7 @@
    },
    {
       "vocabularyId":"31",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"dress",
       "translations":{
          "vn":"đầm"
@@ -277,7 +270,7 @@
    },
    {
       "vocabularyId":"32",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"ring",
       "translations":{
          "vn":"nhẫn"
@@ -285,7 +278,7 @@
    },
    {
       "vocabularyId":"33",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"skirt",
       "translations":{
          "vn":"váy"
@@ -293,7 +286,7 @@
    },
    {
       "vocabularyId":"34",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"tie",
       "translations":{
          "vn":"cà vạt"
@@ -301,23 +294,16 @@
    },
    {
       "vocabularyId":"35",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "vocabulary":"sweater",
       "translations":{
          "vn":"áo ấm"
       }
    },
    {
-      "vocabularyId":"36",
-      "vocabulary":"jumper",
-      "translations":{
-         "vn":"quần dài"
-      }
-   },
-   {
       "vocabularyId":"37",
       "vocabulary":"plural",
-      "themeId":"3",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"số nhiều"
       }
@@ -325,7 +311,7 @@
    {
       "vocabularyId":"38",
       "vocabulary":"trousers",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"quần dài"
       }
@@ -333,7 +319,7 @@
    {
       "vocabularyId":"39",
       "vocabulary":"jeans",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"quần jeans"
       }
@@ -341,7 +327,7 @@
    {
       "vocabularyId":"40",
       "vocabulary":"shorts",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"váy ngắn"
       }
@@ -349,7 +335,7 @@
    {
       "vocabularyId":"41",
       "vocabulary":"tights",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"quần bó"
       }
@@ -357,7 +343,7 @@
    {
       "vocabularyId":"42",
       "vocabulary":"glasses",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"kính"
       }
@@ -365,7 +351,7 @@
    {
       "vocabularyId":"43",
       "vocabulary":"pyjimas",
-      "themeId":"2",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"pyjimas"
       }
@@ -373,7 +359,7 @@
    {
       "vocabularyId":"44",
       "vocabulary":"hair",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"tóc"
       }
@@ -381,7 +367,7 @@
    {
       "vocabularyId":"45",
       "vocabulary":"eye",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"mắt"
       }
@@ -389,7 +375,7 @@
    {
       "vocabularyId":"46",
       "vocabulary":"nose",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"mũi"
       }
@@ -397,7 +383,7 @@
    {
       "vocabularyId":"47",
       "vocabulary":"tooth",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"răng"
       }
@@ -405,7 +391,7 @@
    {
       "vocabularyId":"48",
       "vocabulary":"ear",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"tai"
       }
@@ -413,7 +399,7 @@
    {
       "vocabularyId":"49",
       "vocabulary":"mouth",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"miệng"
       }
@@ -421,7 +407,7 @@
    {
       "vocabularyId":"50",
       "vocabulary":"lip",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"môi"
       }
@@ -429,7 +415,7 @@
    {
       "vocabularyId":"51",
       "vocabulary":"neck",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"cổ"
       }
@@ -437,7 +423,7 @@
    {
       "vocabularyId":"52",
       "vocabulary":"nail",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"móng tay"
       }
@@ -445,7 +431,7 @@
    {
       "vocabularyId":"53",
       "vocabulary":"thumb",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"ngón cái"
       }
@@ -453,7 +439,7 @@
    {
       "vocabularyId":"54",
       "vocabulary":"finger",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"ngón tay"
       }
@@ -461,7 +447,7 @@
    {
       "vocabularyId":"55",
       "vocabulary":"hand",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"tay"
       }
@@ -469,7 +455,7 @@
    {
       "vocabularyId":"56",
       "vocabulary":"shoulder",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"vãi"
       }
@@ -477,7 +463,7 @@
    {
       "vocabularyId":"57",
       "vocabulary":"arm",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"cánh tay"
       }
@@ -485,7 +471,7 @@
    {
       "vocabularyId":"58",
       "vocabulary":"leg",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"chân"
       }
@@ -493,7 +479,7 @@
    {
       "vocabularyId":"59",
       "vocabulary":"knee",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"đầu gối"
       }
@@ -501,7 +487,7 @@
    {
       "vocabularyId":"60",
       "vocabulary":"foot",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"bàn chân"
       }
@@ -509,7 +495,7 @@
    {
       "vocabularyId":"61",
       "vocabulary":"toe",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"ngón chân"
       }
@@ -517,7 +503,7 @@
    {
       "vocabularyId":"62",
       "vocabulary":"chest",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"ngực"
       }
@@ -525,7 +511,7 @@
    {
       "vocabularyId":"63",
       "vocabulary":"side",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"mạn sườn"
       }
@@ -533,7 +519,7 @@
    {
       "vocabularyId":"64",
       "vocabulary":"stomach",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"bụng"
       }
@@ -541,7 +527,7 @@
    {
       "vocabularyId":"65",
       "vocabulary":"back",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"sau lưng"
       }
@@ -549,7 +535,7 @@
    {
       "vocabularyId":"66",
       "vocabulary":"waist",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"thắt lưng"
       }
@@ -557,7 +543,7 @@
    {
       "vocabularyId":"67",
       "vocabulary":"hip",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"hông"
       }
@@ -565,7 +551,7 @@
    {
       "vocabularyId":"68",
       "vocabulary":"heart",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"tim"
       }
@@ -573,7 +559,7 @@
    {
       "vocabularyId":"69",
       "vocabulary":"brain",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"não"
       }
@@ -581,7 +567,7 @@
    {
       "vocabularyId":"70",
       "vocabulary":"blood",
-      "themeId":"1",
+      "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"máu"
       }

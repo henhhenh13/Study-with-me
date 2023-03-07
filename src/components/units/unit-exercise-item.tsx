@@ -20,7 +20,7 @@ export const UnitExerciseItem = ({
   index,
   unitIndex,
 }: UnitExerciseItemProps): React.ReactElement => {
-  const { getVbrsByExerciseId } = useExerciseManager();
+  const { getVbrsByThemeId } = useExerciseManager();
   const { updateActiveExerciseId } = useActiveExercise();
   const { show } = useModal(ModalVocabulary);
 
@@ -28,7 +28,7 @@ export const UnitExerciseItem = ({
     <div>
       <li
         onClick={async () => {
-          await getVbrsByExerciseId(
+          await getVbrsByThemeId(
             {
               exerciseId: exercise.exerciseId,
               title: exercise.title,
