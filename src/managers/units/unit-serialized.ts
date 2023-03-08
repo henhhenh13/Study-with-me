@@ -21,8 +21,7 @@ export interface UnitSerialized {
 }
 
 export const fromApiToUnit = (raw: UnitState): UnitSerialized => {
-  const { unitId, title, description, avatar, svgAvatar, exercises, themeId } =
-    raw;
+  const { unitId, title, description, avatar, exercises, themeId } = raw;
   const exercisesSerialized = exercises.map((exercise) =>
     fromApiToExercise(exercise),
   );

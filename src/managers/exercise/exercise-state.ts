@@ -2,7 +2,7 @@ import { atom } from 'recoil';
 
 import { ActiveExerciseState } from '../active-exercise/active-exercise-state';
 import { SentenseState } from '../sentense/sentense-state';
-import { VocabularyState } from '../vocabulary/vocabulary-state';
+import { VocabulariesState } from '../vocabulary/vocabulary-state';
 
 export interface ExerciseState {
   exerciseId: string;
@@ -10,7 +10,7 @@ export interface ExerciseState {
   unitId: string;
   exerciseType: ExerciseType;
   index: string;
-  vocabularys?: VocabularyState[];
+  vocabularies?: VocabulariesState[];
   sentenses?: SentenseState[];
 }
 

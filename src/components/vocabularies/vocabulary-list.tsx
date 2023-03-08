@@ -10,11 +10,11 @@ export const VocabularyList = (): React.ReactElement => {
   return (
     <div className="w-[836px] h-[85vh] overflow-y-auto grid grid-cols-2 gap-4 custom-scrollbar">
       {!!vbrThemes.length &&
-        vbrThemes.map(({ themeId, vocabularys, theme }) => (
+        vbrThemes.map(({ themeId, vocabularies, theme }) => (
           <VocabularyCard
             key={themeId}
             themeId={themeId}
-            vocabularys={vocabularys}
+            vocabularies={vocabularies}
             theme={theme}
           />
         ))}

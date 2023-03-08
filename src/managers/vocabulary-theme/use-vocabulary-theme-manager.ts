@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 
 import vocabularyThemeJson from '../../data/themes.json';
-import vocabularysJson from '../../data/vocabularys.json';
+import vocabulariesJson from '../../data/vocabularies.json';
 import { useVocabulary } from '../vocabulary/use-vocabulary';
-import { VocabularyState } from '../vocabulary/vocabulary-state';
+import { VocabulariesState } from '../vocabulary/vocabulary-state';
 import {
   VOCABULARY_THEME_STATE,
   VocabularyThemeState,
@@ -31,7 +31,7 @@ export const useVocabularyThemeManager = (): UseVocabularyThemeManager => {
     vocabularyThemeJson.forEach((theme) => {
       newMaps.set(theme.themeId, {
         ...theme,
-        vocabularys: vocabularysJson.filter(
+        vocabularies: vocabulariesJson.filter(
           ({ themeId }) => theme.themeId === themeId,
         ),
       });
@@ -44,9 +44,9 @@ export const useVocabularyThemeManager = (): UseVocabularyThemeManager => {
       setVbrThemeState((prevState) => {
         const newState = new Map(prevState);
         const prevTheme = newState.get(themeId);
-        if (prevTheme && prevTheme.vocabularys) {
-          const newVbr: VocabularyState = {
-            vocabularyId: String(prevTheme.vocabularys.length + 1),
+        if (prevTheme && prevTheme.vocabularies) {
+          const newVbr: VocabulariesState = {
+            vocabularyId: String(prevTheme.vocabularies.length + 1),
             vocabulary,
             themeId: themeId,
             translations: {
@@ -55,7 +55,7 @@ export const useVocabularyThemeManager = (): UseVocabularyThemeManager => {
           };
           newState.set(themeId, {
             ...prevTheme,
-            vocabularys: [...prevTheme.vocabularys, newVbr],
+            vocabularies: [...prevTheme.vocabularies, newVbr],
           });
         }
         return newState;

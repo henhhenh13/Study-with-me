@@ -13,7 +13,7 @@ import { TbVocabulary } from 'react-icons/tb';
 import { Button } from '../../../elements/button';
 import { useActiveExercise } from '../../../managers/active-exercise/use-active-exercise';
 import { useToastManager } from '../../../managers/toast-manager.tsx/use-toat-manager';
-import { VocabularyState } from '../../../managers/vocabulary/vocabulary-state';
+import { VocabulariesState } from '../../../managers/vocabulary/vocabulary-state';
 import { ModalWrapper } from '../modal-wrapper/modal-wrapper';
 
 export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
@@ -26,21 +26,21 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
     useState<boolean>(false);
   const { successToast, errorToast } = useToastManager();
 
-  const vocabularys = useMemo(() => {
-    return activeExercise?.vocabularys || [];
-  }, [activeExercise?.vocabularys]);
+  const vocabularies = useMemo(() => {
+    return activeExercise?.vocabularies || [];
+  }, [activeExercise?.vocabularies]);
 
-  const activeVbr = useMemo<VocabularyState>(() => {
-    return vocabularys[vocabularyIndex];
-  }, [vocabularys, vocabularyIndex]);
+  const activeVbr = useMemo<VocabulariesState>(() => {
+    return vocabularies[vocabularyIndex];
+  }, [vocabularies, vocabularyIndex]);
 
   const isLastVbr = useMemo(() => {
-    return vocabularyIndex === vocabularys.length - 1;
-  }, [vocabularyIndex, vocabularys.length]);
+    return vocabularyIndex === vocabularies.length - 1;
+  }, [vocabularyIndex, vocabularies.length]);
 
   const increaseVbrIndex = () => {
     setVocabularyIndex((prev) =>
-      prev + 1 > vocabularys.length - 1 ? prev : prev + 1,
+      prev + 1 > vocabularies.length - 1 ? prev : prev + 1,
     );
   };
 
@@ -108,7 +108,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
   );
 
   if (isCompletedExercise) {
-    console.log('Succesfull exercise!');
+    console.log('Successfully exercise!');
   }
 
   return (
@@ -133,7 +133,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
             />
           </div>
         </div>
-        {!!vocabularys?.length && (
+        {!!vocabularies?.length && (
           <>
             <div className="w-[65%] mx-auto text-center h-[calc(100%-100px)] pt-20">
               <div className="space-y-2.5">

@@ -1,11 +1,11 @@
 import { atom } from 'recoil';
 
-import { VocabularyState } from '../vocabulary/vocabulary-state';
+import { VocabulariesState } from '../vocabulary/vocabulary-state';
 
 export interface VocabularyThemeState {
   themeId: string;
   theme: string;
-  vocabularys?: VocabularyState[];
+  vocabularies?: VocabulariesState[];
 }
 
 export const VOCABULARY_THEME_STATE = atom<Map<string, VocabularyThemeState>>({

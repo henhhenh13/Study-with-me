@@ -18,7 +18,6 @@ export interface ModalBaseProps {
   isShow?: ModalTransitionWrapperProps['isShow'];
   isDisabled?: boolean;
   isLoading?: boolean;
-  isIconCloseVisible?: boolean;
   onCancel: ModalTransitionWrapperProps['close'];
   onAfterCancel: ModalTransitionWrapperProps['onAfterClose'];
 }
@@ -30,7 +29,6 @@ const sizeObj: Record<string, string> = {
 
 export const ModalWrapper = ({
   isShow,
-  isIconCloseVisible = true,
   size = 'md',
   className,
   customSize,
