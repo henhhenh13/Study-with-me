@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { KeyboardEvent, useCallback, useRef, useState } from 'react';
 
 import { Button } from '../../elements/button';
 import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
@@ -31,6 +31,17 @@ export const VocabularyItem = ({
       firstInput.current?.focus();
     }
   }, []);
+
+  const handleFirstInputFocus = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      const canFirstInputFocus =
+        newTranslationVocabulary === '' && e.key === 'Backspace';
+      if (canFirstInputFocus) {
+        focusFirstInput();
+      }
+    },
+    [focusFirstInput, newTranslationVocabulary],
+  );
 
   const scrollBottomList = useCallback(() => {
     setTimeout(() => {
@@ -93,6 +104,7 @@ export const VocabularyItem = ({
           <input
             value={newTranslationVocabulary}
             onChange={(e) => setNewTranslationVocabulary(e.target.value)}
+            onKeyUp={handleFirstInputFocus}
             className="outline-none max-w-[100px] text-left"
             placeholder="Vietnamese"
           />
