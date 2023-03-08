@@ -571,5 +571,45 @@
       "translations":{
          "vn":"máu"
       }
+   },
+   {
+      "vocabularyId":"2d4af658-7c6a-48df-a5b6-a83b74a050a8",
+      "vocabulary":"belt",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
+      "translations":{
+         "vn":"thắt lưng"
+      }
+   },
+   {
+      "vocabularyId":"5992fcec-1018-467b-810e-40144806096b",
+      "vocabulary":"pair",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
+      "translations":{
+         "vn":"đôi"
+      }
+   },
+   {
+      "vocabularyId":"1a9c2611-496f-430f-901b-31e4f0903d0a",
+      "vocabulary":"suitcase",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
+      "translations":{
+         "vn":"va li"
+      }
+   },
+   {
+      "vocabularyId":"0f413757-ef7f-452d-81f6-3c5af6fbe50b",
+      "vocabulary":"handbag",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
+      "translations":{
+         "vn":"túi xách"
+      }
+   },
+   {
+      "vocabularyId":"c4f9d88f-ce5c-445b-b950-52077b0a8f65",
+      "vocabulary":"umbrella",
+      "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
+      "translations":{
+         "vn":"umbrella"
+      }
    }
 ]
