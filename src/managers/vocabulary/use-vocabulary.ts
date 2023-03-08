@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 
 import vocabulariesJson from '../../data/vocabularies.json';
+import generatorUuid from '../../utils/generatorUuid';
 import { VOCABULARIES_STATE, VocabulariesState } from './vocabulary-state';
 
 interface UseVocabulary {
@@ -29,9 +30,9 @@ export const useVocabulary = (): UseVocabulary => {
     (themeId: string, vocabulary: string, translationVn: string) => {
       setVocabulariesState((prevState) => {
         prevState = new Map(prevState);
-        const id = String(Array.from(prevState.values()).length);
-        prevState.set(id, {
-          vocabularyId: id,
+        const uuid = generatorUuid();
+        prevState.set(uuid, {
+          vocabularyId: uuid,
           vocabulary,
           themeId,
           translations: {

@@ -47,8 +47,9 @@ export const useVocabularyThemeManager = (): UseVocabularyThemeManager => {
         const newState = new Map(prevState);
         const prevTheme = newState.get(themeId);
         if (prevTheme && prevTheme.vocabularies) {
+          const uuid = generatorUuid();
           const newVbr: VocabulariesState = {
-            vocabularyId: String(prevTheme.vocabularies.length + 1),
+            vocabularyId: uuid,
             vocabulary,
             themeId,
             translations: {
