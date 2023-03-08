@@ -1,7 +1,7 @@
 import { useRecoilCallback, useRecoilState } from 'recoil';
 
 import { ActiveExerciseState } from '../active-exercise/active-exercise-state';
-import { VOCABULARYS_STATE } from '../vocabulary/vocabulary-state';
+import { VOCABULARIES_STATE } from '../vocabulary/vocabulary-state';
 import { EXERCISE_STATE } from './exercise-state';
 
 interface UseExerciseManager {
@@ -23,7 +23,7 @@ export const useExerciseManager = (): UseExerciseManager => {
         if (exercisesState.has(exercise.exerciseId)) return;
 
         setExerciseState((prev) => {
-          const vbrState = snapshot.getLoadable(VOCABULARYS_STATE).getValue();
+          const vbrState = snapshot.getLoadable(VOCABULARIES_STATE).getValue();
           const vbrs = Array.from(vbrState.values());
           const exerciseVbr = vbrs.filter(
             ({ themeId }) => themeId === themeIdTemp,
@@ -31,7 +31,7 @@ export const useExerciseManager = (): UseExerciseManager => {
           new Map(prev);
           prev.set(exercise.exerciseId, {
             ...exercise,
-            vocabularys: exerciseVbr,
+            vocabularies: exerciseVbr,
           });
 
           return prev;

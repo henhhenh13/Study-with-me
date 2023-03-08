@@ -4,26 +4,29 @@ import { Toaster } from 'sonner';
 import { UnitList } from './components/units/unit-list';
 import { useSectionManager } from './managers/use-section-manager/use-section-manager';
 import { useVocabulary } from './managers/vocabulary/use-vocabulary';
-import { Vocabularys } from './page/vocabularys';
+import { useVocabularyThemeManager } from './managers/vocabulary-theme/use-vocabulary-theme-manager';
+import { Vocabularies } from './page/vocabularies';
 import { MainBody } from './sections/main-body';
 import { Sidebar } from './sections/sidebar';
 
 export default function App(): React.ReactElement {
-  const { getVocabularys, vocabularys } = useVocabulary();
+  const { getVocabularies, vocabularies } = useVocabulary();
+  const { vbrThemes } = useVocabularyThemeManager();
   const { section } = useSectionManager();
 
-  console.log('vocabularys', vocabularys);
+  console.log('vocabularies', vocabularies);
+  console.log('vbrThemes', vbrThemes);
 
   useEffect(() => {
-    getVocabularys();
+    getVocabularies();
   }, []);
 
   const render = useMemo(() => {
     switch (section) {
       case 'units':
         return <UnitList />;
-      case 'vocabularys':
-        return <Vocabularys />;
+      case 'vocabularies':
+        return <Vocabularies />;
       default:
         return <UnitList />;
     }

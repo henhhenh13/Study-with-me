@@ -1,37 +1,38 @@
 import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 
-import vocabularysJson from '../../data/vocabularys.json';
-import { VOCABULARYS_STATE, VocabularyState } from './vocabulary-state';
+import vocabulariesJson from '../../data/vocabularies.json';
+import generatorUuid from '../../utils/generatorUuid';
+import { VOCABULARIES_STATE, VocabulariesState } from './vocabulary-state';
 
 interface UseVocabulary {
-  getVocabularys: () => void;
+  getVocabularies: () => void;
   addVocabulary: (
     themeId: string,
     vocabulary: string,
     translationVn: string,
   ) => void;
-  vocabularys: VocabularyState[];
+  vocabularies: VocabulariesState[];
 }
 
 export const useVocabulary = (): UseVocabulary => {
-  const [vocabularysState, setVocabularysState] =
-    useRecoilState(VOCABULARYS_STATE);
-  const getVocabularys = useCallback(() => {
+  const [vocabulariesState, setVocabulariesState] =
+    useRecoilState(VOCABULARIES_STATE);
+  const getVocabularies = useCallback(() => {
     const newMaps = new Map();
-    vocabularysJson.forEach((vocabulary) => {
+    vocabulariesJson.forEach((vocabulary) => {
       newMaps.set(vocabulary.vocabularyId, vocabulary);
     }, []);
 
-    setVocabularysState(newMaps);
-  }, [setVocabularysState]);
+    setVocabulariesState(newMaps);
+  }, [setVocabulariesState]);
   const addVocabulary = useCallback(
     (themeId: string, vocabulary: string, translationVn: string) => {
-      setVocabularysState((prevState) => {
+      setVocabulariesState((prevState) => {
         prevState = new Map(prevState);
-        const id = String(Array.from(prevState.values()).length);
-        prevState.set(id, {
-          vocabularyId: id,
+        const uuid = generatorUuid();
+        prevState.set(uuid, {
+          vocabularyId: uuid,
           vocabulary,
           themeId,
           translations: {
@@ -44,8 +45,8 @@ export const useVocabulary = (): UseVocabulary => {
     [],
   );
   return {
-    vocabularys: Array.from(vocabularysState.values()),
-    getVocabularys,
+    vocabularies: Array.from(vocabulariesState.values()),
+    getVocabularies,
     addVocabulary,
   };
 };

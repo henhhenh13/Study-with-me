@@ -1,26 +1,28 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { KeyboardEvent, useCallback, useRef, useState } from 'react';
 
 import { Button } from '../../elements/button';
-import { VocabularyState } from '../../managers/vocabulary/vocabulary-state';
+import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
+import { VocabulariesState } from '../../managers/vocabulary/vocabulary-state';
 import { useVocabularyThemeManager } from '../../managers/vocabulary-theme/use-vocabulary-theme-manager';
 
 export interface VocabularyItemProps {
-  vocabularys: VocabularyState[] | undefined;
+  vocabularies: VocabulariesState[] | undefined;
   themeId: string;
 }
 export const VocabularyItem = ({
   themeId,
-  vocabularys,
+  vocabularies,
 }: VocabularyItemProps): React.ReactElement => {
   const { addVocabularyInTheme } = useVocabularyThemeManager();
   const [newVocabulary, setNewVocabulary] = useState<string>('');
-  const [newTransltionVocabulary, setNewTransltionVocabulary] =
+  const [newTranslationVocabulary, setNewTranslationVocabulary] =
     useState<string>('');
   const listRef = useRef<HTMLUListElement>(null);
   const firstInput = useRef<HTMLInputElement>(null);
+  const { successToast, errorToast } = useToastManager();
 
   const onClearInput = useCallback(() => {
-    setNewTransltionVocabulary('');
+    setNewTranslationVocabulary('');
     setNewVocabulary('');
   }, []);
 
@@ -30,6 +32,17 @@ export const VocabularyItem = ({
     }
   }, []);
 
+  const handleFirstInputFocus = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      const canFirstInputFocus =
+        newTranslationVocabulary === '' && e.key === 'Backspace';
+      if (canFirstInputFocus) {
+        focusFirstInput();
+      }
+    },
+    [focusFirstInput, newTranslationVocabulary],
+  );
+
   const scrollBottomList = useCallback(() => {
     setTimeout(() => {
       if (listRef.current) {
@@ -38,13 +51,26 @@ export const VocabularyItem = ({
     });
   }, []);
 
+  const handleAddVocabulary = useCallback(() => {
+    const canAdd = newVocabulary && newTranslationVocabulary;
+    if (canAdd) {
+      addVocabularyInTheme(themeId, newVocabulary, newTranslationVocabulary);
+      onClearInput();
+      scrollBottomList();
+      focusFirstInput();
+      successToast(`You added "${newVocabulary}"`);
+    } else {
+      errorToast('Please do not empty form!');
+    }
+  }, [newVocabulary, newTranslationVocabulary]);
+
   return (
     <ul
       ref={listRef}
       className="w-full max-w-full overflow-hidden h-[calc(100vh-222px)] overflow-y-auto px-4 divide-y scroll-smooth"
     >
-      {vocabularys &&
-        vocabularys.map(({ vocabularyId, vocabulary, translations }) => (
+      {vocabularies &&
+        vocabularies.map(({ vocabularyId, vocabulary, translations }) => (
           <li
             key={`${vocabulary}-${vocabularyId}`}
             className="w-full flex items-center justify-between py-1"
@@ -58,6 +84,7 @@ export const VocabularyItem = ({
               <Button variants="text" color="primary" className="text-blue-400">
                 Edit
               </Button>
+
               <Button variants="text" color="danger" className="text-red-400">
                 Delete
               </Button>
@@ -72,26 +99,18 @@ export const VocabularyItem = ({
             onChange={(e) => setNewVocabulary(e.target.value)}
             className="outline-none max-w-[110px] text-left font-bold"
             placeholder="English"
-          ></input>
+          />
           <span className="mr-6">-</span>
           <input
-            value={newTransltionVocabulary}
-            onChange={(e) => setNewTransltionVocabulary(e.target.value)}
+            value={newTranslationVocabulary}
+            onChange={(e) => setNewTranslationVocabulary(e.target.value)}
+            onKeyUp={handleFirstInputFocus}
             className="outline-none max-w-[100px] text-left"
             placeholder="Vietnamese"
-          ></input>
+          />
         </div>
         <Button
-          onClick={() => {
-            addVocabularyInTheme(
-              themeId,
-              newVocabulary,
-              newTransltionVocabulary,
-            );
-            onClearInput();
-            scrollBottomList();
-            focusFirstInput();
-          }}
+          onClick={handleAddVocabulary}
           variants="background"
           color="primary"
           className="px-3.5 py-1"

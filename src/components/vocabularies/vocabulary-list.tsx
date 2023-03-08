@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useVocabularyThemeManager } from '../../managers/vocabulary-theme/use-vocabulary-theme-manager';
+import { AddVocabularyCard } from './add-vocabulary-card';
 import { VocabularyCard } from './vocabulary-card';
 
 export const VocabularyList = (): React.ReactElement => {
@@ -9,14 +10,15 @@ export const VocabularyList = (): React.ReactElement => {
   return (
     <div className="w-[836px] h-[85vh] overflow-y-auto grid grid-cols-2 gap-4 custom-scrollbar">
       {!!vbrThemes.length &&
-        vbrThemes.map(({ themeId, vocabularys, theme }) => (
+        vbrThemes.map(({ themeId, vocabularies, theme }) => (
           <VocabularyCard
             key={themeId}
             themeId={themeId}
-            vocabularys={vocabularys}
+            vocabularies={vocabularies}
             theme={theme}
           />
         ))}
+      <AddVocabularyCard />
     </div>
   );
 };
