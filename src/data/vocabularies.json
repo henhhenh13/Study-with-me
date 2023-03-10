@@ -611,5 +611,229 @@
       "translations":{
          "vn":"umbrella"
       }
+   },
+   {
+      "vocabularyId":"92a604bb-307a-4df1-aa63-d03eeee010a2",
+      "vocabulary":"guarantee",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"bảo đảm"
+      }
+   },
+   {
+      "vocabularyId":"31ae2e13-21f6-4e8b-87de-68c9a1398663",
+      "vocabulary":"empower",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":" trao quyền, uỷ quyền"
+      }
+   },
+   {
+      "vocabularyId":"e94607ca-e724-481e-a5c7-eb36f8c6e765",
+      "vocabulary":"smart",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"thông minh"
+      }
+   },
+   {
+      "vocabularyId":"3ef12e96-c6bc-4460-b886-527820080d39",
+      "vocabulary":"evaluate",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"đánh giá"
+      }
+   },
+   {
+      "vocabularyId":"5912f526-3646-4d0d-a700-d63ea3036f0c",
+      "vocabulary":"prominent",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"nổi bật, đáng chú ý"
+      }
+   },
+   {
+      "vocabularyId":"a29cd8b7-2c7a-4610-8673-efbafa35262f",
+      "vocabulary":"visualize",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"hình dung"
+      }
+   },
+   {
+      "vocabularyId":"61e6709d-7241-48b4-859b-6938f241091d",
+      "vocabulary":"abstract",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"trừu tượng"
+      }
+   },
+   {
+      "vocabularyId":"457b5212-2671-4727-8fb8-13078d3e5840",
+      "vocabulary":"recap",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"tóm tắt lại"
+      }
+   },
+   {
+      "vocabularyId":"e9c9f6d7-cdbd-4716-b53b-79c144369963",
+      "vocabulary":"appear",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"xuất hiện"
+      }
+   },
+   {
+      "vocabularyId":"4d4b0d8d-903e-419a-af5a-ee1a102b1343",
+      "vocabulary":"Hopefully",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"hy vọng rằng"
+      }
+   },
+   {
+      "vocabularyId":"84ec8130-7528-498d-8f72-047bf635570c",
+      "vocabulary":"Kinds",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "translations":{
+         "vn":"loại"
+      }
+   },
+   {
+      "vocabularyId":"8308a82a-1dc3-4f47-ac30-9bd1625a0016",
+      "vocabulary":"tall",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"cao"
+      }
+   },
+   {
+      "vocabularyId":"951b38f1-45e3-4e52-b3fb-151981c079cf",
+      "vocabulary":"short",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"lùn"
+      }
+   },
+   {
+      "vocabularyId":"6394993b-4972-44fc-82d5-c489887fa836",
+      "vocabulary":"medium height",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"cao trung bình"
+      }
+   },
+   {
+      "vocabularyId":"89d50b1a-20e6-4253-abdd-ff2bc38d99cd",
+      "vocabulary":"slim",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"mảnh khảnh"
+      }
+   },
+   {
+      "vocabularyId":"96728916-87e6-4243-96fb-4811fd023a7c",
+      "vocabulary":"thin",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"gầy"
+      }
+   },
+   {
+      "vocabularyId":"690c7bcb-7ccb-4e72-93c0-3c5757cd01d1",
+      "vocabulary":"overweight",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"thừa cân"
+      }
+   },
+   {
+      "vocabularyId":"ea554e4a-e5c4-4589-9f71-779f8a4f4a6f",
+      "vocabulary":"fat",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"béo"
+      }
+   },
+   {
+      "vocabularyId":"52a762e5-c24e-4b19-a17d-8d7435d73be1",
+      "vocabulary":"dark skin",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"da đen"
+      }
+   },
+   {
+      "vocabularyId":"0efbd759-7a04-4213-abef-2f20f4dab1f4",
+      "vocabulary":"dark hair",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"tóc đen"
+      }
+   },
+   {
+      "vocabularyId":"1b48a1e8-9b20-4de6-bf47-35f4160b0eaa",
+      "vocabulary":"blonde",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"tóc vàng hoe"
+      }
+   },
+   {
+      "vocabularyId":"72b50276-0b3d-420d-b1da-09dbeebfd392",
+      "vocabulary":"beard",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"râu"
+      }
+   },
+   {
+      "vocabularyId":"4a87c180-88e3-495c-8686-6ff5efeca55f",
+      "vocabulary":"moustache",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"ria mép"
+      }
+   },
+   {
+      "vocabularyId":"20d4c405-1ae6-4127-b131-6497a476c9f8",
+      "vocabulary":"good-loking",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"ưa nhìn"
+      }
+   },
+   {
+      "vocabularyId":"0a3e8de7-27ea-4ec9-aaa1-34f54c721fa9",
+      "vocabulary":"pretty",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"xinh đẹp"
+      }
+   },
+   {
+      "vocabularyId":"572c0f61-a097-4a95-be47-d6fe05721f1c",
+      "vocabulary":"ugly",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"xấu"
+      }
+   },
+   {
+      "vocabularyId":"8a9a5b53-24bf-46e5-b257-11846a756f76",
+      "vocabulary":"average-looking",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"đẹp trung bình"
+      }
+   },
+   {
+      "vocabularyId":"22efcbb1-5004-4a84-9379-4e5dcd4dfa17",
+      "vocabulary":"eldery",
+      "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
+      "translations":{
+         "vn":"người cao tuổi"
+      }
    }
 ]
