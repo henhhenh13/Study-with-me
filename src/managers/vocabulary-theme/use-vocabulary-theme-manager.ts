@@ -37,9 +37,9 @@ export const useVocabularyThemeManager = (): UseVocabularyThemeManager => {
     vocabularyThemeJson.forEach((theme) => {
       newMaps.set(theme.themeId, {
         ...theme,
-        vocabularies: vocabulariesJson.filter(
-          ({ themeId }) => theme.themeId === themeId,
-        ),
+        vocabularies: vocabulariesJson
+          .filter(({ themeId }) => theme.themeId === themeId)
+          .map((vocabulary) => serializationVocabulary(vocabulary)),
       });
     });
     setVbrThemeState(newMaps);

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { VocabulariesState } from '../../managers/vocabulary/vocabulary-state';
+import { SerializedVocabulary } from '../../managers/vocabulary/serialized-vocabulary';
 import { VocabularyItem } from './vocabulary-item';
 
 interface VocabularyCardProps {
   themeId: string;
   theme: string;
-  vocabularies: VocabulariesState[] | undefined;
+  vocabularies: SerializedVocabulary[] | undefined;
 }
 export const VocabularyCard = (
   props: VocabularyCardProps,

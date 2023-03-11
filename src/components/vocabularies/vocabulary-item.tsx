@@ -1,12 +1,14 @@
+import { useModal } from '@ebay/nice-modal-react';
 import React, { KeyboardEvent, useCallback, useRef, useState } from 'react';
 
 import { Button } from '../../elements/button';
 import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
-import { VocabulariesState } from '../../managers/vocabulary/vocabulary-state';
+import { SerializedVocabulary } from '../../managers/vocabulary/serialized-vocabulary';
 import { useVocabularyThemeManager } from '../../managers/vocabulary-theme/use-vocabulary-theme-manager';
+import { ModalVocabularyDetail } from '../modals/modal-vocabulary/modal-vocabulary-detail';
 
 export interface VocabularyItemProps {
-  vocabularies: VocabulariesState[] | undefined;
+  vocabularies: SerializedVocabulary[] | undefined;
   themeId: string;
 }
 export const VocabularyItem = ({
@@ -20,6 +22,7 @@ export const VocabularyItem = ({
   const listRef = useRef<HTMLUListElement>(null);
   const firstInput = useRef<HTMLInputElement>(null);
   const { successToast, errorToast } = useToastManager();
+  const { show } = useModal(ModalVocabularyDetail);
 
   const onClearInput = useCallback(() => {
     setNewTranslationVocabulary('');
@@ -75,27 +78,44 @@ export const VocabularyItem = ({
       className="w-full max-w-full overflow-hidden h-[calc(100vh-222px)] overflow-y-auto px-4 divide-y scroll-smooth"
     >
       {vocabularies &&
-        vocabularies.map(({ vocabularyId, vocabulary, translations }) => (
-          <li
-            key={`${vocabulary}-${vocabularyId}`}
-            className="w-full flex items-center justify-between py-1"
-          >
-            <div>
-              <span className="font-bold capitalize">{vocabulary}</span>
-              <span className="mx-2">-</span>
-              <span className="">{translations.vn}</span>
-            </div>
-            <div className="space-x-2.5 flex items-center">
-              <Button variants="text" color="primary" className="text-blue-400">
-                Edit
-              </Button>
+        vocabularies.map(
+          ({ vocabularyId, vocabulary, translations, detail, flags }) => (
+            <li
+              key={`${vocabulary}-${vocabularyId}`}
+              className="w-full flex items-center justify-between py-1"
+            >
+              <div>
+                <span className="font-bold capitalize">{vocabulary}</span>
+                <span className="mx-2">-</span>
+                <span className="">{translations.vn}</span>
+              </div>
+              <div className="space-x-2.5 flex items-center">
+                <Button
+                  variants="text"
+                  color="primary"
+                  className="text-blue-400 disabled:text-gray-300 hover:no-underline"
+                  disabled={!flags.hasDetail}
+                  onClick={() => {
+                    if (flags.hasDetail) {
+                      show({
+                        props: {
+                          vocabulary,
+                          detail,
+                        },
+                      });
+                    }
+                  }}
+                >
+                  Detail
+                </Button>
 
-              <Button variants="text" color="danger" className="text-red-400">
-                Delete
-              </Button>
-            </div>
-          </li>
-        ))}
+                <Button variants="text" color="danger" className="text-red-400">
+                  Delete
+                </Button>
+              </div>
+            </li>
+          ),
+        )}
       <li className="flex items-center justify-between py-1.5">
         <div className="flex">
           <input
