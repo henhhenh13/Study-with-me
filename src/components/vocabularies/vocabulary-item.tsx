@@ -54,7 +54,12 @@ export const VocabularyItem = ({
   const handleAddVocabulary = useCallback(() => {
     const canAdd = newVocabulary && newTranslationVocabulary;
     if (canAdd) {
-      addVocabularyInTheme(themeId, newVocabulary, newTranslationVocabulary);
+      addVocabularyInTheme({
+        vocabulary: newVocabulary,
+        themeId,
+        translationVn: newTranslationVocabulary,
+        detail: null,
+      });
       onClearInput();
       scrollBottomList();
       focusFirstInput();

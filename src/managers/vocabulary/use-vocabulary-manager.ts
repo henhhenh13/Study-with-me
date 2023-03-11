@@ -9,7 +9,7 @@ import {
 } from './serialized-vocabulary';
 import { VOCABULARIES_STATE } from './vocabulary-state';
 
-interface UseVocabulary {
+interface UseVocabularyManager {
   getVocabularies: () => void;
   addVocabulary: (vocabularies: {
     themeId: string;
@@ -20,7 +20,7 @@ interface UseVocabulary {
   vocabularies: SerializedVocabulary[];
 }
 
-export const useVocabulary = (): UseVocabulary => {
+export const useVocabularyManager = (): UseVocabularyManager => {
   const [vocabulariesState, setVocabulariesState] =
     useRecoilState(VOCABULARIES_STATE);
   const getVocabularies = useCallback(() => {

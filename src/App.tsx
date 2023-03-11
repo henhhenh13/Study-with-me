@@ -3,14 +3,14 @@ import { Toaster } from 'sonner';
 
 import { UnitList } from './components/units/unit-list';
 import { useSectionManager } from './managers/use-section-manager/use-section-manager';
-import { useVocabulary } from './managers/vocabulary/use-vocabulary';
+import { useVocabularyManager } from './managers/vocabulary/use-vocabulary-manager';
 import { useVocabularyThemeManager } from './managers/vocabulary-theme/use-vocabulary-theme-manager';
 import { Vocabularies } from './page/vocabularies';
 import { MainBody } from './sections/main-body';
 import { Sidebar } from './sections/sidebar';
 
 export default function App(): React.ReactElement {
-  const { getVocabularies, vocabularies } = useVocabulary();
+  const { getVocabularies, vocabularies } = useVocabularyManager();
   const { vbrThemes } = useVocabularyThemeManager();
   const { section } = useSectionManager();
 
