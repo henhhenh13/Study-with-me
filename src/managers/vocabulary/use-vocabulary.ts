@@ -3,16 +3,21 @@ import { useRecoilState } from 'recoil';
 
 import vocabulariesJson from '../../data/vocabularies.json';
 import generatorUuid from '../../utils/generatorUuid';
-import { VOCABULARIES_STATE, VocabulariesState } from './vocabulary-state';
+import {
+  serializationVocabulary,
+  SerializedVocabulary,
+} from './serialized-vocabulary';
+import { VOCABULARIES_STATE } from './vocabulary-state';
 
 interface UseVocabulary {
   getVocabularies: () => void;
-  addVocabulary: (
-    themeId: string,
-    vocabulary: string,
-    translationVn: string,
-  ) => void;
-  vocabularies: VocabulariesState[];
+  addVocabulary: (vocabularies: {
+    themeId: string;
+    vocabulary: string;
+    translationVn: string;
+    detail: string | null;
+  }) => void;
+  vocabularies: SerializedVocabulary[];
 }
 
 export const useVocabulary = (): UseVocabulary => {
@@ -21,28 +26,37 @@ export const useVocabulary = (): UseVocabulary => {
   const getVocabularies = useCallback(() => {
     const newMaps = new Map();
     vocabulariesJson.forEach((vocabulary) => {
-      newMaps.set(vocabulary.vocabularyId, vocabulary);
+      const serializedVocabulary = serializationVocabulary(vocabulary);
+      newMaps.set(vocabulary.vocabularyId, serializedVocabulary);
     }, []);
 
     setVocabulariesState(newMaps);
   }, [setVocabulariesState]);
   const addVocabulary = useCallback(
-    (themeId: string, vocabulary: string, translationVn: string) => {
+    (vocabularies: {
+      themeId: string;
+      vocabulary: string;
+      translationVn: string;
+      detail: string | null;
+    }) => {
       setVocabulariesState((prevState) => {
         prevState = new Map(prevState);
+        const { themeId, vocabulary, translationVn, detail } = vocabularies;
         const uuid = generatorUuid();
-        prevState.set(uuid, {
+        const newVocabulary: SerializedVocabulary = serializationVocabulary({
           vocabularyId: uuid,
-          vocabulary,
           themeId,
+          vocabulary,
           translations: {
             vn: translationVn,
           },
+          detail,
         });
+        prevState.set(uuid, newVocabulary);
         return prevState;
       });
     },
-    [],
+    [setVocabulariesState],
   );
   return {
     vocabularies: Array.from(vocabulariesState.values()),
