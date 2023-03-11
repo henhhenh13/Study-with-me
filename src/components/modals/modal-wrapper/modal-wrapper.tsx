@@ -45,7 +45,7 @@ export const ModalWrapper = ({
     >
       <div
         className={clsx(
-          'bg-white transform overflow-hidden rounded-xl text-left align-middle shadow-xl transition-all',
+          'bg-white transform overflow-hidden rounded-lg text-left align-middle shadow-xl transition-all',
           customSize !== undefined ? customSize : sizeObj[size],
           className,
         )}
