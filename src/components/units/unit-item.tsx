@@ -1,5 +1,7 @@
+import { useModal } from '@ebay/nice-modal-react';
 import clsx from 'clsx';
 import React, { useState } from 'react';
+import { AiOutlineCloseSquare } from 'react-icons/ai';
 import {
   FaChevronRight,
   FaPlayCircle,
@@ -8,12 +10,15 @@ import {
 } from 'react-icons/fa';
 
 import { type UnitSerialized } from '../../managers/units/unit-serialized';
+import { ModalSentence } from '../modals/modal-sentence/modal-sentence';
 import { UnitExerciseItem } from './unit-exercise-item';
 
 interface UnitItemProps extends UnitSerialized {
   unitIndex: number;
 }
 export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
+  const { show } = useModal(ModalSentence);
+
   const {
     title,
     svgAvatar: SvgAvatar,
@@ -41,7 +46,12 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
         <div className="max-w-full">
           <div className="flex items-center justify-between">
             <h2 className="capitalize font-semibold text-lg">{title}</h2>
-            <FaPlayCircle className="text-green-400 text-xl cursor-pointer transition-all duration-200 hover:text-green-500 hover:scale-125 active:text-green-600" />
+            <FaPlayCircle
+              onClick={() => {
+                show();
+              }}
+              className="text-green-400 text-xl cursor-pointer transition-all duration-200 hover:text-green-500 hover:scale-125 active:text-green-600"
+            />
           </div>
           <p className="line-clamp-1">{description}</p>
         </div>
