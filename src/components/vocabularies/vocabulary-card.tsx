@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { SerializedVocabulary } from '../../managers/vocabulary/serialized-vocabulary';
-import { VocabularyItem } from './vocabulary-item';
+import { VocabularyTable } from './vocabulary-table';
 
 interface VocabularyCardProps {
   themeId: string;
@@ -17,7 +17,7 @@ export const VocabularyCard = (
       <h2 className="text-center py-8 text-2xl italic font-semibold">
         {theme}
       </h2>
-      <VocabularyItem vocabularies={vocabularies} themeId={props.themeId} />
+      <VocabularyTable vocabularies={vocabularies} themeId={props.themeId} />
     </div>
   );
 };
