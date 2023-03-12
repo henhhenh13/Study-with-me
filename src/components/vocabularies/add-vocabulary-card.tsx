@@ -25,7 +25,7 @@ export const AddVocabularyCard = (): React.ReactElement => {
         placeholder="Enter Theme Name..."
       />
       <ul className="w-full max-w-full overflow-hidden h-[calc(100vh-292px)] overflow-y-auto px-4 divide-y scroll-smooth">
-        {Array.from(Array(13)).map((_, index) => (
+        {Array.from(Array(15)).map((_, index) => (
           <li
             key={index}
             className="w-full flex items-center justify-between py-1"
@@ -42,7 +42,7 @@ export const AddVocabularyCard = (): React.ReactElement => {
                 disabled
                 className="text-blue-400"
               >
-                Edit
+                Detail
               </Button>
               <Button
                 variants="text"
@@ -55,17 +55,15 @@ export const AddVocabularyCard = (): React.ReactElement => {
             </div>
           </li>
         ))}
-        <li>
-          <Button
-            onClick={handleAddTheme}
-            variants="background"
-            color="primary"
-            className="w-2/4 mx-auto py-2 mt-4"
-          >
-            Add Theme
-          </Button>
-        </li>
       </ul>
+      <Button
+        onClick={handleAddTheme}
+        variants="background"
+        color="primary"
+        className="w-2/4 mx-auto py-2 mt-4"
+      >
+        Add Theme
+      </Button>
     </div>
   );
 };

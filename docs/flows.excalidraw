@@ -470,13 +470,13 @@
       "updated": 1677513817562,
       "link": null,
       "locked": false,
-      "text": "vocabularys: VocabularyItem[]",
+      "text": "vocabularys: VocabularyTable[]",
       "fontSize": 16,
       "fontFamily": 1,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "vocabularys: VocabularyItem[]"
+      "originalText": "vocabularys: VocabularyTable[]"
     },
     {
       "id": "Dv3QpG8Mi_GDPSUOQBFKt",

@@ -4,8 +4,11 @@ import { useRecoilState } from 'recoil';
 import vocabularyThemeJson from '../../data/themes.json';
 import vocabulariesJson from '../../data/vocabularies.json';
 import generatorUuid from '../../utils/generatorUuid';
-import { useVocabulary } from '../vocabulary/use-vocabulary';
-import { VocabulariesState } from '../vocabulary/vocabulary-state';
+import {
+  serializationVocabulary,
+  SerializedVocabulary,
+} from '../vocabulary/serialized-vocabulary';
+import { useVocabularyManager } from '../vocabulary/use-vocabulary-manager';
 import {
   VOCABULARY_THEME_STATE,
   VocabularyThemeState,
@@ -14,18 +17,19 @@ import {
 interface UseVocabularyThemeManager {
   vbrThemes: VocabularyThemeState[];
   getVocabularyTheme: () => void;
-  addVocabularyInTheme: (
-    themeId: string,
-    vocabulary: string,
-    translationVn: string,
-  ) => void;
+  addVocabularyInTheme: (vocabularies: {
+    themeId: string;
+    vocabulary: string;
+    translationVn: string;
+    detail: string | null;
+  }) => void;
   addTheme: (theme: string) => void;
 }
 export const useVocabularyThemeManager = (): UseVocabularyThemeManager => {
   const [vbrThemeState, setVbrThemeState] = useRecoilState(
     VOCABULARY_THEME_STATE,
   );
-  const { addVocabulary } = useVocabulary();
+  const { addVocabulary } = useVocabularyManager();
 
   const getVocabularyTheme = useCallback(() => {
     const newMaps = new Map();
@@ -33,37 +37,45 @@ export const useVocabularyThemeManager = (): UseVocabularyThemeManager => {
     vocabularyThemeJson.forEach((theme) => {
       newMaps.set(theme.themeId, {
         ...theme,
-        vocabularies: vocabulariesJson.filter(
-          ({ themeId }) => theme.themeId === themeId,
-        ),
+        vocabularies: vocabulariesJson
+          .filter(({ themeId }) => theme.themeId === themeId)
+          .map((vocabulary) => serializationVocabulary(vocabulary)),
       });
     });
     setVbrThemeState(newMaps);
   }, [setVbrThemeState]);
 
   const addVocabularyInTheme = useCallback(
-    (themeId: string, vocabulary: string, translationVn: string) => {
+    (vocabularies: {
+      themeId: string;
+      vocabulary: string;
+      translationVn: string;
+      detail: string | null;
+    }) => {
       setVbrThemeState((prevState) => {
-        const newState = new Map(prevState);
-        const prevTheme = newState.get(themeId);
+        const { themeId, vocabulary, translationVn, detail } = vocabularies;
+
+        prevState = new Map(prevState);
+        const prevTheme = prevState.get(themeId);
         if (prevTheme && prevTheme.vocabularies) {
           const uuid = generatorUuid();
-          const newVbr: VocabulariesState = {
+          const newVocabulary: SerializedVocabulary = serializationVocabulary({
             vocabularyId: uuid,
-            vocabulary,
             themeId,
+            vocabulary,
             translations: {
               vn: translationVn,
             },
-          };
-          newState.set(themeId, {
+            detail,
+          });
+          prevState.set(themeId, {
             ...prevTheme,
-            vocabularies: [...prevTheme.vocabularies, newVbr],
+            vocabularies: [...prevTheme.vocabularies, newVocabulary],
           });
         }
-        return newState;
+        return prevState;
       });
-      addVocabulary(themeId, vocabulary, translationVn);
+      addVocabulary(vocabularies);
     },
     [addVocabulary, setVbrThemeState],
   );
