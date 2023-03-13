@@ -1,9 +1,19 @@
+import NiceModal, { useModal } from '@ebay/nice-modal-react';
 import React from 'react';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 
-export const CompleteSentense = (): React.ReactElement => {
+import { ModalWrapper } from '../modal-wrapper/modal-wrapper';
+
+export const ModalSentence = NiceModal.create((): React.ReactElement => {
+  const { visible, hide, remove } = useModal();
+
   return (
-    <>
+    <ModalWrapper
+      isShow={visible}
+      customSize="w-[75vw] h-[90vh]"
+      close={hide}
+      onAfterClose={remove}
+    >
       <AiOutlineCloseSquare className="absolute top-0 right-0 text-3xl -translate-x-6 translate-y-4 transition-all cursor-pointer text-red-500 hover:scale-125 hover:text-red-600 active:text-red-700" />
       <div className="w-full h-full pt-16 px-20">
         <div className="flex border-2 p-4 rounded-xl shadow-xl">
@@ -85,6 +95,6 @@ export const CompleteSentense = (): React.ReactElement => {
           </ul>
         </div>
       </div>
-    </>
+    </ModalWrapper>
   );
-};
+});
