@@ -6,6 +6,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Những đứa trẻ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -15,6 +19,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Chồng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -24,6 +32,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Vợ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -33,6 +45,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Mẹ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -42,6 +58,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Cha"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -51,6 +71,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Cha mẹ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -60,6 +84,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Con gái"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -69,6 +97,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Con trai"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -78,6 +110,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Anh trai"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -87,6 +123,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Em gái"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -96,6 +136,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Ông"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -105,6 +149,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Bà"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -114,6 +162,10 @@
       "theme":"The family",
       "translations":{
          "vn":"Ông bà"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -123,6 +175,10 @@
       "theme":"The family",
       "translations":{
          "vn":"cháu gái"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -132,6 +188,10 @@
       "theme":"The family",
       "translations":{
          "vn":"cháu trai"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -141,6 +201,10 @@
       "theme":"The family",
       "translations":{
          "vn":"chú"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -150,6 +214,10 @@
       "theme":"The family",
       "translations":{
          "vn":"những người cô"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -159,6 +227,10 @@
       "theme":"The family",
       "translations":{
          "vn":"cô"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -168,6 +240,10 @@
       "theme":"The family",
       "translations":{
          "vn":"cháu gái"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -177,6 +253,10 @@
       "theme":"The family",
       "translations":{
          "vn":"cháu trai"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -186,6 +266,10 @@
       "theme":"The family",
       "translations":{
          "vn":"anh em họ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -194,6 +278,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"mũ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -202,6 +290,10 @@
       "vocabulary":"scarf",
       "translations":{
          "vn":"khăng quàng cổ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -210,6 +302,10 @@
       "vocabulary":"gloves",
       "translations":{
          "vn":"găng tay"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -218,6 +314,10 @@
       "vocabulary":"shoes",
       "translations":{
          "vn":"giày"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -226,6 +326,10 @@
       "vocabulary":"trainers",
       "translations":{
          "vn":"giày thể thao"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -234,6 +338,10 @@
       "vocabulary":"boots",
       "translations":{
          "vn":"giày bốt"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -242,6 +350,10 @@
       "vocabulary":"suit",
       "translations":{
          "vn":"suit"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -250,6 +362,10 @@
       "vocabulary":"socks",
       "translations":{
          "vn":"tất chân"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -258,6 +374,10 @@
       "vocabulary":"watch",
       "translations":{
          "vn":"đồng hồ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -266,6 +386,10 @@
       "vocabulary":"dress",
       "translations":{
          "vn":"đầm"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -274,6 +398,10 @@
       "vocabulary":"ring",
       "translations":{
          "vn":"nhẫn"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -282,6 +410,10 @@
       "vocabulary":"skirt",
       "translations":{
          "vn":"váy"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -290,6 +422,10 @@
       "vocabulary":"tie",
       "translations":{
          "vn":"cà vạt"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -298,6 +434,10 @@
       "vocabulary":"sweater",
       "translations":{
          "vn":"áo ấm"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -306,6 +446,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"số nhiều"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -314,6 +458,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"quần dài"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -322,6 +470,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"quần jeans"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -330,6 +482,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"váy ngắn"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -338,6 +494,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"quần bó"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -346,6 +506,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"kính"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -354,6 +518,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"pyjimas"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -362,6 +530,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"tóc"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -370,6 +542,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"mắt"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -378,6 +554,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"mũi"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -386,6 +566,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"răng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -394,6 +578,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"tai"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -402,6 +590,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"miệng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -410,6 +602,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"môi"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -418,6 +614,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"cổ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -426,6 +626,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"móng tay"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -434,6 +638,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"ngón cái"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -442,6 +650,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"ngón tay"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -450,6 +662,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"tay"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -458,6 +674,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"vãi"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -466,6 +686,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"cánh tay"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -474,6 +698,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"chân"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -482,6 +710,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"đầu gối"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -490,6 +722,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"bàn chân"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -498,6 +734,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"ngón chân"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -506,6 +746,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"ngực"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -514,6 +758,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"mạn sườn"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -522,6 +770,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"bụng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -530,6 +782,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"sau lưng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -538,6 +794,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"thắt lưng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -546,6 +806,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"hông"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -554,6 +818,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"tim"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -562,6 +830,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"não"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -570,6 +842,10 @@
       "themeId":"ef402905-de7b-49e3-b211-b03b651f3fa8",
       "translations":{
          "vn":"máu"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -578,6 +854,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"thắt lưng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -586,6 +866,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"đôi"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -594,6 +878,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"va li"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -602,6 +890,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"túi xách"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -610,6 +902,10 @@
       "themeId":"0a2609b5-c1db-4770-9249-9ee7005638f8",
       "translations":{
          "vn":"umbrella"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -618,6 +914,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"bảo đảm"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -626,6 +926,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":" trao quyền, uỷ quyền"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -634,6 +938,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"thông minh"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -642,6 +950,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"đánh giá"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -650,6 +962,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"nổi bật, đáng chú ý"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -658,6 +974,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"hình dung"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -666,6 +986,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"trừu tượng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -674,6 +998,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"tóm tắt lại"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -682,6 +1010,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"xuất hiện"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -690,6 +1022,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"hy vọng rằng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -698,6 +1034,10 @@
       "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
       "translations":{
          "vn":"loại"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -706,6 +1046,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"cao"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -714,6 +1058,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"lùn"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -722,6 +1070,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"cao trung bình"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -730,6 +1082,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"mảnh khảnh"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -738,6 +1094,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"gầy"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -746,6 +1106,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"thừa cân"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -754,6 +1118,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"béo"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -762,6 +1130,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"da đen"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -770,6 +1142,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"tóc đen"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -778,6 +1154,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"tóc vàng hoe"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -786,6 +1166,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"râu"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -794,6 +1178,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"ria mép"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -802,6 +1190,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"ưa nhìn"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -810,6 +1202,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"xinh đẹp"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -818,6 +1214,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"xấu"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -826,6 +1226,10 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"đẹp trung bình"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    },
    {
@@ -834,6 +1238,238 @@
       "themeId":"36e1af92-09bd-4334-931f-95d11c075e69",
       "translations":{
          "vn":"người cao tuổi"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"9f376fe9-ffc2-455d-87a6-dfd483d66f0f",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"illness",
+      "translations":{
+         "vn":"bệnh tật"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"ff4e7f4a-932f-443a-af61-2b185a3545e0",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"sick",
+      "translations":{
+         "vn":"ốm"
+      },
+      "detail":"Sick: thường được sử dụng để miêu tả một trạng thái bệnh tật nhẹ hơn, thường kéo dài ngắn hơn và có thể hồi phục nhanh chóng. Ví dụ: I'm feeling sick today (Tôi cảm thấy khó chịu hôm nay).",
+      "flags":{
+         "hasDetail":true
+      }
+   },
+   {
+      "vocabularyId":"110a8f6e-7a0b-4c34-b756-27f62e62a02b",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"ill",
+      "translations":{
+         "vn":"ốm"
+      },
+      "detail":"Ill: thường được sử dụng để miêu tả một trạng thái bệnh tật nghiêm trọng hơn, thường kéo dài và có thể gây ảnh hưởng lâu dài đến sức khỏe. Ví dụ: She has been ill for weeks (Cô ấy đã bị ốm suốt vài tuần).\nTừ \"ill\" thường được sử dụng trong các văn bản chuyên nghiệp, trong khi \"sick\" thường được sử dụng trong giao tiếp hàng ngày.",
+      "flags":{
+         "hasDetail":true
+      }
+   },
+   {
+      "vocabularyId":"30221b5a-7b9f-4a51-a408-4117d35a0850",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"aspirin",
+      "translations":{
+         "vn":"một loại thuốc"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"f0df0677-954e-4942-a83a-b79e62d43775",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"headache",
+      "translations":{
+         "vn":"đau đầu"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"1bbf6210-6cc7-4df5-8884-b2ac1ce73129",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"toothache",
+      "translations":{
+         "vn":"đau răng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"bfc1ae76-9969-462b-81dc-b6b5c52f7986",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"dentist",
+      "translations":{
+         "vn":"nha sĩ"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"1425f790-0773-4e73-9a59-c6feb9a69de2",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"hay fever",
+      "translations":{
+         "vn":"sốt mùa hè"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"230198f4-201a-418d-9837-a35aa1d69237",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"sneeze",
+      "translations":{
+         "vn":"hắt hơi"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"316ebc58-95ba-4e11-abef-bc7c8d9be117",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"asthma",
+      "translations":{
+         "vn":"hen suyễn"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"8cea0350-2672-4485-b25f-4d3e45f50e13",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"mosquito",
+      "translations":{
+         "vn":"muỗi"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"6895fd43-a776-4c3f-95cc-5ae0ca7bfa9d",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"malaria",
+      "translations":{
+         "vn":"sốt rét"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"19cd7367-7e4b-455b-b578-f8a711fc73c6",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"cholera",
+      "translations":{
+         "vn":"dịch tả"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"dea300f6-4352-4893-b0f3-0795475564de",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"cancer",
+      "translations":{
+         "vn":"ung thư"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"32d002e6-8190-4e2c-8922-7a224bf7f6ac",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"diet",
+      "translations":{
+         "vn":"ăn kiêng"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
+      }
+   },
+   {
+      "vocabularyId":"8882e358-896a-441d-8613-ea37aedacdaf",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "vocabulary":"probably",
+      "translations":{
+         "vn":"cõ lẽ"
+      },
+      "detail":"\"Probably\": thể hiện một mức độ chắc chắn hơn và được sử dụng khi có dữ liệu hoặc thông tin để hỗ trợ cho giả định đó. Ví dụ: He will probably arrive at 8pm (Anh ấy có khả năng cao sẽ đến lúc 8 giờ tối).",
+      "flags":{
+         "hasDetail":true
+      }
+   },
+   {
+      "vocabularyId":"703901af-d720-4a7e-9709-10a42a78a8db",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "vocabulary":"Perhaps",
+      "translations":{
+         "vn":"có lẽ"
+      },
+      "detail":"\"Perhaps\": thể hiện sự không chắc chắn và được sử dụng khi không có đủ thông tin để xác định một cách chắc chắn. Ví dụ: Perhaps he will come later (Có thể anh ấy sẽ đến muộn hơn).",
+      "flags":{
+         "hasDetail":true
+      }
+   },
+   {
+      "vocabularyId":"668d3b12-b425-48bd-9451-a09cd5cc2196",
+      "themeId":"bc807141-df31-4da3-a59e-c66b1fd2c679",
+      "vocabulary":"Maybe",
+      "translations":{
+         "vn":"có "
+      },
+      "detail":"\"Maybe\": tương tự như \"perhaps\", thể hiện sự không chắc chắn và được sử dụng để đưa ra một giả định hoặc dự đoán. Ví dụ: Maybe it will rain tomorrow (Có thể ngày mai sẽ mưa).",
+      "flags":{
+         "hasDetail":true
+      }
+   },
+   {
+      "vocabularyId":"dd184b9d-771b-4180-ae3b-dc29e30a3587",
+      "themeId":"362ef7f2-4b94-48a3-a4bd-04ee1b726dbb",
+      "vocabulary":"breathe",
+      "translations":{
+         "vn":"thở"
+      },
+      "detail":"This word has not detail, you can add this on above input!",
+      "flags":{
+         "hasDetail":false
       }
    }
 ]
