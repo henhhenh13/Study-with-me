@@ -1,38 +1,41 @@
+import { IconType } from 'react-icons';
 import { MdFamilyRestroom } from 'react-icons/md';
 
 import {
   type ExerciseSerialized,
-  fromApiToExercise,
+  // fromApiToExercise,
 } from '../exercise/exercise-serialized';
-import { type UnitState } from './unit-state';
+import { UnitsApiDefinitions } from './interface';
 
 export interface UnitSerialized {
-  unitId: UnitState['unitId'];
-  title: UnitState['title'];
-  description: UnitState['description'];
-  avatar: UnitState['avatar'];
-  svgAvatar: UnitState['svgAvatar'];
+  unitId: string;
+  title: string;
+  description: string;
+  avatar: string;
+  svgAvatar: string | IconType;
   exercises: ExerciseSerialized[];
-  themeId: UnitState['themeId'];
+  themeId: string;
   flags: {
     isSvgAvatar: boolean;
     isAvatar: boolean;
   };
 }
 
-export const fromApiToUnit = (raw: UnitState): UnitSerialized => {
+export const fromApiToUnit = (
+  raw: UnitsApiDefinitions['UnitApi'],
+): UnitSerialized => {
   const { unitId, title, description, avatar, exercises, themeId } = raw;
-  const exercisesSerialized = exercises.map((exercise) =>
-    fromApiToExercise(exercise),
-  );
+  // const exercisesSerialized = exercises.map((exercise) =>
+  //   fromApiToExercise(exercise),
+  // );
   return {
     unitId,
     title,
     themeId,
     description,
-    avatar,
+    avatar: avatar || 'unAvatar',
     svgAvatar: MdFamilyRestroom,
-    exercises: exercisesSerialized,
+    exercises: [],
     flags: {
       isSvgAvatar: true,
       isAvatar: Boolean(avatar),
