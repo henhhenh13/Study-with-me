@@ -33,12 +33,12 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
       )}
     >
       <div className="flex items-center w-full gap-x-6">
-        <div className="min-w-[40px] min-h-[40px] rounded-sm bg-gray-100 flex-1 flex items-center justify-center drop-shadow">
+        <div className="min-w-[40px] min-h-[40px] max-w-[40px] max-h-[40px] rounded-sm bg-gray-100 flex-1 flex items-center justify-center drop-shadow">
           {flags.isSvgAvatar && SvgAvatar != null && (
             <SvgAvatar className="text-xl text-sky-600" />
           )}
         </div>
-        <div className="max-w-full">
+        <div className="max-w-full flex-1">
           <div className="flex items-center justify-between">
             <h2 className="capitalize font-semibold text-lg">{title}</h2>
             <FaPlayCircle className="text-green-400 text-xl cursor-pointer transition-all duration-200 hover:text-green-500 hover:scale-125 active:text-green-600" />
