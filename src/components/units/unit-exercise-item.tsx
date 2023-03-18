@@ -4,11 +4,11 @@ import { FaCheck } from 'react-icons/fa';
 
 import { useActiveExercise } from '../../managers/active-exercise/use-active-exercise';
 import { useExerciseManager } from '../../managers/exercise/exercise-manager';
-import { ExerciseSerialized } from '../../managers/exercise/exercise-serialized';
+import { UnitExercise } from '../../managers/units/interface';
 import { ModalVocabulary } from '../modals/modal-vocabulary/modal-vocabulary';
 
 interface UnitExerciseItemProps {
-  exercise: ExerciseSerialized;
+  exercise: UnitExercise;
   themeId: string;
   index: number;
   unitIndex: number;
@@ -28,16 +28,16 @@ export const UnitExerciseItem = ({
     <div>
       <li
         onClick={async () => {
-          await getVbrsByThemeId(
-            {
-              exerciseId: exercise.exerciseId,
-              title: exercise.title,
-              index: index,
-              exerciseType: 'vocabulary',
-              unitId: exercise.unitId,
-            },
-            themeId,
-          );
+          // await getVbrsByThemeId(
+          //   {
+          //     exerciseId: exercise.exerciseId,
+          //     title: exercise.title,
+          //     index: index,
+          //     exerciseType: 'vocabulary',
+          //     unitId: exercise.unitId,
+          //   },
+          //   themeId,
+          // );
           await updateActiveExerciseId(exercise.exerciseId);
           show();
         }}

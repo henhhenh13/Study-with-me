@@ -2,13 +2,10 @@ import { MdFamilyRestroom } from 'react-icons/md';
 
 import { UnitsApiDefinitions, UnitSerialized } from './interface';
 
-export const fromApiToUnit = (
+export const serializationUnit = (
   raw: UnitsApiDefinitions['UnitApi'],
 ): UnitSerialized => {
-  const { unitId, title, description, avatar, themeId } = raw;
-  // const exercisesSerialized = exercises.map((exercise) =>
-  //   fromApiToExercise(exercise),
-  // );
+  const { unitId, title, description, avatar, themeId, exercises } = raw;
   return {
     unitId,
     title,
@@ -16,10 +13,11 @@ export const fromApiToUnit = (
     description,
     avatar: avatar || 'unAvatar',
     svgAvatar: MdFamilyRestroom,
-    exercises: [],
+    exercises,
     flags: {
       isSvgAvatar: true,
       isAvatar: Boolean(avatar),
+      hasExercise: !!exercises.length,
     },
   };
 };

@@ -9,7 +9,10 @@ export const useUnitApi = (): UseUnitApi => {
   const fetchUnits = async (): Promise<UnitsApiDefinitions['Units']> => {
     const { data, status, error } = await supabase
       .from('units')
-      .select<'*', UnitsApiDefinitions['UnitApi']>('*');
+      .select<
+        '*, exercises(exerciseId,exerciseType,title)',
+        UnitsApiDefinitions['UnitApi']
+      >('*, exercises(exerciseId,exerciseType,title)');
     return {
       units: data || [],
       flags: {

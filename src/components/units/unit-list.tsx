@@ -19,10 +19,11 @@ export const UnitList = (): React.ReactElement => {
       </div>
       <div className="w-full">
         <ul className="w-full space-y-6 h-screen overflow-y-auto">
-          {flags.isFetched &&
-            units.map((unit, index) => (
-              <UnitItem {...unit} unitIndex={index + 1} key={unit.unitId} />
-            ))}
+          {flags.isFetched
+            ? units.map((unit, index) => (
+                <UnitItem {...unit} unitIndex={index + 1} key={unit.unitId} />
+              ))
+            : null}
         </ul>
       </div>
     </div>

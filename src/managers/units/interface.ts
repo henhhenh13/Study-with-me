@@ -1,9 +1,13 @@
 import { IconType } from 'react-icons/lib';
 
 import { FetchStatus } from '../../contains/interface';
-import { ExerciseSerialized } from '../exercise/exercise-serialized';
-import { ExerciseState } from '../exercise/exercise-state';
+import { ExerciseType } from '../exercise/exercise-state';
 
+export interface UnitExercise {
+  exerciseId: string;
+  exerciseType: ExerciseType;
+  title: string;
+}
 interface UnitApi {
   unitId: string;
   title: string;
@@ -11,7 +15,7 @@ interface UnitApi {
   themeId: string;
   avatar: string | null;
   svgAvatar: IconType | null;
-  exercises: ExerciseState[];
+  exercises: UnitExercise[];
 }
 
 export interface UnitSerialized {
@@ -20,11 +24,12 @@ export interface UnitSerialized {
   description: string;
   avatar: string;
   svgAvatar: string | IconType;
-  exercises: ExerciseSerialized[];
+  exercises: UnitExercise[];
   themeId: string;
   flags: {
     isSvgAvatar: boolean;
     isAvatar: boolean;
+    hasExercise: boolean;
   };
 }
 
