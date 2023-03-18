@@ -4,10 +4,12 @@ import { VocabularyList } from '../components/vocabularies/vocabulary-list';
 import { useThemeManager } from '../managers/themes/use-theme-manager';
 
 export const Vocabularies = (): React.ReactElement => {
-  const { fetchThemes } = useThemeManager();
+  const { fetchThemes, themeList } = useThemeManager();
 
   useEffect(() => {
-    fetchThemes();
+    if (themeList.flags.isFetching) {
+      fetchThemes();
+    }
   }, []);
 
   return (
