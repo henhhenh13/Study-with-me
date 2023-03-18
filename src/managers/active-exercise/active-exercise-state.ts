@@ -3,10 +3,10 @@ import { atom, selector } from 'recoil';
 import { ExerciseSerialized } from '../exercise/exercise-serialized';
 import { EXERCISE_STATE } from '../exercise/exercise-state';
 import { SentenseState } from '../sentense/sentense-state';
-import { VocabulariesState } from '../vocabulary/vocabulary-state';
+import { SerializedVocabulary } from '../vocabularies/interface';
 
 export interface ActiveExerciseState extends ExerciseSerialized {
-  vocabularies?: VocabulariesState[];
+  vocabularies?: SerializedVocabulary[];
   sentenses?: SentenseState[];
 }
 

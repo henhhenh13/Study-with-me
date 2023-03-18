@@ -13,7 +13,7 @@ import { TbVocabulary } from 'react-icons/tb';
 import { Button } from '../../../elements/button';
 import { useActiveExercise } from '../../../managers/active-exercise/use-active-exercise';
 import { useToastManager } from '../../../managers/toast-manager.tsx/use-toat-manager';
-import { VocabulariesState } from '../../../managers/vocabulary/vocabulary-state';
+// import { VocabulariesState } from '../../../managers/vocabularies/vocabularies-state';
 import { ModalWrapper } from '../modal-wrapper/modal-wrapper';
 
 export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
@@ -30,7 +30,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
     return activeExercise?.vocabularies || [];
   }, [activeExercise?.vocabularies]);
 
-  const activeVbr = useMemo<VocabulariesState>(() => {
+  const activeVbr = useMemo(() => {
     return vocabularies[vocabularyIndex];
   }, [vocabularies, vocabularyIndex]);
 
@@ -142,7 +142,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
                 <hr />
               </div>
               <h2 className="text-4xl font-semibold text-blue-600 py-8">
-                {activeVbr.translations.vn}
+                {activeVbr.translation}
               </h2>
               <hr />
               <div className="mt-10">

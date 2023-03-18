@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 
 import { VocabularyList } from '../components/vocabularies/vocabulary-list';
-import { useVocabularyThemeManager } from '../managers/vocabulary-theme/use-vocabulary-theme-manager';
+import { useThemeManager } from '../managers/themes/use-theme-manager';
 
 export const Vocabularies = (): React.ReactElement => {
-  const { getVocabularyTheme } = useVocabularyThemeManager();
+  const { fetchThemes } = useThemeManager();
 
   useEffect(() => {
-    getVocabularyTheme();
+    fetchThemes();
   }, []);
 
   return (

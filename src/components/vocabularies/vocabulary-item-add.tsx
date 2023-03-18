@@ -3,7 +3,7 @@ import React, { KeyboardEvent, useCallback, useRef, useState } from 'react';
 
 import { Button } from '../../elements/button';
 import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
-import { useVocabularyThemeManager } from '../../managers/vocabulary-theme/use-vocabulary-theme-manager';
+// import { useVocabularyThemeManager } from '../../managers/themes/use-theme-manager';
 import { ModalVocabularyDetail } from '../modals/modal-vocabulary/modal-vocabulary-detail';
 
 interface VocabularyItemAddProps {
@@ -16,7 +16,7 @@ export const VocabularyItemAdd = ({
 }: VocabularyItemAddProps): React.ReactElement => {
   const firstInput = useRef<HTMLInputElement>(null);
   const { successToast, errorToast } = useToastManager();
-  const { addVocabularyInTheme } = useVocabularyThemeManager();
+  // const { addVocabularyInTheme } = useVocabularyThemeManager();
   const [newTranslationVocabulary, setNewTranslationVocabulary] =
     useState<string>('');
   const [detail, setDetail] = useState<string | null>(null);
@@ -36,12 +36,12 @@ export const VocabularyItemAdd = ({
   const handleAddVocabulary = useCallback(() => {
     const canAdd = newVocabulary && newTranslationVocabulary;
     if (canAdd) {
-      addVocabularyInTheme({
-        vocabulary: newVocabulary,
-        themeId,
-        translationVn: newTranslationVocabulary,
-        detail: detail,
-      });
+      // addVocabularyInTheme({
+      //   vocabulary: newVocabulary,
+      //   themeId,
+      //   translationVn: newTranslationVocabulary,
+      //   detail: detail,
+      // });
       onClearInput();
       focusFirstInput();
       successToast(`You added "${newVocabulary}"`);
@@ -76,7 +76,7 @@ export const VocabularyItemAdd = ({
       });
     } else {
       errorToast(
-        'If you want add detail for this vocabulary, you do not empty all input!',
+        'If you want add detail for this vocabularies, you do not empty all input!',
       );
     }
   }, [detail, errorToast, newTranslationVocabulary, newVocabulary, show]);

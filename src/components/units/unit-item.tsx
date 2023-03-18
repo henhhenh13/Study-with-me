@@ -7,7 +7,7 @@ import {
   FaTrashAlt,
 } from 'react-icons/fa';
 
-import { type UnitSerialized } from '../../managers/units/unit-serialized';
+import { UnitSerialized } from '../../managers/units/interface';
 import { UnitExerciseItem } from './unit-exercise-item';
 
 interface UnitItemProps extends UnitSerialized {

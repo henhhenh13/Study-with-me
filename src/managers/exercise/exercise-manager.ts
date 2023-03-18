@@ -1,7 +1,6 @@
 import { useRecoilCallback, useRecoilState } from 'recoil';
 
 import { ActiveExerciseState } from '../active-exercise/active-exercise-state';
-import { VOCABULARIES_STATE } from '../vocabulary/vocabulary-state';
 import { EXERCISE_STATE } from './exercise-state';
 
 interface UseExerciseManager {
@@ -22,20 +21,20 @@ export const useExerciseManager = (): UseExerciseManager => {
         const exercisesState = snapshot.getLoadable(EXERCISE_STATE).getValue();
         if (exercisesState.has(exercise.exerciseId)) return;
 
-        setExerciseState((prev) => {
-          const vbrState = snapshot.getLoadable(VOCABULARIES_STATE).getValue();
-          const vbrs = Array.from(vbrState.values());
-          const exerciseVbr = vbrs.filter(
-            ({ themeId }) => themeId === themeIdTemp,
-          );
-          new Map(prev);
-          prev.set(exercise.exerciseId, {
-            ...exercise,
-            vocabularies: exerciseVbr,
-          });
-
-          return prev;
-        });
+        // setExerciseState((prev) => {
+        //   const vbrState = snapshot.getLoadable(VOCABULARIES_STATE).getValue();
+        //   const vbrs = Array.from(vbrState.values());
+        //   const exerciseVbr = vbrs.filter(
+        //     ({ themeId }) => themeId === themeIdTemp,
+        //   );
+        //   new Map(prev);
+        //   prev.set(exercise.exerciseId, {
+        //     ...exercise,
+        //     vocabularies: exerciseVbr,
+        //   });
+        //
+        //   return prev;
+        // });
 
         release();
       },

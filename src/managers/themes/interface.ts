@@ -1,18 +1,25 @@
 import { FetchStatus } from '../../contains/interface';
-import { SerializedVocabulary } from '../vocabulary/serialized-vocabulary';
+import {
+  SerializedVocabulary,
+  VocabularyApiDefinitions,
+} from '../vocabularies/interface';
 
 export interface ThemeApi {
   themeId: string;
   theme: string;
-  //TODO: Add vocabulary interface
-  vocabularies: SerializedVocabulary[] | null;
+  vocabularies: VocabularyApiDefinitions['Vocabulary'][] | null;
 }
 export interface ThemeApiDefinitions {
-  ThemeApi: ThemeApi;
+  Theme: ThemeApi;
   Themes: {
     themes: ThemeApi[];
     flags: FetchStatus;
   };
+}
+export interface Theme {
+  themeId: string;
+  theme: string;
+  vocabularies: SerializedVocabulary[];
 }
 
 export interface ThemesDefinitions {
@@ -21,7 +28,7 @@ export interface ThemesDefinitions {
     flags: FetchStatus;
   };
   ThemesSelector: {
-    themes: ThemeApi[];
+    themes: Theme[];
     flags: FetchStatus;
   };
 }

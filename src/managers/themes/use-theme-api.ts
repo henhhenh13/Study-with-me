@@ -9,7 +9,7 @@ export const useThemeApi = (): UseThemeApi => {
   const fetchThemes = async (): Promise<ThemeApiDefinitions['Themes']> => {
     const { data, error, status } = await supabase
       .from('themes')
-      .select<'*, vocabularies(*)', ThemeApiDefinitions['ThemeApi']>(
+      .select<'*, vocabularies(*)', ThemeApiDefinitions['Theme']>(
         '*, vocabularies(*)',
       );
     return {

@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { UnitsDefinitions } from './interface';
-import { fromApiToUnit, UnitSerialized } from './unit-serialized';
+import { fromApiToUnit } from './unit-serialized';
 import { UNITS_SELECTOR, UNITS_STATE } from './unit-state';
 import { useUnitApi } from './use-unit-api';
 
