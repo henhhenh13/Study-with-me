@@ -2,7 +2,7 @@ import { atom, selector } from 'recoil';
 
 import { UnitsDefinitions } from './interface';
 
-export const UNIT_STATE = atom<UnitsDefinitions['UnitsState']>({
+export const UNITS_STATE = atom<UnitsDefinitions['UnitsState']>({
   key: 'unitState',
   default: {
     units: new Map(),
@@ -14,10 +14,10 @@ export const UNIT_STATE = atom<UnitsDefinitions['UnitsState']>({
   },
 });
 
-export const UNIT_SELECTOR = selector<UnitsDefinitions['UnitsSelector']>({
+export const UNITS_SELECTOR = selector<UnitsDefinitions['UnitsSelector']>({
   key: 'unitSelector',
   get: ({ get }) => {
-    const { units, flags } = get(UNIT_STATE);
+    const { units, flags } = get(UNITS_STATE);
 
     return {
       flags,

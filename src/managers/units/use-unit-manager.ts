@@ -3,7 +3,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { UnitsDefinitions } from './interface';
 import { fromApiToUnit, UnitSerialized } from './unit-serialized';
-import { UNIT_SELECTOR, UNIT_STATE } from './unit-state';
+import { UNITS_SELECTOR, UNITS_STATE } from './unit-state';
 import { useUnitApi } from './use-unit-api';
 
 interface UseUnitManager {
@@ -13,8 +13,8 @@ interface UseUnitManager {
 
 export const useUnitManager = (): UseUnitManager => {
   const { fetchUnits } = useUnitApi();
-  const setUnitState = useSetRecoilState(UNIT_STATE);
-  const unitSelector = useRecoilValue(UNIT_SELECTOR);
+  const setUnitState = useSetRecoilState(UNITS_STATE);
+  const unitSelector = useRecoilValue(UNITS_SELECTOR);
 
   const fetchUnit = useCallback(async () => {
     const { units, flags } = await fetchUnits();
