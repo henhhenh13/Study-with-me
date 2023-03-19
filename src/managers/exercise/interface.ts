@@ -1,6 +1,6 @@
 import { FetchStatus } from '../../contains/interface';
 
-export type ExerciseType = 'vocabulary' | 'sentense';
+export type ExerciseType = 'vocabulary' | 'sentence';
 
 interface VocabularyExercise {
   vocabulary: string;
@@ -23,9 +23,24 @@ export interface ExerciseApiDefinitions {
   };
 }
 
+export interface Exercise {
+  exerciseId: string;
+  title: string;
+  exerciseType: ExerciseType;
+  vocabularies: VocabularyExercise[];
+  flags: {
+    isVocabularyExercise: boolean;
+    hasVocabularyExercise: boolean;
+  };
+}
+
 export interface ExerciseDefinitions {
   ExercisesState: {
-    exercise: Map<string, ExerciseApi>;
+    exercises: Map<string, ExerciseApi>;
+    flags: FetchStatus;
+  };
+  ExercisesSelector: {
+    exercises: Exercise[];
     flags: FetchStatus;
   };
 }
