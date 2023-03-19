@@ -13,7 +13,7 @@ import { TbVocabulary } from 'react-icons/tb';
 import { Button } from '../../../elements/button';
 import { useActiveExercise } from '../../../managers/active-exercise/use-active-exercise';
 import { useToastManager } from '../../../managers/toast-manager.tsx/use-toat-manager';
-import { VocabulariesState } from '../../../managers/vocabulary/vocabulary-state';
+// import { VocabulariesState } from '../../../managers/vocabularies/vocabularies-state';
 import { ModalWrapper } from '../modal-wrapper/modal-wrapper';
 
 export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
@@ -27,10 +27,10 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
   const { successToast, errorToast } = useToastManager();
 
   const vocabularies = useMemo(() => {
-    return activeExercise?.vocabularies || [];
-  }, [activeExercise?.vocabularies]);
+    return activeExercise.vocabularies || [];
+  }, [activeExercise.vocabularies]);
 
-  const activeVbr = useMemo<VocabulariesState>(() => {
+  const activeVbr = useMemo(() => {
     return vocabularies[vocabularyIndex];
   }, [vocabularies, vocabularyIndex]);
 
@@ -44,7 +44,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
     );
   };
 
-  const dereaseVbrIndex = () => {
+  const decreaseVbrIndex = () => {
     setVocabularyIndex((prev) => (prev - 1 < 0 ? prev : prev - 1));
   };
 
@@ -58,7 +58,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
   const navigationVbr = useCallback(
     (type: 'prev' | 'next') => {
       if (type === 'prev') {
-        dereaseVbrIndex();
+        decreaseVbrIndex();
       } else {
         increaseVbrIndex();
       }
@@ -69,7 +69,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
 
   const checkCorrectAnswer = useCallback(
     (answer: string) => {
-      return answer === activeVbr?.vocabulary;
+      return answer === activeVbr.vocabulary;
     },
     [activeVbr.vocabulary],
   );
@@ -133,7 +133,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
             />
           </div>
         </div>
-        {!!vocabularies?.length && (
+        {!!vocabularies.length && (
           <>
             <div className="w-[65%] mx-auto text-center h-[calc(100%-100px)] pt-20">
               <div className="space-y-2.5">
@@ -142,7 +142,7 @@ export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
                 <hr />
               </div>
               <h2 className="text-4xl font-semibold text-blue-600 py-8">
-                {activeVbr.translations.vn}
+                {activeVbr.translation}
               </h2>
               <hr />
               <div className="mt-10">

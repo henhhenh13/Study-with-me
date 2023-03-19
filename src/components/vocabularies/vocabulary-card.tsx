@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SerializedVocabulary } from '../../managers/vocabulary/serialized-vocabulary';
+import { SerializedVocabulary } from '../../managers/vocabularies/interface';
 import { VocabularyTable } from './vocabulary-table';
 
 interface VocabularyCardProps {

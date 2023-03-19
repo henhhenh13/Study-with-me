@@ -1,22 +1,34 @@
-import { atom } from 'recoil';
+import { atom, selector } from 'recoil';
 
-import { ActiveExerciseState } from '../active-exercise/active-exercise-state';
-import { SentenseState } from '../sentense/sentense-state';
-import { VocabulariesState } from '../vocabulary/vocabulary-state';
+import { ExerciseDefinitions } from './interface';
+import { serializationVocabularyExercise } from './serialize-exercise';
 
-export interface ExerciseState {
-  exerciseId: string;
-  title: string;
-  unitId: string;
-  exerciseType: ExerciseType;
-  index: string;
-  vocabularies?: VocabulariesState[];
-  sentenses?: SentenseState[];
-}
-
-export type ExerciseType = 'vocabulary' | 'sentense';
-
-export const EXERCISE_STATE = atom<Map<string, ActiveExerciseState>>({
+export const EXERCISES_STATE = atom<ExerciseDefinitions['ExercisesState']>({
   key: 'exerciseState',
-  default: new Map(),
+  default: {
+    exercises: new Map(),
+    flags: {
+      isFetching: false,
+      isFetched: true,
+      isFetchError: false,
+    },
+  },
+});
+
+export const EXERCISES_SELECTOR = selector<
+  ExerciseDefinitions['ExercisesSelector']
+>({
+  key: 'exercisesSelector',
+  get: ({ get }) => {
+    const { exercises, flags } = get(EXERCISES_STATE);
+    const serializedExercises = Array.from(exercises.values()).map(
+      (exercise) => {
+        return serializationVocabularyExercise(exercise);
+      },
+    );
+    return {
+      exercises: serializedExercises,
+      flags,
+    };
+  },
 });

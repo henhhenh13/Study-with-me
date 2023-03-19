@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useRef } from 'react';
 
-import { SerializedVocabulary } from '../../managers/vocabulary/serialized-vocabulary';
+import { SerializedVocabulary } from '../../managers/vocabularies/interface';
 import { VocabularyItem } from './vocabulary-item';
 import { VocabularyItemAdd } from './vocabulary-item-add';
 

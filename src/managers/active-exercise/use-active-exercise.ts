@@ -1,27 +1,26 @@
 import { useCallback } from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 
-import {
-  ACTIVE_EXERCISE_ID_STATE,
-  ACTIVE_EXERCISE_STATE,
-  ActiveExerciseState,
-} from './active-exercise-state';
+import { Exercise } from '../exercise/interface';
+import { ACTIVE_EXERCISE } from './active-exercise-state';
 
-interface UseExerciseManager {
-  activeExercise: ActiveExerciseState | undefined;
-  updateActiveExerciseId: (exerciseId: string) => void;
+interface UseActiveExercise {
+  changeActiveExercise: (exercise: Exercise) => void;
+  activeExercise: Exercise;
 }
-export const useActiveExercise = (): UseExerciseManager => {
-  const activeExerciseState = useRecoilValue(ACTIVE_EXERCISE_STATE);
-  const setActiveExerciseIdState = useSetRecoilState(ACTIVE_EXERCISE_ID_STATE);
+export const useActiveExercise = (): UseActiveExercise => {
+  const [activeExerciseState, setActiveExerciseState] =
+    useRecoilState(ACTIVE_EXERCISE);
 
-  const updateActiveExerciseId = useCallback(
-    (exerciseId: string) => setActiveExerciseIdState(exerciseId),
-    [setActiveExerciseIdState],
+  const changeActiveExercise = useCallback(
+    (exercise: Exercise) => {
+      setActiveExerciseState(exercise);
+    },
+    [setActiveExerciseState],
   );
 
   return {
-    updateActiveExerciseId,
+    changeActiveExercise,
     activeExercise: activeExerciseState,
   };
 };

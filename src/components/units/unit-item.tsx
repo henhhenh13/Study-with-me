@@ -7,7 +7,7 @@ import {
   FaTrashAlt,
 } from 'react-icons/fa';
 
-import { type UnitSerialized } from '../../managers/units/unit-serialized';
+import { UnitSerialized } from '../../managers/units/interface';
 import { UnitExerciseItem } from './unit-exercise-item';
 
 interface UnitItemProps extends UnitSerialized {
@@ -52,21 +52,23 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
           <FaRegEdit className="cursor-pointer text-blue-500 transition-all duration-200 hover:scale-125 hover:text-blue-600 active:text-blue-700" />
           <FaTrashAlt className="cursor-pointer text-red-500 transition-all duration-200 hover:scale-125 hover:text-red-600 active:text-red-700" />
         </div>
-        <button
-          className="flex-1 flex group cursor-pointer"
-          onClick={() => {
-            setIsShowExercise((prev) => !prev);
-          }}
-        >
-          <FaChevronRight
-            className={clsx(
-              'group-hover:text-blue-700 group-hover:scale-125 transition-all duration-200 ml-auto',
-              isShowExercise && 'rotate-90 scale-125 text-blue-700',
-            )}
-          />
-        </button>
+        {flags.hasExercise ? (
+          <button
+            className="flex-1 flex group cursor-pointer"
+            onClick={() => {
+              setIsShowExercise((prev) => !prev);
+            }}
+          >
+            <FaChevronRight
+              className={clsx(
+                'group-hover:text-blue-700 group-hover:scale-125 transition-all duration-200 ml-auto',
+                isShowExercise && 'rotate-90 scale-125 text-blue-700',
+              )}
+            />
+          </button>
+        ) : null}
       </div>
-      {isShowExercise && (
+      {isShowExercise && flags.hasExercise ? (
         <div>
           <h2 className="font-semibold text-lg">Exercises</h2>
           <ul>
@@ -81,7 +83,7 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
             ))}
           </ul>
         </div>
-      )}
+      ) : null}
     </li>
   );
 };
