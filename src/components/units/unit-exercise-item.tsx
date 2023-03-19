@@ -1,8 +1,6 @@
-import React from 'react';
-import { FaSpinner } from 'react-icons/fa';
-import { useRecoilValue } from 'recoil';
+import React, { useMemo } from 'react';
+import { FaCheck, FaSpinner } from 'react-icons/fa';
 
-import { EXERCISES_STATE } from '../../managers/exercise/exercise-state';
 import { useExerciseManager } from '../../managers/exercise/use-exercise-manager';
 import { UnitExercise } from '../../managers/units/interface';
 
@@ -15,14 +13,24 @@ interface UnitExerciseItemProps {
 
 export const UnitExerciseItem = ({
   exercise,
-  themeId,
   index,
   unitIndex,
 }: UnitExerciseItemProps): React.ReactElement => {
   const { fetchVocabularyExerciseById } = useExerciseManager();
-  const exerciseState = useRecoilValue(EXERCISES_STATE);
+  const { exerciseList } = useExerciseManager();
+  const { flags } = exerciseList;
 
-  console.log(exerciseState);
+  const renderIcon = useMemo(() => {
+    const { isFetched, isFetching, isFetchError } = flags;
+    switch (true) {
+      case isFetched:
+        return <FaCheck className="text-green-400" />;
+      case isFetching:
+        return <FaSpinner className="text-green-400 animate-spin" />;
+      case isFetchError:
+        return <FaCheck className="text-red-400" />;
+    }
+  }, [flags]);
 
   return (
     <div>
@@ -35,7 +43,7 @@ export const UnitExerciseItem = ({
         <p>
           {unitIndex}.{index + 1}: {exercise.title}
         </p>
-        <FaSpinner className="text-green-400 animate-spin duration-100" />
+        {renderIcon}
       </li>
     </div>
   );
