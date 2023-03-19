@@ -12,6 +12,7 @@ interface UseExerciseManager {
     isNeedReturn?: boolean,
   ) => Promise<Exercise | void>;
   exerciseList: ExerciseDefinitions['ExercisesSelector'];
+  getVocabularyExerciseById: (exerciseId: string) => Exercise | null;
 }
 export const useExerciseManager = (): UseExerciseManager => {
   const { fetchVocabularyExerciseById: fetchVocabularyExerciseByIdApi } =
@@ -33,7 +34,7 @@ export const useExerciseManager = (): UseExerciseManager => {
   }, [setExercises]);
   const fetchVocabularyExerciseById = useRecoilCallback(
     ({ snapshot }) =>
-      async (exerciseId: string, isNeedReturn = false) => {
+      async (exerciseId: string) => {
         const exerciseState = snapshot.getLoadable(EXERCISES_STATE).getValue();
         if (exerciseState.exercises.has(exerciseId)) return;
 
@@ -51,14 +52,26 @@ export const useExerciseManager = (): UseExerciseManager => {
             flags,
           };
         });
-        if (isNeedReturn && !!exercise) {
-          return serializationVocabularyExercise(exercise);
-        }
       },
     [fetchVocabularyExerciseByIdApi, setExercises, startFetchAnyExercise],
+  );
+  const getVocabularyExerciseById = useRecoilCallback(
+    ({ snapshot }) =>
+      (exerciseId: string) => {
+        const exerciseState = snapshot.getLoadable(EXERCISES_STATE).getValue();
+        const { exercises } = exerciseState;
+        if (exercises.has(exerciseId)) {
+          const exercise = exercises.get(exerciseId);
+
+          return exercise ? serializationVocabularyExercise(exercise) : null;
+        }
+        return null;
+      },
+    [],
   );
   return {
     fetchVocabularyExerciseById,
     exerciseList: exercisesSelector,
+    getVocabularyExerciseById,
   };
 };

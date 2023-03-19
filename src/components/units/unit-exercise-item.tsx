@@ -19,7 +19,8 @@ export const UnitExerciseItem = ({
   index,
   unitIndex,
 }: UnitExerciseItemProps): React.ReactElement => {
-  const { fetchVocabularyExerciseById } = useExerciseManager();
+  const { fetchVocabularyExerciseById, getVocabularyExerciseById } =
+    useExerciseManager();
   const { exerciseList } = useExerciseManager();
   const { changeActiveExercise } = useActiveExercise();
   const { flags } = exerciseList;
@@ -38,15 +39,19 @@ export const UnitExerciseItem = ({
   }, [flags]);
 
   const handleOpenExercise = useCallback(async () => {
-    const exerciseFetched = await fetchVocabularyExerciseById(
-      exercise.exerciseId,
-      true,
-    );
+    await fetchVocabularyExerciseById(exercise.exerciseId);
+    const exerciseFetched = getVocabularyExerciseById(exercise.exerciseId);
     if (exerciseFetched) {
       await changeActiveExercise(exerciseFetched);
       show();
     }
-  }, [changeActiveExercise, exercise.exerciseId, fetchVocabularyExerciseById]);
+  }, [
+    changeActiveExercise,
+    exercise.exerciseId,
+    fetchVocabularyExerciseById,
+    getVocabularyExerciseById,
+    show,
+  ]);
 
   return (
     <div>
