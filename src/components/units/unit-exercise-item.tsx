@@ -1,8 +1,11 @@
-import React, { useMemo } from 'react';
+import { useModal } from '@ebay/nice-modal-react';
+import React, { useCallback, useMemo } from 'react';
 import { FaCheck, FaSpinner } from 'react-icons/fa';
 
+import { useActiveExercise } from '../../managers/active-exercise/use-active-exercise';
 import { useExerciseManager } from '../../managers/exercise/use-exercise-manager';
 import { UnitExercise } from '../../managers/units/interface';
+import { ModalVocabulary } from '../modals/modal-vocabulary/modal-vocabulary';
 
 interface UnitExerciseItemProps {
   exercise: UnitExercise;
@@ -18,7 +21,9 @@ export const UnitExerciseItem = ({
 }: UnitExerciseItemProps): React.ReactElement => {
   const { fetchVocabularyExerciseById } = useExerciseManager();
   const { exerciseList } = useExerciseManager();
+  const { changeActiveExercise } = useActiveExercise();
   const { flags } = exerciseList;
+  const { show } = useModal(ModalVocabulary);
 
   const renderIcon = useMemo(() => {
     const { isFetched, isFetching, isFetchError } = flags;
@@ -32,12 +37,21 @@ export const UnitExerciseItem = ({
     }
   }, [flags]);
 
+  const handleOpenExercise = useCallback(async () => {
+    const exerciseFetched = await fetchVocabularyExerciseById(
+      exercise.exerciseId,
+      true,
+    );
+    if (exerciseFetched) {
+      await changeActiveExercise(exerciseFetched);
+      show();
+    }
+  }, [changeActiveExercise, exercise.exerciseId, fetchVocabularyExerciseById]);
+
   return (
     <div>
       <li
-        onClick={async () => {
-          await fetchVocabularyExerciseById(exercise.exerciseId);
-        }}
+        onClick={handleOpenExercise}
         className="cursor-pointer hover:text-blue-600 transition-colors duration-200 flex items-center justify-between"
       >
         <p>

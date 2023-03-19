@@ -2,11 +2,15 @@ import { useCallback } from 'react';
 import { useRecoilCallback, useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { EXERCISES_SELECTOR, EXERCISES_STATE } from './exercise-state';
-import { ExerciseDefinitions } from './interface';
+import { Exercise, ExerciseDefinitions } from './interface';
+import { serializationVocabularyExercise } from './serialize-exercise';
 import { useExerciseApi } from './use-exercise-api';
 
 interface UseExerciseManager {
-  fetchVocabularyExerciseById: (exerciseId: string) => Promise<void>;
+  fetchVocabularyExerciseById: (
+    exerciseId: string,
+    isNeedReturn?: boolean,
+  ) => Promise<Exercise | void>;
   exerciseList: ExerciseDefinitions['ExercisesSelector'];
 }
 export const useExerciseManager = (): UseExerciseManager => {
@@ -29,7 +33,7 @@ export const useExerciseManager = (): UseExerciseManager => {
   }, [setExercises]);
   const fetchVocabularyExerciseById = useRecoilCallback(
     ({ snapshot }) =>
-      async (exerciseId: string) => {
+      async (exerciseId: string, isNeedReturn = false) => {
         const exerciseState = snapshot.getLoadable(EXERCISES_STATE).getValue();
         if (exerciseState.exercises.has(exerciseId)) return;
 
@@ -47,6 +51,9 @@ export const useExerciseManager = (): UseExerciseManager => {
             flags,
           };
         });
+        if (isNeedReturn && !!exercise) {
+          return serializationVocabularyExercise(exercise);
+        }
       },
     [fetchVocabularyExerciseByIdApi, setExercises, startFetchAnyExercise],
   );
