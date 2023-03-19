@@ -4,5 +4,5 @@ export type SectionState = 'units' | 'vocabularies' | 'exercise';
 
 export const SECTION_STATE = atom<SectionState>({
   key: 'sectionState',
-  default: 'vocabularies',
+  default: 'units',
 });
