@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons/lib';
 
 import { FetchStatus } from '../../contains/interface';
-import { ExerciseType } from '../exercise/exercise-state';
+import { ExerciseType } from '../exercise/interface';
 
 export interface UnitExercise {
   exerciseId: string;

@@ -1,22 +1,15 @@
 import { atom } from 'recoil';
 
-import { ActiveExerciseState } from '../active-exercise/active-exercise-state';
-import { SentenseState } from '../sentense/sentense-state';
-import { SerializedVocabulary } from '../vocabularies/interface';
+import { ExerciseDefinitions } from './interface';
 
-export interface ExerciseState {
-  exerciseId: string;
-  title: string;
-  unitId: string;
-  exerciseType: ExerciseType;
-  index: string;
-  vocabularies?: SerializedVocabulary[];
-  sentenses?: SentenseState[];
-}
-
-export type ExerciseType = 'vocabulary' | 'sentense';
-
-export const EXERCISE_STATE = atom<Map<string, ActiveExerciseState>>({
+export const EXERCISES_STATE = atom<ExerciseDefinitions['ExercisesState']>({
   key: 'exerciseState',
-  default: new Map(),
+  default: {
+    exercise: new Map(),
+    flags: {
+      isFetching: false,
+      isFetched: true,
+      isFetchError: false,
+    },
+  },
 });

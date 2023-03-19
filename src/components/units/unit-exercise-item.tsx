@@ -1,11 +1,10 @@
-import { useModal } from '@ebay/nice-modal-react';
 import React from 'react';
-import { FaCheck } from 'react-icons/fa';
+import { FaSpinner } from 'react-icons/fa';
+import { useRecoilValue } from 'recoil';
 
-import { useActiveExercise } from '../../managers/active-exercise/use-active-exercise';
-import { useExerciseManager } from '../../managers/exercise/exercise-manager';
+import { EXERCISES_STATE } from '../../managers/exercise/exercise-state';
+import { useExerciseManager } from '../../managers/exercise/use-exercise-manager';
 import { UnitExercise } from '../../managers/units/interface';
-import { ModalVocabulary } from '../modals/modal-vocabulary/modal-vocabulary';
 
 interface UnitExerciseItemProps {
   exercise: UnitExercise;
@@ -20,33 +19,23 @@ export const UnitExerciseItem = ({
   index,
   unitIndex,
 }: UnitExerciseItemProps): React.ReactElement => {
-  const { getVbrsByThemeId } = useExerciseManager();
-  const { updateActiveExerciseId } = useActiveExercise();
-  const { show } = useModal(ModalVocabulary);
+  const { fetchVocabularyExerciseById } = useExerciseManager();
+  const exerciseState = useRecoilValue(EXERCISES_STATE);
+
+  console.log(exerciseState);
 
   return (
     <div>
       <li
         onClick={async () => {
-          // await getVbrsByThemeId(
-          //   {
-          //     exerciseId: exercise.exerciseId,
-          //     title: exercise.title,
-          //     index: index,
-          //     exerciseType: 'vocabulary',
-          //     unitId: exercise.unitId,
-          //   },
-          //   themeId,
-          // );
-          await updateActiveExerciseId(exercise.exerciseId);
-          show();
+          await fetchVocabularyExerciseById(exercise.exerciseId);
         }}
         className="cursor-pointer hover:text-blue-600 transition-colors duration-200 flex items-center justify-between"
       >
         <p>
           {unitIndex}.{index + 1}: {exercise.title}
         </p>
-        <FaCheck className="text-green-400" />
+        <FaSpinner className="text-green-400 animate-spin duration-100" />
       </li>
     </div>
   );
