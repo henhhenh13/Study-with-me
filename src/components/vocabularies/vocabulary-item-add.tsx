@@ -2,6 +2,7 @@ import { useModal } from '@ebay/nice-modal-react';
 import React, { KeyboardEvent, useCallback, useRef, useState } from 'react';
 
 import { Button } from '../../elements/button';
+import { useThemeManager } from '../../managers/themes/use-theme-manager';
 import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
 import { useVocabularyManager } from '../../managers/vocabularies/use-vocabulary-manager';
 import { ModalVocabularyDetail } from '../modals/modal-vocabulary/modal-vocabulary-detail';
@@ -22,6 +23,7 @@ export const VocabularyItemAdd = ({
   const [newVocabulary, setNewVocabulary] = useState<string>('');
   const { show } = useModal(ModalVocabularyDetail);
   const { addVocabulary } = useVocabularyManager();
+  const { updateVocabulariesById } = useThemeManager();
   const onClearInput = useCallback(() => {
     setNewTranslationVocabulary('');
     setNewVocabulary('');
@@ -36,13 +38,13 @@ export const VocabularyItemAdd = ({
   const handleAddVocabulary = useCallback(async () => {
     const canAdd = newVocabulary && newTranslationVocabulary;
     if (canAdd) {
-      const vocabulary = await addVocabulary({
+      const vocabularyApi = await addVocabulary({
         vocabulary: newVocabulary,
         translation: newTranslationVocabulary,
         themeId,
       });
+      updateVocabulariesById(themeId, vocabularyApi.vocabulary);
 
-      console.log(vocabulary);
       onClearInput();
       focusFirstInput();
       successToast(`You added "${newVocabulary}"`);

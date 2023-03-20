@@ -2,7 +2,6 @@ import { AddStatus, FetchStatus } from '../../contains/interface';
 
 export interface VocabularyApi {
   vocabularyId: string;
-  createdAt: string;
   vocabulary: string;
   translation: string;
   themeId: string;

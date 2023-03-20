@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
-import { serializationVocabulary } from '../vocabularies/serialize-vocabulary';
+import { VocabularyApi } from '../vocabularies/interface';
 import { ThemesDefinitions } from './interface';
 import { THEMES_SELECTOR, THEMES_STATE } from './themes-state';
 import { useThemeApi } from './use-theme-api';
@@ -9,6 +9,7 @@ import { useThemeApi } from './use-theme-api';
 interface UseThemeManager {
   fetchThemes: () => Promise<void>;
   themeList: ThemesDefinitions['ThemesSelector'];
+  updateVocabulariesById: (themeId: string, vocabulary: VocabularyApi) => void;
 }
 
 export const useThemeManager = (): UseThemeManager => {
@@ -31,8 +32,31 @@ export const useThemeManager = (): UseThemeManager => {
     });
   }, [fetchThemesApi, setThemesState]);
 
+  const updateVocabulariesById = useCallback(
+    async (themeId: string, vocabulary: VocabularyApi) => {
+      setThemesState((prevState) => {
+        const theme = prevState.themes.get(themeId);
+        if (theme) {
+          const newVocabularies = theme.vocabularies
+            ? [...theme.vocabularies, vocabulary]
+            : null;
+          prevState.themes.set(themeId, {
+            ...theme,
+            vocabularies: newVocabularies,
+          });
+        }
+        return {
+          ...prevState,
+          themes: prevState.themes,
+        };
+      });
+    },
+    [setThemesState],
+  );
+
   return {
     fetchThemes,
+    updateVocabulariesById,
     themeList: themes,
   };
 };

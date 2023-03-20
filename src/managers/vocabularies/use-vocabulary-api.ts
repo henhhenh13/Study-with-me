@@ -12,7 +12,6 @@ export const initialVocabulary: VocabularyApi = {
   vocabulary: 'vocabulary',
   detail: null,
   themeId: 'themeId',
-  createdAt: 'createdAt',
 };
 export const useVocabularyApi = (): UseVocabularyApi => {
   const addVocabulary: UseVocabularyApi['addVocabulary'] = async (
