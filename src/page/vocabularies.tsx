@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Themes } from '../components/themes/themes';
+import { ThemeList } from '../components/themes/theme-list';
 import { useThemeManager } from '../managers/themes/use-theme-manager';
 
 export const Vocabularies = (): React.ReactElement => {
@@ -18,7 +18,7 @@ export const Vocabularies = (): React.ReactElement => {
         <h1 className="text-2xl font-bold">Vocabularies</h1>
       </div>
 
-      <Themes />
+      <ThemeList />
     </div>
   );
 };

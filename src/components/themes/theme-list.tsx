@@ -4,7 +4,7 @@ import { useThemeManager } from '../../managers/themes/use-theme-manager';
 import { ThemeCard } from './theme-card';
 import { ThemeCardAdd } from './theme-card-add';
 
-export const Themes = (): React.ReactElement => {
+export const ThemeList = (): React.ReactElement => {
   const { themeList } = useThemeManager();
   const { themes, flags } = themeList;
 

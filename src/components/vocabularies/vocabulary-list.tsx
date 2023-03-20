@@ -8,7 +8,7 @@ export interface VocabularyTableProps {
   vocabularies: SerializedVocabulary[] | undefined;
   themeId: string;
 }
-export const VocabularyTable = ({
+export const VocabularyList = ({
   themeId,
   vocabularies,
 }: VocabularyTableProps): React.ReactElement => {
