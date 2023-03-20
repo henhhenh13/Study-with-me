@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 
 import { useThemeManager } from '../../managers/themes/use-theme-manager';
-import { AddVocabularyCard } from './add-vocabulary-card';
-import { VocabularyCard } from './vocabulary-card';
+import { ThemeCard } from './theme-card';
+import { ThemeCardAdd } from './theme-card-add';
 
-export const VocabularyList = (): React.ReactElement => {
+export const Themes = (): React.ReactElement => {
   const { themeList } = useThemeManager();
   const { themes, flags } = themeList;
 
@@ -17,7 +17,7 @@ export const VocabularyList = (): React.ReactElement => {
           <>
             {themes.length
               ? themes.map(({ themeId, vocabularies, theme }) => (
-                  <VocabularyCard
+                  <ThemeCard
                     key={themeId}
                     themeId={themeId}
                     vocabularies={vocabularies}
@@ -36,7 +36,7 @@ export const VocabularyList = (): React.ReactElement => {
   return (
     <div className="w-[836px] h-[85vh] overflow-y-auto grid grid-cols-2 gap-4 custom-scrollbar">
       {render}
-      <AddVocabularyCard />
+      <ThemeCardAdd />
     </div>
   );
 };
