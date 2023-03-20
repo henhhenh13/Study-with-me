@@ -1,7 +1,9 @@
 import { useModal } from '@ebay/nice-modal-react';
 import React, { KeyboardEvent, useCallback, useRef, useState } from 'react';
+import { FaSpinner } from 'react-icons/fa';
 
 import { Button } from '../../elements/button';
+import { LoadingButton } from '../../elements/loading-button';
 import { useThemeManager } from '../../managers/themes/use-theme-manager';
 import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
 import { useVocabularyManager } from '../../managers/vocabularies/use-vocabulary-manager';
@@ -42,6 +44,7 @@ export const VocabularyItemAdd = ({
         vocabulary: newVocabulary,
         translation: newTranslationVocabulary,
         themeId,
+        detail,
       });
       updateVocabulariesById(themeId, vocabularyApi.vocabulary);
 
@@ -53,7 +56,19 @@ export const VocabularyItemAdd = ({
     } else {
       errorToast('Please do not empty form!');
     }
-  }, [newVocabulary, newTranslationVocabulary, detail]);
+  }, [
+    newVocabulary,
+    newTranslationVocabulary,
+    addVocabulary,
+    themeId,
+    detail,
+    updateVocabulariesById,
+    onClearInput,
+    focusFirstInput,
+    successToast,
+    onCompleteAdded,
+    errorToast,
+  ]);
 
   const handleFirstInputFocus = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
@@ -112,14 +127,7 @@ export const VocabularyItemAdd = ({
         >
           Detail
         </Button>
-        <Button
-          onClick={handleAddVocabulary}
-          variants="background"
-          color="primary"
-          className="px-3.5 py-1"
-        >
-          Add
-        </Button>
+        <LoadingButton onClick={handleAddVocabulary} />
       </div>
     </li>
   );

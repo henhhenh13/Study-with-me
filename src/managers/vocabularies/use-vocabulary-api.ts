@@ -17,7 +17,7 @@ export const useVocabularyApi = (): UseVocabularyApi => {
   const addVocabulary: UseVocabularyApi['addVocabulary'] = async (
     vocabularies,
   ): Promise<VocabularyApiDefinitions['VocabularyAdd']> => {
-    const { vocabulary, translation, themeId } = vocabularies;
+    const { vocabulary, translation, themeId, detail } = vocabularies;
     const { data, status, error } = await supabase
       .from('vocabularies')
       .insert([
@@ -25,6 +25,7 @@ export const useVocabularyApi = (): UseVocabularyApi => {
           themeId,
           vocabulary,
           translation,
+          detail,
         },
       ])
       .select<
