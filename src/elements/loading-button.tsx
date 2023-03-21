@@ -6,8 +6,12 @@ import { Button } from './button';
 
 interface LoadingButtonProps {
   onClick: () => Promise<void>;
+  className?: string;
+  title: string;
 }
 export const LoadingButton = ({
+  title,
+  className,
   onClick,
 }: LoadingButtonProps): React.ReactElement => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,11 +28,11 @@ export const LoadingButton = ({
       onClick={handleLoadingWhenClick}
       variants="background"
       color="primary"
-      className={clsx('px-2 py-1 space-x-1', isLoading && 'cursor-progress')}
+      className={clsx('space-x-1', className, isLoading && 'cursor-progress')}
     >
       <FaSpinner
         className={clsx(
-          'text-sm transition-opacity duration-200 delay-75',
+          'transition-opacity duration-200 delay-75',
           isLoading ? 'opacity-100 animate-spin' : 'opacity-0',
         )}
       />
@@ -38,7 +42,7 @@ export const LoadingButton = ({
           !isLoading && '-translate-x-[10px]',
         )}
       >
-        Add
+        {title}
       </span>
     </Button>
   );

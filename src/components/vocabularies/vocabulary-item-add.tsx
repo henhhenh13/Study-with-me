@@ -127,7 +127,11 @@ export const VocabularyItemAdd = ({
         >
           Detail
         </Button>
-        <LoadingButton onClick={handleAddVocabulary} />
+        <LoadingButton
+          onClick={handleAddVocabulary}
+          title="Add"
+          className="px-1.5 py-0.5"
+        />
       </div>
     </li>
   );

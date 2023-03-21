@@ -1,6 +1,7 @@
-import { FetchStatus } from '../../contains/interface';
+import { AddStatus, FetchStatus } from '../../contains/interface';
 import {
   SerializedVocabulary,
+  VocabularyApi,
   VocabularyApiDefinitions,
 } from '../vocabularies/interface';
 
@@ -14,6 +15,10 @@ export interface ThemeApiDefinitions {
   Themes: {
     themes: ThemeApi[];
     flags: FetchStatus;
+  };
+  ThemeAdd: {
+    theme: ThemeApi;
+    flags: AddStatus;
   };
 }
 export interface Theme {

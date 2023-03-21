@@ -1,28 +1,43 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { Button } from '../../elements/button';
+import { LoadingButton } from '../../elements/loading-button';
+import { useThemeManager } from '../../managers/themes/use-theme-manager';
+import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
 export const ThemeCardAdd = (): React.ReactElement => {
-  // const { addTheme } = useVocabularyThemeManager();
-  // const { successToast, errorToast } = useToastManager();
-  // const [value, setValue] = useState<string>('');
-  // const handleAddTheme = useCallback(() => {
-  //   if (value) {
-  //     addTheme(value);
-  //     successToast(`You added "${value}"`);
-  //     setValue('');
-  //   } else {
-  //     errorToast(`Please do not empty form`);
-  //   }
-  // }, [addTheme, successToast, value]);
+  const { addTheme } = useThemeManager();
+  const { successToast, errorToast } = useToastManager();
+  const [value, setValue] = useState<string>('');
+
+  const handleAddTheme = useCallback(async () => {
+    if (value) {
+      const { isAdded, isError } = await addTheme(value);
+
+      switch (true) {
+        case isAdded: {
+          successToast(`You added "${value}"`);
+          setValue('');
+          return;
+        }
+        case isError: {
+          errorToast(`You failed add "${value}"`);
+          return;
+        }
+      }
+    } else {
+      errorToast(`Please do not empty form`);
+    }
+  }, [addTheme, errorToast, successToast, value]);
+
   return (
     <div className="w-[400px] max-h-[calc(100vh-112px)] bg-white border-4 border-blue-500">
       <input
-        // value={value}
-        // onChange={(e) => setValue(e.target.value)}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
         className="text-center py-8 w-full text-2xl italic font-semibold border-b-2 outline-none"
         placeholder="Enter Theme Name..."
       />
-      <ul className="w-full max-w-full overflow-hidden h-[calc(100vh-292px)] overflow-y-auto px-4 divide-y scroll-smooth">
+      <ul className="w-full max-w-full overflow-hidden h-[calc(100vh-280px)] overflow-y-auto px-4 divide-y scroll-smooth">
         {Array.from(Array(15)).map((_, index) => (
           <li
             key={index}
@@ -54,14 +69,11 @@ export const ThemeCardAdd = (): React.ReactElement => {
           </li>
         ))}
       </ul>
-      <Button
-        // onClick={handleAddTheme}
-        variants="background"
-        color="primary"
-        className="w-2/4 mx-auto py-2 mt-4"
-      >
-        Add Theme
-      </Button>
+      <LoadingButton
+        onClick={handleAddTheme}
+        title="Add theme"
+        className="w-2/4 mx-auto py-2 my-2"
+      />
     </div>
   );
 };
