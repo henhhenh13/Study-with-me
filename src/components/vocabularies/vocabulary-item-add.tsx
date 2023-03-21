@@ -127,7 +127,7 @@ export const VocabularyItemAdd = ({
         >
           Detail
         </Button>
-        <LoadingButton onClick={handleAddVocabulary} />
+        <LoadingButton onClick={handleAddVocabulary} title="Add" />
       </div>
     </li>
   );
