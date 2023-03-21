@@ -1,11 +1,17 @@
 import { supabase } from '../../supabaseClient';
-import { ThemeApiDefinitions } from './interface';
+import { ThemeApi, ThemeApiDefinitions } from './interface';
 
 interface UseThemeApi {
   fetchThemes: () => Promise<ThemeApiDefinitions['Themes']>;
+  addTheme: (theme: string) => Promise<ThemeApiDefinitions['ThemeAdd']>;
 }
 
 export const useThemeApi = (): UseThemeApi => {
+  const initialTheme: ThemeApi = {
+    themeId: 'themeId',
+    theme: 'theme',
+    vocabularies: [],
+  };
   const fetchThemes = async (): Promise<ThemeApiDefinitions['Themes']> => {
     const { data, error, status } = await supabase
       .from('themes')
@@ -21,7 +27,28 @@ export const useThemeApi = (): UseThemeApi => {
       },
     };
   };
+
+  const addTheme = async (
+    theme: string,
+  ): Promise<ThemeApiDefinitions['ThemeAdd']> => {
+    const { data, error, status } = await supabase
+      .from('themes')
+      .insert([{ theme }])
+      .select<'*', ThemeApi>('*')
+      .single();
+
+    return {
+      theme: data || initialTheme,
+      flags: {
+        isAdded: status === 201,
+        isError: !!error,
+        isLoading: false,
+      },
+    };
+  };
+
   return {
     fetchThemes,
+    addTheme,
   };
 };

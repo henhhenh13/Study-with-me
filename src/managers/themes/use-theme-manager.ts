@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { VocabularyApi } from '../vocabularies/interface';
-import { ThemesDefinitions } from './interface';
+import { ThemeApiDefinitions, ThemesDefinitions } from './interface';
 import { THEMES_SELECTOR, THEMES_STATE } from './themes-state';
 import { useThemeApi } from './use-theme-api';
 
@@ -10,10 +10,11 @@ interface UseThemeManager {
   fetchThemes: () => Promise<void>;
   themeList: ThemesDefinitions['ThemesSelector'];
   updateVocabulariesById: (themeId: string, vocabulary: VocabularyApi) => void;
+  addTheme: (theme: string) => Promise<ThemeApiDefinitions['ThemeAdd']>;
 }
 
 export const useThemeManager = (): UseThemeManager => {
-  const { fetchThemes: fetchThemesApi } = useThemeApi();
+  const { fetchThemes: fetchThemesApi, addTheme } = useThemeApi();
   const setThemesState = useSetRecoilState(THEMES_STATE);
   const themes = useRecoilValue(THEMES_SELECTOR);
 
@@ -58,5 +59,6 @@ export const useThemeManager = (): UseThemeManager => {
     fetchThemes,
     updateVocabulariesById,
     themeList: themes,
+    addTheme,
   };
 };

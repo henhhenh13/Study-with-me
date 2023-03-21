@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { Button } from '../../elements/button';
+import { useThemeManager } from '../../managers/themes/use-theme-manager';
+import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
 export const ThemeCardAdd = (): React.ReactElement => {
-  // const { addTheme } = useVocabularyThemeManager();
-  // const { successToast, errorToast } = useToastManager();
-  // const [value, setValue] = useState<string>('');
-  // const handleAddTheme = useCallback(() => {
-  //   if (value) {
-  //     addTheme(value);
-  //     successToast(`You added "${value}"`);
-  //     setValue('');
-  //   } else {
-  //     errorToast(`Please do not empty form`);
-  //   }
-  // }, [addTheme, successToast, value]);
+  const { addTheme } = useThemeManager();
+  const { successToast, errorToast } = useToastManager();
+  const [value, setValue] = useState<string>('');
+  const handleAddTheme = useCallback(async () => {
+    if (value) {
+      await addTheme(value);
+      successToast(`You added "${value}"`);
+      setValue('');
+    } else {
+      errorToast(`Please do not empty form`);
+    }
+  }, [addTheme, errorToast, successToast, value]);
+
   return (
     <div className="w-[400px] max-h-[calc(100vh-112px)] bg-white border-4 border-blue-500">
       <input
-        // value={value}
-        // onChange={(e) => setValue(e.target.value)}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
         className="text-center py-8 w-full text-2xl italic font-semibold border-b-2 outline-none"
         placeholder="Enter Theme Name..."
       />
@@ -55,7 +58,7 @@ export const ThemeCardAdd = (): React.ReactElement => {
         ))}
       </ul>
       <Button
-        // onClick={handleAddTheme}
+        onClick={handleAddTheme}
         variants="background"
         color="primary"
         className="w-2/4 mx-auto py-2 mt-4"
