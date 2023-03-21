@@ -3,3 +3,9 @@ export interface FetchStatus {
   isFetched: boolean;
   isFetchError: boolean;
 }
+
+export interface AddStatus {
+  isAdded: boolean;
+  isError: boolean;
+  isLoading: boolean;
+}

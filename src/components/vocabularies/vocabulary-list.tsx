@@ -1,42 +1,44 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 
-import { useThemeManager } from '../../managers/themes/use-theme-manager';
-import { AddVocabularyCard } from './add-vocabulary-card';
-import { VocabularyCard } from './vocabulary-card';
+import { SerializedVocabulary } from '../../managers/vocabularies/interface';
+import { VocabularyItem } from './vocabulary-item';
+import { VocabularyItemAdd } from './vocabulary-item-add';
 
-export const VocabularyList = (): React.ReactElement => {
-  const { themeList } = useThemeManager();
-  const { themes, flags } = themeList;
+export interface VocabularyTableProps {
+  vocabularies: SerializedVocabulary[] | undefined;
+  themeId: string;
+}
+export const VocabularyList = ({
+  themeId,
+  vocabularies,
+}: VocabularyTableProps): React.ReactElement => {
+  const listRef = useRef<HTMLUListElement>(null);
+
+  const scrollBottomList = useCallback(() => {
+    setTimeout(() => {
+      if (listRef.current) {
+        listRef.current.scrollTo(0, listRef.current.scrollHeight);
+      }
+    });
+  }, []);
 
   const render = useMemo(() => {
-    switch (true) {
-      case flags.isFetching:
-        return <div>Loading...</div>;
-      case flags.isFetched:
-        return (
-          <>
-            {themes.length
-              ? themes.map(({ themeId, vocabularies, theme }) => (
-                  <VocabularyCard
-                    key={themeId}
-                    themeId={themeId}
-                    vocabularies={vocabularies}
-                    theme={theme}
-                  />
-                ))
-              : null}
-          </>
-        );
-      case flags.isFetchError:
-        return <div>Error</div>;
-      default:
-        return <div>Loading...</div>;
-    }
-  }, [flags.isFetchError, flags.isFetched, flags.isFetching, themes]);
+    if (!vocabularies) return null;
+    return vocabularies.map((vocabulary) => (
+      <VocabularyItem
+        key={vocabulary.vocabularyId}
+        vocabularyProps={vocabulary}
+      />
+    ));
+  }, [vocabularies]);
+
   return (
-    <div className="w-[836px] h-[85vh] overflow-y-auto grid grid-cols-2 gap-4 custom-scrollbar">
+    <ul
+      ref={listRef}
+      className="w-full max-w-full overflow-hidden h-[calc(100vh-222px)] overflow-y-auto px-4 divide-y scroll-smooth"
+    >
       {render}
-      <AddVocabularyCard />
-    </div>
+      <VocabularyItemAdd themeId={themeId} onCompleteAdded={scrollBottomList} />
+    </ul>
   );
 };

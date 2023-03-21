@@ -1,9 +1,12 @@
 import { useModal } from '@ebay/nice-modal-react';
 import React, { KeyboardEvent, useCallback, useRef, useState } from 'react';
+import { FaSpinner } from 'react-icons/fa';
 
 import { Button } from '../../elements/button';
+import { LoadingButton } from '../../elements/loading-button';
+import { useThemeManager } from '../../managers/themes/use-theme-manager';
 import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
-// import { useVocabularyThemeManager } from '../../managers/themes/use-theme-manager';
+import { useVocabularyManager } from '../../managers/vocabularies/use-vocabulary-manager';
 import { ModalVocabularyDetail } from '../modals/modal-vocabulary/modal-vocabulary-detail';
 
 interface VocabularyItemAddProps {
@@ -16,12 +19,13 @@ export const VocabularyItemAdd = ({
 }: VocabularyItemAddProps): React.ReactElement => {
   const firstInput = useRef<HTMLInputElement>(null);
   const { successToast, errorToast } = useToastManager();
-  // const { addVocabularyInTheme } = useVocabularyThemeManager();
   const [newTranslationVocabulary, setNewTranslationVocabulary] =
     useState<string>('');
   const [detail, setDetail] = useState<string | null>(null);
   const [newVocabulary, setNewVocabulary] = useState<string>('');
   const { show } = useModal(ModalVocabularyDetail);
+  const { addVocabulary } = useVocabularyManager();
+  const { updateVocabulariesById } = useThemeManager();
   const onClearInput = useCallback(() => {
     setNewTranslationVocabulary('');
     setNewVocabulary('');
@@ -33,15 +37,17 @@ export const VocabularyItemAdd = ({
     }
   }, []);
 
-  const handleAddVocabulary = useCallback(() => {
+  const handleAddVocabulary = useCallback(async () => {
     const canAdd = newVocabulary && newTranslationVocabulary;
     if (canAdd) {
-      // addVocabularyInTheme({
-      //   vocabulary: newVocabulary,
-      //   themeId,
-      //   translationVn: newTranslationVocabulary,
-      //   detail: detail,
-      // });
+      const vocabularyApi = await addVocabulary({
+        vocabulary: newVocabulary,
+        translation: newTranslationVocabulary,
+        themeId,
+        detail,
+      });
+      updateVocabulariesById(themeId, vocabularyApi.vocabulary);
+
       onClearInput();
       focusFirstInput();
       successToast(`You added "${newVocabulary}"`);
@@ -50,7 +56,19 @@ export const VocabularyItemAdd = ({
     } else {
       errorToast('Please do not empty form!');
     }
-  }, [newVocabulary, newTranslationVocabulary, detail]);
+  }, [
+    newVocabulary,
+    newTranslationVocabulary,
+    addVocabulary,
+    themeId,
+    detail,
+    updateVocabulariesById,
+    onClearInput,
+    focusFirstInput,
+    successToast,
+    onCompleteAdded,
+    errorToast,
+  ]);
 
   const handleFirstInputFocus = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
@@ -109,14 +127,7 @@ export const VocabularyItemAdd = ({
         >
           Detail
         </Button>
-        <Button
-          onClick={handleAddVocabulary}
-          variants="background"
-          color="primary"
-          className="px-3.5 py-1"
-        >
-          Add
-        </Button>
+        <LoadingButton onClick={handleAddVocabulary} />
       </div>
     </li>
   );

@@ -1,9 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
 import { Button } from '../../elements/button';
-// import { useVocabularyThemeManager } from '../../managers/themes/use-theme-manager';
-import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
-export const AddVocabularyCard = (): React.ReactElement => {
+export const ThemeCardAdd = (): React.ReactElement => {
   // const { addTheme } = useVocabularyThemeManager();
   // const { successToast, errorToast } = useToastManager();
   // const [value, setValue] = useState<string>('');

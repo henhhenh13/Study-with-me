@@ -1,8 +1,7 @@
-import { FetchStatus } from '../../contains/interface';
+import { AddStatus, FetchStatus } from '../../contains/interface';
 
 export interface VocabularyApi {
   vocabularyId: string;
-  createdAt: string;
   vocabulary: string;
   translation: string;
   themeId: string;
@@ -25,5 +24,9 @@ export interface VocabularyApiDefinitions {
   Vocabularies: {
     vocabularies: VocabularyApi[];
     flags: FetchStatus;
+  };
+  VocabularyAdd: {
+    vocabulary: VocabularyApi;
+    flags: AddStatus;
   };
 }
