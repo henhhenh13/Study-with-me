@@ -1,17 +1,29 @@
 import React, { useCallback, useState } from 'react';
 
 import { Button } from '../../elements/button';
+import { LoadingButton } from '../../elements/loading-button';
 import { useThemeManager } from '../../managers/themes/use-theme-manager';
 import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
 export const ThemeCardAdd = (): React.ReactElement => {
   const { addTheme } = useThemeManager();
   const { successToast, errorToast } = useToastManager();
   const [value, setValue] = useState<string>('');
+
   const handleAddTheme = useCallback(async () => {
     if (value) {
-      await addTheme(value);
-      successToast(`You added "${value}"`);
-      setValue('');
+      const { isAdded, isError } = await addTheme(value);
+
+      switch (true) {
+        case isAdded: {
+          successToast(`You added "${value}"`);
+          setValue('');
+          return;
+        }
+        case isError: {
+          errorToast(`You failed add "${value}"`);
+          return;
+        }
+      }
     } else {
       errorToast(`Please do not empty form`);
     }
@@ -25,7 +37,7 @@ export const ThemeCardAdd = (): React.ReactElement => {
         className="text-center py-8 w-full text-2xl italic font-semibold border-b-2 outline-none"
         placeholder="Enter Theme Name..."
       />
-      <ul className="w-full max-w-full overflow-hidden h-[calc(100vh-292px)] overflow-y-auto px-4 divide-y scroll-smooth">
+      <ul className="w-full max-w-full overflow-hidden h-[calc(100vh-280px)] overflow-y-auto px-4 divide-y scroll-smooth">
         {Array.from(Array(15)).map((_, index) => (
           <li
             key={index}
@@ -57,14 +69,11 @@ export const ThemeCardAdd = (): React.ReactElement => {
           </li>
         ))}
       </ul>
-      <Button
+      <LoadingButton
         onClick={handleAddTheme}
-        variants="background"
-        color="primary"
-        className="w-2/4 mx-auto py-2 mt-4"
-      >
-        Add Theme
-      </Button>
+        title="Add theme"
+        className="w-2/4 mx-auto py-2 my-2"
+      />
     </div>
   );
 };

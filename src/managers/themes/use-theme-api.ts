@@ -3,7 +3,7 @@ import { ThemeApi, ThemeApiDefinitions } from './interface';
 
 interface UseThemeApi {
   fetchThemes: () => Promise<ThemeApiDefinitions['Themes']>;
-  addTheme: (theme: string) => Promise<ThemeApiDefinitions['ThemeAdd']>;
+  addTheme: (themeName: string) => Promise<ThemeApiDefinitions['ThemeAdd']>;
 }
 
 export const useThemeApi = (): UseThemeApi => {
@@ -29,11 +29,11 @@ export const useThemeApi = (): UseThemeApi => {
   };
 
   const addTheme = async (
-    theme: string,
+    themeName: string,
   ): Promise<ThemeApiDefinitions['ThemeAdd']> => {
     const { data, error, status } = await supabase
       .from('themes')
-      .insert([{ theme }])
+      .insert([{ theme: themeName }])
       .select<'*', ThemeApi>('*')
       .single();
 
