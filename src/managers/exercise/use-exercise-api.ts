@@ -1,25 +1,24 @@
 import { supabase } from '../../supabaseClient';
-import { ExerciseApi, ExerciseApiDefinitions } from './interface';
+import {
+  VocabularyApi,
+  VocabularyApiDefinitions,
+} from '../vocabularies/interface';
 
 interface UseExerciseApi {
-  fetchVocabularyExerciseById: (
-    exerciseId: string,
-  ) => Promise<ExerciseApiDefinitions['Exercise']>;
+  fetchVocabularyExerciseByThemeId: (
+    themeId: string,
+  ) => Promise<VocabularyApiDefinitions['Vocabularies']>;
 }
 export const useExerciseApi = (): UseExerciseApi => {
-  const fetchVocabularyExerciseById = async (
-    exerciseId: string,
-  ): Promise<ExerciseApiDefinitions['Exercise']> => {
-    const { data, status, error } = await supabase
-      .from('exercises')
-      .select<
-        'exerciseId,exerciseType,title, vocabularies(vocabulary,translation)',
-        ExerciseApi
-      >('exerciseId,exerciseType,title, vocabularies(vocabulary,translation)')
-      .eq('exerciseId', exerciseId)
-      .single();
+  const fetchVocabularyExerciseByThemeId = async (
+    themeId: string,
+  ): Promise<VocabularyApiDefinitions['Vocabularies']> => {
+    const { data, error } = await supabase
+      .from('vocabularies')
+      .select<'*', VocabularyApi>('*')
+      .eq('themeId', themeId);
     return {
-      exercise: data,
+      vocabularies: data || [],
       flags: {
         isFetched: true,
         isFetchError: !!error,
@@ -29,6 +28,6 @@ export const useExerciseApi = (): UseExerciseApi => {
   };
 
   return {
-    fetchVocabularyExerciseById,
+    fetchVocabularyExerciseByThemeId,
   };
 };

@@ -7,6 +7,7 @@ export interface UnitExercise {
   exerciseId: string;
   exerciseType: ExerciseType;
   title: string;
+  themeId: string;
 }
 interface UnitApi {
   unitId: string;
