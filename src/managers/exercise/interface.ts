@@ -9,6 +9,8 @@ interface VocabularyExercise {
 export interface ExerciseApi {
   exerciseId: string;
   title: string;
+  themeId: string;
+  unitId: string;
   exerciseType: ExerciseType;
   vocabularies: VocabularyExercise[];
 }

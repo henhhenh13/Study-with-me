@@ -7,6 +7,7 @@ import {
   FaTrashAlt,
 } from 'react-icons/fa';
 
+import { useExerciseManager } from '../../managers/exercise/use-exercise-manager';
 import { UnitSerialized } from '../../managers/units/interface';
 import { UnitExerciseItem } from './unit-exercise-item';
 
@@ -22,7 +23,9 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
     exercises,
     unitIndex,
     themeId,
+    unitId,
   } = props;
+  const { addExercise } = useExerciseManager();
   const [isShowExercise, setIsShowExercise] = useState<boolean>(false);
 
   return (
@@ -49,7 +52,17 @@ export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
       <hr />
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <FaRegEdit className="cursor-pointer text-blue-500 transition-all duration-200 hover:scale-125 hover:text-blue-600 active:text-blue-700" />
+          <FaRegEdit
+            onClick={async () => {
+              await addExercise({
+                exerciseType: 'vocabulary',
+                themeId,
+                title,
+                unitId,
+              });
+            }}
+            className="cursor-pointer text-blue-500 transition-all duration-200 hover:scale-125 hover:text-blue-600 active:text-blue-700"
+          />
           <FaTrashAlt className="cursor-pointer text-red-500 transition-all duration-200 hover:scale-125 hover:text-red-600 active:text-red-700" />
         </div>
         {flags.hasExercise ? (

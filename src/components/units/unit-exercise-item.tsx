@@ -3,12 +3,12 @@ import React, { useCallback, useMemo } from 'react';
 import { FaCheck, FaSpinner } from 'react-icons/fa';
 
 import { useActiveExercise } from '../../managers/active-exercise/use-active-exercise';
+import { ExerciseApi } from '../../managers/exercise/interface';
 import { useExerciseManager } from '../../managers/exercise/use-exercise-manager';
-import { UnitExercise } from '../../managers/units/interface';
 import { ModalVocabulary } from '../modals/modal-vocabulary/modal-vocabulary';
 
 interface UnitExerciseItemProps {
-  exercise: UnitExercise;
+  exercise: ExerciseApi;
   themeId: string;
   index: number;
   unitIndex: number;
@@ -41,7 +41,7 @@ export const UnitExerciseItem = ({
   const handleOpenExercise = useCallback(async () => {
     await fetchVocabularyExerciseByThemeId(exercise);
     const exerciseFetched = getVocabularyExerciseById(exercise.exerciseId);
-    if (exerciseFetched) {
+    if (exerciseFetched && exerciseFetched.flags.hasVocabularyExercise) {
       await changeActiveExercise(exerciseFetched);
       show();
     }

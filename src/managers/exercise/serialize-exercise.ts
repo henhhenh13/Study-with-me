@@ -7,7 +7,7 @@ export const serializationVocabularyExercise = (raw: ExerciseApi): Exercise => {
     title,
     exerciseType,
     exerciseId,
-    vocabularies,
+    vocabularies: vocabularies || [],
     flags: {
       isVocabularyExercise: exerciseType === 'vocabulary',
       hasVocabularyExercise: !!vocabularies.length,

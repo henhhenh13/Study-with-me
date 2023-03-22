@@ -13,7 +13,6 @@ import { TbVocabulary } from 'react-icons/tb';
 import { Button } from '../../../elements/button';
 import { useActiveExercise } from '../../../managers/active-exercise/use-active-exercise';
 import { useToastManager } from '../../../managers/toast-manager.tsx/use-toat-manager';
-// import { VocabulariesState } from '../../../managers/vocabularies/vocabularies-state';
 import { ModalWrapper } from '../modal-wrapper/modal-wrapper';
 
 export const ModalVocabulary = NiceModal.create((): React.ReactElement => {
