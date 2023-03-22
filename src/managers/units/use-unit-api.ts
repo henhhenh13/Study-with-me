@@ -10,9 +10,9 @@ export const useUnitApi = (): UseUnitApi => {
     const { data, status, error } = await supabase
       .from('units')
       .select<
-        '*, exercises(exerciseId,exerciseType,title)',
+        '*, exercises(exerciseId,exerciseType,title,themeId)',
         UnitsApiDefinitions['UnitApi']
-      >('*, exercises(exerciseId,exerciseType,title)');
+      >('*, exercises(exerciseId,exerciseType,title,themeId)');
     return {
       units: data || [],
       flags: {

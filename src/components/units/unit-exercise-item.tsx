@@ -3,12 +3,12 @@ import React, { useCallback, useMemo } from 'react';
 import { FaCheck, FaSpinner } from 'react-icons/fa';
 
 import { useActiveExercise } from '../../managers/active-exercise/use-active-exercise';
+import { ExerciseApi } from '../../managers/exercise/interface';
 import { useExerciseManager } from '../../managers/exercise/use-exercise-manager';
-import { UnitExercise } from '../../managers/units/interface';
 import { ModalVocabulary } from '../modals/modal-vocabulary/modal-vocabulary';
 
 interface UnitExerciseItemProps {
-  exercise: UnitExercise;
+  exercise: ExerciseApi;
   themeId: string;
   index: number;
   unitIndex: number;
@@ -19,7 +19,7 @@ export const UnitExerciseItem = ({
   index,
   unitIndex,
 }: UnitExerciseItemProps): React.ReactElement => {
-  const { fetchVocabularyExerciseById, getVocabularyExerciseById } =
+  const { fetchVocabularyExerciseByThemeId, getVocabularyExerciseById } =
     useExerciseManager();
   const { exerciseList } = useExerciseManager();
   const { changeActiveExercise } = useActiveExercise();
@@ -39,16 +39,16 @@ export const UnitExerciseItem = ({
   }, [flags]);
 
   const handleOpenExercise = useCallback(async () => {
-    await fetchVocabularyExerciseById(exercise.exerciseId);
+    await fetchVocabularyExerciseByThemeId(exercise);
     const exerciseFetched = getVocabularyExerciseById(exercise.exerciseId);
-    if (exerciseFetched) {
+    if (exerciseFetched && exerciseFetched.flags.hasVocabularyExercise) {
       await changeActiveExercise(exerciseFetched);
       show();
     }
   }, [
     changeActiveExercise,
     exercise.exerciseId,
-    fetchVocabularyExerciseById,
+    fetchVocabularyExerciseByThemeId,
     getVocabularyExerciseById,
     show,
   ]);

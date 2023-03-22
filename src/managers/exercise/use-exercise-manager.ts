@@ -2,21 +2,23 @@ import { useCallback } from 'react';
 import { useRecoilCallback, useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { EXERCISES_SELECTOR, EXERCISES_STATE } from './exercise-state';
-import { Exercise, ExerciseDefinitions } from './interface';
+import { Exercise, ExerciseApi, ExerciseDefinitions } from './interface';
 import { serializationVocabularyExercise } from './serialize-exercise';
 import { useExerciseApi } from './use-exercise-api';
 
 interface UseExerciseManager {
-  fetchVocabularyExerciseById: (
-    exerciseId: string,
-    isNeedReturn?: boolean,
+  fetchVocabularyExerciseByThemeId: (
+    exercises: ExerciseApi,
   ) => Promise<Exercise | void>;
   exerciseList: ExerciseDefinitions['ExercisesSelector'];
   getVocabularyExerciseById: (exerciseId: string) => Exercise | null;
+  addExercise: (exercise: Partial<ExerciseApi>) => Promise<void>;
 }
 export const useExerciseManager = (): UseExerciseManager => {
-  const { fetchVocabularyExerciseById: fetchVocabularyExerciseByIdApi } =
-    useExerciseApi();
+  const {
+    fetchVocabularyExerciseByThemeId: fetchVocabularyExerciseByIdApi,
+    addExercise: addExerciseApi,
+  } = useExerciseApi();
   const setExercises = useSetRecoilState(EXERCISES_STATE);
   const exercisesSelector = useRecoilValue(EXERCISES_SELECTOR);
 
@@ -32,17 +34,18 @@ export const useExerciseManager = (): UseExerciseManager => {
       };
     });
   }, [setExercises]);
-  const fetchVocabularyExerciseById = useRecoilCallback(
+  const fetchVocabularyExerciseByThemeId = useRecoilCallback(
     ({ snapshot }) =>
-      async (exerciseId: string) => {
+      async (exercises: ExerciseApi) => {
+        const { exerciseId, themeId } = exercises;
         const exerciseState = snapshot.getLoadable(EXERCISES_STATE).getValue();
         if (exerciseState.exercises.has(exerciseId)) return;
 
         startFetchAnyExercise();
-        const { exercise, flags } = await fetchVocabularyExerciseByIdApi(
-          exerciseId,
+        const { flags, vocabularies } = await fetchVocabularyExerciseByIdApi(
+          themeId,
         );
-
+        const exercise = { ...exercises, vocabularies };
         setExercises((prevState) => {
           if (flags.isFetched && exercise) {
             prevState.exercises.set(exercise.exerciseId, exercise);
@@ -69,9 +72,26 @@ export const useExerciseManager = (): UseExerciseManager => {
       },
     [],
   );
+  const addExercise = useCallback(
+    async (exercise: Partial<ExerciseApi>) => {
+      startFetchAnyExercise();
+      const { exercise: newExercise, flags } = await addExerciseApi(exercise);
+      if (flags.isFetched && !!newExercise) {
+        setExercises((prevState) => {
+          prevState.exercises.set(newExercise.exerciseId, newExercise);
+          return {
+            ...prevState,
+            flags,
+          };
+        });
+      }
+    },
+    [addExerciseApi, setExercises, startFetchAnyExercise],
+  );
   return {
-    fetchVocabularyExerciseById,
+    fetchVocabularyExerciseByThemeId,
     exerciseList: exercisesSelector,
     getVocabularyExerciseById,
+    addExercise,
   };
 };
