@@ -23,6 +23,12 @@ export const Sidebar = (): React.ReactElement => {
           >
             Vocabularies
           </li>
+          <li
+            className="py-2 cursor-pointer hover:text-blue-500 transition-colors duration-200"
+            onClick={() => updateSection('grammars')}
+          >
+            Grammars
+          </li>
         </ul>
       </div>
     </div>
