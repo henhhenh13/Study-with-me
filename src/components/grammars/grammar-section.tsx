@@ -33,41 +33,42 @@ export const GrammarSection = ({
             <div className="w-[400px] bg-gray-200 mx-auto py-8 text-center text-lg rounded-md">
               Chủ ngữ (Subject) + Động từ (Verb)
             </div>
-            <div className="px-6">
+            <div className="px-6 space-y-1.5">
               <div>
                 <h2 className="font-semibold">
                   What is Simple sentence (Câu đơn)
                 </h2>
-                <p>
-                  Câu đơn (simple sentences) là câu chỉ có một chủ ngữ (subject)
-                  và một động từ (verb). Câu đơn thường được sử dụng để truyền
-                  đạt một thông tin đơn giản, không phức tạp.
-                </p>
+                <ul className="list-disc pl-[20px] space-y-1">
+                  <li>
+                    Câu đơn (simple sentences) là câu chỉ có một chủ ngữ
+                    (subject) và một động từ (verb). Câu đơn thường được sử dụng
+                    để truyền đạt một thông tin đơn giản, không phức tạp.
+                  </li>
+                </ul>
               </div>
               <div>
                 <h2 className="font-semibold">
                   Example for Simple sentence (Câu đơn)
                 </h2>
-                <p>
-                  Although I was tired, I stayed up late to finish my homework.
-                  (Mặc dù tôi mệt mỏi, tôi vẫn thức khuya để hoàn thành bài tập
-                  về nhà.)
-                  <br />
-                  Because she was sick, she couldnt come to the party. (Vì cô ấy
-                  bị ốm, cô ấy không thể đến dự tiệc.)
-                  <br />
-                  When I was a child, I used to play with dolls. (Khi tôi còn
-                  nhỏ, tôi thường chơi với búp bê.)
-                  <br />
+                <ul className="list-disc pl-[20px] space-y-1">
+                  <li>
+                    Although I was tired, I stayed up late to finish my
+                    homework. (Mặc dù tôi mệt mỏi, tôi vẫn thức khuya để hoàn
+                    thành bài tập về nhà.) Because she was sick, she couldnt
+                    come to the party. (Vì cô ấy bị ốm, cô ấy không thể đến dự
+                    tiệc.)
+                  </li>
+                  <li>
+                    When I was a child, I used to play with dolls. (Khi tôi còn
+                    nhỏ, tôi thường chơi với búp bê.)
+                  </li>
                   If it rains, well stay inside. (Nếu trời mưa, chúng ta sẽ ở
                   trong nhà.)
-                  <br />
-                  Since I started studying English, my speaking skills have
-                  improved.
-                  <br />
-                  (Kể từ khi tôi bắt đầu học tiếng Anh, kỹ năng nói của tôi đã
-                  được cải thiện.)
-                </p>
+                  <li>
+                    Since I started studying English, my speaking skills have
+                    improved.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
