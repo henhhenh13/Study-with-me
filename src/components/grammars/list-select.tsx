@@ -1,11 +1,15 @@
 import clsx from 'clsx';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 
 import { ListSelectItem } from './list-select-item';
 
-export const ListSelect = (): React.ReactElement => {
-  const [selectIndex, setSelectIndex] = useState(0);
-
+export const ListSelect = ({
+  selectIndex,
+  onSelectClick,
+}: {
+  selectIndex: number;
+  onSelectClick: (index: number) => void;
+}): React.ReactElement => {
   const fragmentTransformY = useMemo(() => {
     return selectIndex * 76;
   }, [selectIndex]);
@@ -24,7 +28,7 @@ export const ListSelect = (): React.ReactElement => {
             <ListSelectItem
               key={index}
               onClick={() => {
-                setSelectIndex(index);
+                onSelectClick(index);
               }}
             />
           ))}
