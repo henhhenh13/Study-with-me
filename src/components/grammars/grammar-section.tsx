@@ -40,7 +40,7 @@ export const GrammarSection = (
           enterFrom="opacity-0 scale-[0.95] translate-x-[10px] -translate-y-[5px]"
           enterTo="opacity-100 scale-100 translate-x-0 translate-y-0"
         >
-          <div className="overflow-y-auto custom-scrollbar min-w-[630px] max-w-[630px] h-full border rounded-lg shadow-lg min-h-[calc(100vh-120px)] max-h-[calc(100vh-120px)] bg-white py-6 space-y-6">
+          <div className="min-w-[630px] max-w-[630px] h-full border rounded-lg shadow-lg min-h-[calc(100vh-120px)] max-h-[calc(100vh-120px)] bg-white py-6 space-y-6">
             <h2 className="text-3xl text-center text-blue-500">
               {grammarName}
             </h2>
@@ -49,7 +49,7 @@ export const GrammarSection = (
                 <li key={index}>{text}</li>
               ))}
             </ul>
-            <div className="px-6 space-y-1.5">
+            <div className="px-6 space-y-1.5 overflow-y-auto custom-scrollbar max-h-[calc(100vh-348px)]">
               <div>
                 <h2 className="font-semibold">What is {grammarName}</h2>
                 <ul className="list-disc pl-[20px] space-y-1">
