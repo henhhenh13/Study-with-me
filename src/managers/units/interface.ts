@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons/lib';
 
 import { FetchStatus } from '../../contains/interface';
-import { ExerciseApi, ExerciseType } from '../exercise/interface';
+import { ExerciseApi } from '../exercise/interface';
 
 interface UnitApi {
   unitId: string;

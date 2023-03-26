@@ -4,7 +4,7 @@ export const MainBody = ({
   children,
 }: PropsWithChildren<unknown>): React.ReactElement => {
   return (
-    <div className="w-full h-screen bg-gray-100 flex flex-nowrap overflow-hidden">
+    <div className="w-full h-screen bg-[#f8f9fa] flex flex-nowrap overflow-hidden">
       {children}
     </div>
   );
