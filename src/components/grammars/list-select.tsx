@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React, { useMemo } from 'react';
 
+import { ListSelectAdd } from './list-select-add';
 import { ListSelectItem } from './list-select-item';
 
 export const ListSelect = ({
@@ -32,6 +33,11 @@ export const ListSelect = ({
               }}
             />
           ))}
+          <ListSelectAdd
+            onClick={() => {
+              onSelectClick(6);
+            }}
+          />
         </ul>
       </div>
     </div>

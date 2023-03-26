@@ -17,6 +17,7 @@ export const GrammarSection = ({
     setIsShow(false);
     resetIsShowing();
   }, [resetIsShowing, title]);
+
   return (
     <>
       {isShow ? (
