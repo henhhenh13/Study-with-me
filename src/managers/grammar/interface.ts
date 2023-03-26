@@ -30,7 +30,7 @@ export interface GrammarDefinitions {
     flags: FetchStatus;
   };
   Selector: {
-    grammars: Grammar[];
+    grammarList: Grammar[];
     flags: FetchStatus;
   };
 }

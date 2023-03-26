@@ -1,30 +1,22 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-import { GrammarAdd } from '../components/grammars/grammar-add';
-import { GrammarSection } from '../components/grammars/grammar-section';
-import { ListSelect } from '../components/grammars/list-select';
+import { GrammarContainer } from '../components/grammars/grammar-container';
+import { useGrammarManager } from '../managers/grammar/use-grammar-manager';
 
 export const Grammars = (): React.ReactElement => {
-  const [selectIndex, setSelectIndex] = useState(0);
-  const [isShow, setIsShow] = useState(true);
+  const { grammars, fetchGrammars } = useGrammarManager();
 
-  const renderGrammarSection = useMemo(() => {
-    const isGrammarAdd = selectIndex === 6;
-    if (isGrammarAdd) {
-      return <GrammarAdd />;
-    } else return <GrammarSection title={String(selectIndex)} />;
-  }, [selectIndex]);
+  useEffect(() => {
+    if (grammars.flags.isFetching) {
+      fetchGrammars();
+    }
+  }, [fetchGrammars, grammars.flags.isFetching]);
 
   return (
     <div className="w-max px-6 h-screen">
       <div className="py-8">
-        <h1 onClick={() => setIsShow(!isShow)} className="text-2xl font-bold">
-          Grammars
-        </h1>
-      </div>
-      <div className="flex space-x-12">
-        <ListSelect onSelectClick={setSelectIndex} selectIndex={selectIndex} />
-        {renderGrammarSection}
+        <h1 className="text-2xl font-bold">Grammars</h1>
+        <GrammarContainer />
       </div>
     </div>
   );

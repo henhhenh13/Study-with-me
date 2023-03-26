@@ -1,19 +1,21 @@
 import clsx from 'clsx';
 import React, { useMemo } from 'react';
 
+import { Grammar } from '../../managers/grammar/interface';
 import { ListSelectAdd } from './list-select-add';
 import { ListSelectItem } from './list-select-item';
 
-export const ListSelect = ({
-  selectIndex,
-  onSelectClick,
-}: {
+interface ListSelectProps {
+  grammarList: Grammar[];
   selectIndex: number;
   onSelectClick: (index: number) => void;
-}): React.ReactElement => {
+}
+export const ListSelect = (props: ListSelectProps): React.ReactElement => {
+  const { selectIndex, grammarList, onSelectClick } = props;
   const fragmentTransformY = useMemo(() => {
     return selectIndex * 76;
   }, [selectIndex]);
+
   return (
     <div className="flex space-x-12">
       <div className="h-[511px] min-w-[356px]">
@@ -25,8 +27,9 @@ export const ListSelect = ({
             )}
             style={{ transform: `translate(0, ${fragmentTransformY}px)` }}
           />
-          {Array.from(Array(6)).map((_, index) => (
+          {grammarList.map(({ grammarName }, index) => (
             <ListSelectItem
+              title={grammarName}
               key={index}
               onClick={() => {
                 onSelectClick(index);
@@ -35,7 +38,7 @@ export const ListSelect = ({
           ))}
           <ListSelectAdd
             onClick={() => {
-              onSelectClick(6);
+              onSelectClick(grammarList.length);
             }}
           />
         </ul>

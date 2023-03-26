@@ -18,10 +18,12 @@ export const useGrammarManager = (): UseGrammarManager => {
     const { grammars, flags } = await fetchGrammarsApi();
     setGrammarsState((prevState) => {
       grammars.forEach((grammar) => {
+        console.log(grammar.grammarId);
         prevState.grammars.set(grammar.grammarId, grammar);
       });
+
       return {
-        grammars: prevState.grammars,
+        ...prevState,
         flags,
       };
     });

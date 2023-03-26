@@ -24,8 +24,9 @@ export const GRAMMARS_SELECTOR = selector<GrammarDefinitions['Selector']>({
         return serializationGrammar(grammar);
       },
     );
+
     return {
-      grammars,
+      grammarList: grammars,
       flags: grammarState.flags,
     };
   },

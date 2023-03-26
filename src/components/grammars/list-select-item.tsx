@@ -2,12 +2,13 @@ import React from 'react';
 import { FaRegClock } from 'react-icons/fa';
 
 interface ListSelectItemProps {
+  title: string;
   onClick: () => void;
 }
 export const ListSelectItem = (
   props: ListSelectItemProps,
 ): React.ReactElement => {
-  const { onClick } = props;
+  const { title, onClick } = props;
   return (
     <li
       onClick={onClick}
@@ -16,7 +17,7 @@ export const ListSelectItem = (
       <div className="flex items-center space-x-4 z-[3] relative">
         <FaRegClock className="text-2xl text-blue-500" />
         <div>
-          <h3 className="font-bold">Grammar name</h3>
+          <h3 className="font-bold">{title}</h3>
           <p className="text-sm text-gray-600">Grammar paragraph</p>
         </div>
       </div>

@@ -11,6 +11,9 @@ export const serializationGrammar = (
     grammarName,
     grammarDetail,
   } = raw;
+
+  console.log(raw);
+
   return {
     grammarDetail: stringToArray(grammarDetail),
     grammarExample: stringToArray(grammarExample),
