@@ -1,4 +1,4 @@
-import { FetchStatus } from '../../contains/interface';
+import { AddStatus, FetchStatus } from '../../contains/interface';
 
 interface GrammarApi {
   grammarId: string;
@@ -21,6 +21,10 @@ export interface GrammarApiDefinitions {
   Grammars: {
     grammars: GrammarApi[];
     flags: FetchStatus;
+  };
+  GrammarAdd: {
+    grammar: GrammarApi;
+    flags: AddStatus;
   };
 }
 

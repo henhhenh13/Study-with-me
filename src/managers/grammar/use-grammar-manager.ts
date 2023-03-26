@@ -1,16 +1,20 @@
 import { useCallback } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
+import { AddStatus } from '../../contains/interface';
 import { GRAMMARS_SELECTOR, GRAMMARS_STATE } from './grammar-state';
 import { GrammarDefinitions } from './interface';
-import { useGrammarApi } from './use-grammar-api';
+import { GrammarAddApiArgs, useGrammarApi } from './use-grammar-api';
 
 interface UseGrammarManager {
-  fetchGrammars: () => Promise<void>;
   grammars: GrammarDefinitions['Selector'];
+
+  fetchGrammars: () => Promise<void>;
+  addGrammar: (grammars: GrammarAddApiArgs) => Promise<AddStatus>;
 }
 export const useGrammarManager = (): UseGrammarManager => {
-  const { fetchGrammars: fetchGrammarsApi } = useGrammarApi();
+  const { fetchGrammars: fetchGrammarsApi, addGrammar: addGrammarApi } =
+    useGrammarApi();
   const setGrammarsState = useSetRecoilState(GRAMMARS_STATE);
   const grammarSelector = useRecoilValue(GRAMMARS_SELECTOR);
 
@@ -29,8 +33,25 @@ export const useGrammarManager = (): UseGrammarManager => {
     });
   }, [fetchGrammarsApi, setGrammarsState]);
 
+  const addGrammar = useCallback(
+    async (grammars: GrammarAddApiArgs) => {
+      const { grammar, flags } = await addGrammarApi(grammars);
+      if (flags.isAdded && !flags.isError) {
+        setGrammarsState((prevState) => {
+          prevState.grammars.set(grammar.grammarId, grammar);
+          return {
+            ...prevState,
+          };
+        });
+      }
+      return flags;
+    },
+    [addGrammarApi, setGrammarsState],
+  );
+
   return {
     fetchGrammars,
     grammars: grammarSelector,
+    addGrammar,
   };
 };
