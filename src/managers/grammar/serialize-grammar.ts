@@ -17,8 +17,8 @@ export const serializationGrammar = (
   return {
     grammarDetail: stringToArray(grammarDetail),
     grammarExample: stringToArray(grammarExample),
+    grammarFormula: stringToArray(grammarFormula),
     grammarName,
     grammarId,
-    grammarFormula,
   };
 };

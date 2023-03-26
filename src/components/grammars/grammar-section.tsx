@@ -44,9 +44,11 @@ export const GrammarSection = (
             <h2 className="text-3xl text-center text-blue-500">
               {grammarName}
             </h2>
-            <div className="w-[400px] bg-gray-200 mx-auto py-8 text-center text-lg rounded-md">
-              {grammarFormula}
-            </div>
+            <ul className="w-[400px] bg-gray-200 mx-auto py-8 text-center text-lg rounded-md">
+              {grammarFormula.map((text, index) => (
+                <li key={index}>{text}</li>
+              ))}
+            </ul>
             <div className="px-6 space-y-1.5">
               <div>
                 <h2 className="font-semibold">What is {grammarName}</h2>

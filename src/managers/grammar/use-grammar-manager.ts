@@ -37,6 +37,7 @@ export const useGrammarManager = (): UseGrammarManager => {
     async (grammars: GrammarAddApiArgs) => {
       const { grammar, flags } = await addGrammarApi(grammars);
       if (flags.isAdded && !flags.isError) {
+        console.log('can add');
         setGrammarsState((prevState) => {
           prevState.grammars.set(grammar.grammarId, grammar);
           return {

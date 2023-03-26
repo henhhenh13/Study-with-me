@@ -10,8 +10,8 @@ interface GrammarApi {
 
 export interface Grammar {
   grammarId: string;
-  grammarFormula: string;
   grammarName: string;
+  grammarFormula: string[];
   grammarDetail: string[];
   grammarExample: string[];
 }

@@ -44,10 +44,11 @@ export const useGrammarApi = (): UseGrammarApi => {
       .insert<GrammarAddApiArgs>([{ ...grammars }])
       .select<'*', GrammarApiDefinitions['Grammar']>('*')
       .single();
+
     return {
       grammar: data ? data : initialGrammar,
       flags: {
-        isAdded: Boolean(!!data && status === 200),
+        isAdded: Boolean(!!data && status === 201),
         isLoading: false,
         isError: !!error,
       },

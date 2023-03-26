@@ -1,9 +1,13 @@
 import { Transition } from '@headlessui/react';
 import React, { ChangeEvent, useCallback, useState } from 'react';
 
-import { Button } from '../../elements/button';
+import { LoadingButton } from '../../elements/loading-button';
+import { useGrammarManager } from '../../managers/grammar/use-grammar-manager';
+import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
 
 export const GrammarAdd = (): React.ReactElement => {
+  const { addGrammar } = useGrammarManager();
+  const { errorToast, successToast } = useToastManager();
   const [{ name, formula, meaning, example }, setGrammars] = useState({
     name: '',
     formula: '',
@@ -44,6 +48,56 @@ export const GrammarAdd = (): React.ReactElement => {
     [],
   );
 
+  const checkEmptyAnyField = useCallback(() => {
+    return Boolean(name && formula && meaning && example);
+  }, [example, formula, meaning, name]);
+
+  const clearAllValue = useCallback(() => {
+    setGrammars(() => {
+      return {
+        name: '',
+        formula: '',
+        meaning: '',
+        example: '',
+      };
+    });
+  }, []);
+
+  const handleAddGrammar = useCallback(async () => {
+    const hasEmptyField = checkEmptyAnyField();
+    if (hasEmptyField) {
+      const { isError, isAdded } = await addGrammar({
+        grammarName: name,
+        grammarExample: example,
+        grammarFormula: formula,
+        grammarDetail: meaning,
+      });
+      switch (true) {
+        case isAdded: {
+          clearAllValue();
+          successToast(`You added "${name}"`);
+          return;
+        }
+        case isError: {
+          errorToast(`You failed add "${name}"`);
+          return;
+        }
+      }
+    } else {
+      errorToast('Do not empty any field');
+    }
+  }, [
+    addGrammar,
+    checkEmptyAnyField,
+    clearAllValue,
+    errorToast,
+    example,
+    formula,
+    meaning,
+    name,
+    successToast,
+  ]);
+
   return (
     <Transition
       show
@@ -62,14 +116,12 @@ export const GrammarAdd = (): React.ReactElement => {
           />
         </div>
 
-        <div className="w-[400px] bg-gray-200 mx-auto py-8 text-center text-lg rounded-md">
-          <input
-            value={formula}
-            onChange={(e) => handleGrammarsChange(e, 'formula')}
-            className="w-full outline-none bg-transparent text-center"
-            placeholder="Grammar formula..."
-          />
-        </div>
+        <textarea
+          value={formula}
+          onChange={(e) => handleGrammarsChange(e, 'formula')}
+          className="w-[400px] bg-gray-200 mx-auto text-center text-lg rounded-md outline-none block"
+          placeholder="Grammar formula..."
+        />
         <div className="px-6 space-y-1.5">
           <div>
             <h2 className="font-semibold">What is Simple sentence (Câu đơn)</h2>
@@ -94,13 +146,11 @@ export const GrammarAdd = (): React.ReactElement => {
             </div>
           </div>
         </div>
-        <Button
-          color="primary"
-          variants="background"
-          className="px-6 py-1.5 ml-auto mr-6"
-        >
-          Add
-        </Button>
+        <LoadingButton
+          onClick={handleAddGrammar}
+          title="Add Grammar"
+          className="ml-auto mr-6 p-2 my-2"
+        />
       </div>
     </Transition>
   );
