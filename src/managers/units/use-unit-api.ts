@@ -1,5 +1,5 @@
 import { supabase } from '../../supabaseClient';
-import { UnitsApiDefinitions } from './interface';
+import { UnitApi, UnitsApiDefinitions } from './interface';
 
 interface UseUnitApi {
   fetchUnits: () => Promise<UnitsApiDefinitions['Units']>;
@@ -9,10 +9,9 @@ export const useUnitApi = (): UseUnitApi => {
   const fetchUnits = async (): Promise<UnitsApiDefinitions['Units']> => {
     const { data, status, error } = await supabase
       .from('units')
-      .select<
+      .select<'*, exercises(exerciseId,exerciseType,title,themeId)', UnitApi>(
         '*, exercises(exerciseId,exerciseType,title,themeId)',
-        UnitsApiDefinitions['UnitApi']
-      >('*, exercises(exerciseId,exerciseType,title,themeId)');
+      );
     return {
       units: data || [],
       flags: {

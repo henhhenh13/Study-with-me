@@ -8,10 +8,10 @@ import {
 } from 'react-icons/fa';
 
 import { useExerciseManager } from '../../managers/exercise/use-exercise-manager';
-import { UnitSerialized } from '../../managers/units/interface';
+import { Unit } from '../../managers/units/interface';
 import { UnitExerciseItem } from './unit-exercise-item';
 
-interface UnitItemProps extends UnitSerialized {
+interface UnitItemProps extends Unit {
   unitIndex: number;
 }
 export const UnitItem = ({ ...props }: UnitItemProps): React.ReactElement => {
