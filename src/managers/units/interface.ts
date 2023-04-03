@@ -3,7 +3,7 @@ import { IconType } from 'react-icons/lib';
 import { FetchStatus } from '../../contains/interface';
 import { ExerciseApi } from '../exercise/interface';
 
-interface UnitApi {
+export interface UnitApi {
   unitId: string;
   title: string;
   description: string;
@@ -13,7 +13,7 @@ interface UnitApi {
   exercises: ExerciseApi[];
 }
 
-export interface UnitSerialized {
+export interface Unit {
   unitId: string;
   title: string;
   description: string;
@@ -29,7 +29,6 @@ export interface UnitSerialized {
 }
 
 export interface UnitsApiDefinitions {
-  UnitApi: UnitApi;
   Units: {
     units: UnitApi[];
     flags: FetchStatus;
@@ -38,11 +37,11 @@ export interface UnitsApiDefinitions {
 
 export interface UnitsDefinitions {
   UnitsState: {
-    units: Map<string, UnitSerialized>;
+    units: Map<string, UnitApi>;
     flags: FetchStatus;
   };
   UnitsSelector: {
-    units: UnitSerialized[];
+    unitList: Unit[];
     flags: FetchStatus;
   };
 }

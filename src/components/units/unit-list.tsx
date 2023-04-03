@@ -4,8 +4,8 @@ import { useUnitManager } from '../../managers/units/use-unit-manager';
 import { UnitItem } from './unit-item';
 
 export const UnitList = (): React.ReactElement => {
-  const { fetchUnit, unitList } = useUnitManager();
-  const { units, flags } = unitList;
+  const { fetchUnit, units } = useUnitManager();
+  const { unitList, flags } = units;
   useEffect(() => {
     if (flags.isFetching) {
       fetchUnit();
@@ -20,7 +20,7 @@ export const UnitList = (): React.ReactElement => {
       <div className="w-full">
         <ul className="w-full space-y-6 h-screen overflow-y-auto">
           {flags.isFetched
-            ? units.map((unit, index) => (
+            ? unitList.map((unit, index) => (
                 <UnitItem {...unit} unitIndex={index + 1} key={unit.unitId} />
               ))
             : null}

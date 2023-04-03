@@ -3,7 +3,7 @@ import React, { ChangeEvent, useCallback, useState } from 'react';
 
 import { LoadingButton } from '../../elements/loading-button';
 import { useGrammarManager } from '../../managers/grammar/use-grammar-manager';
-import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
+import { useToastManager } from '../../managers/toasts.tsx/use-toast-manager';
 
 export const GrammarAdd = (): React.ReactElement => {
   const { addGrammar } = useGrammarManager();

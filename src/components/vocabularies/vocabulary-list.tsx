@@ -1,11 +1,11 @@
 import React, { useCallback, useMemo, useRef } from 'react';
 
-import { SerializedVocabulary } from '../../managers/vocabularies/interface';
+import { Vocabulary } from '../../managers/vocabularies/interface';
 import { VocabularyItem } from './vocabulary-item';
 import { VocabularyItemAdd } from './vocabulary-item-add';
 
 export interface VocabularyTableProps {
-  vocabularies: SerializedVocabulary[] | undefined;
+  vocabularies: Vocabulary[] | undefined;
   themeId: string;
 }
 export const VocabularyList = ({

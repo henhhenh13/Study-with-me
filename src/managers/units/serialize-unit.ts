@@ -1,10 +1,8 @@
 import { MdFamilyRestroom } from 'react-icons/md';
 
-import { UnitsApiDefinitions, UnitSerialized } from './interface';
+import { Unit, UnitApi } from './interface';
 
-export const serializationUnit = (
-  raw: UnitsApiDefinitions['UnitApi'],
-): UnitSerialized => {
+export const serializationUnit = (raw: UnitApi): Unit => {
   const { unitId, title, description, avatar, themeId, exercises } = raw;
   return {
     unitId,

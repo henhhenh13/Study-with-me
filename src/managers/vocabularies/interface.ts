@@ -8,7 +8,7 @@ export interface VocabularyApi {
   detail: string | null;
 }
 
-export interface SerializedVocabulary {
+export interface Vocabulary {
   vocabularyId: string;
   vocabulary: string;
   translation: string;
@@ -20,7 +20,6 @@ export interface SerializedVocabulary {
 }
 
 export interface VocabularyApiDefinitions {
-  Vocabulary: VocabularyApi;
   Vocabularies: {
     vocabularies: VocabularyApi[];
     flags: FetchStatus;

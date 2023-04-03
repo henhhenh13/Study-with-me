@@ -5,7 +5,7 @@ import { FaSpinner } from 'react-icons/fa';
 import { Button } from '../../elements/button';
 import { LoadingButton } from '../../elements/loading-button';
 import { useThemeManager } from '../../managers/themes/use-theme-manager';
-import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
+import { useToastManager } from '../../managers/toasts.tsx/use-toast-manager';
 import { useVocabularyManager } from '../../managers/vocabularies/use-vocabulary-manager';
 import { ModalVocabularyDetail } from '../modals/modal-vocabulary/modal-vocabulary-detail';
 

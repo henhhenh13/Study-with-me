@@ -1,14 +1,10 @@
 import { AddStatus, FetchStatus } from '../../contains/interface';
-import {
-  SerializedVocabulary,
-  VocabularyApi,
-  VocabularyApiDefinitions,
-} from '../vocabularies/interface';
+import { Vocabulary, VocabularyApi } from '../vocabularies/interface';
 
 export interface ThemeApi {
   themeId: string;
   theme: string;
-  vocabularies: VocabularyApiDefinitions['Vocabulary'][] | null;
+  vocabularies: VocabularyApi[] | null;
 }
 export interface ThemeApiDefinitions {
   Theme: ThemeApi;
@@ -24,7 +20,7 @@ export interface ThemeApiDefinitions {
 export interface Theme {
   themeId: string;
   theme: string;
-  vocabularies: SerializedVocabulary[];
+  vocabularies: Vocabulary[];
 }
 
 export interface ThemesDefinitions {

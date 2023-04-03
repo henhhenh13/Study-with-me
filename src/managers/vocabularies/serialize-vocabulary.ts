@@ -1,9 +1,7 @@
 import { NOT_DETAIL_IN_VOCABULARY } from '../../contains/sentences';
-import { SerializedVocabulary, VocabularyApiDefinitions } from './interface';
+import { Vocabulary, VocabularyApi } from './interface';
 
-export const serializationVocabulary = (
-  raw: VocabularyApiDefinitions['Vocabulary'],
-): SerializedVocabulary => {
+export const serializationVocabulary = (raw: VocabularyApi): Vocabulary => {
   const { vocabulary, vocabularyId, themeId, detail, translation } = raw;
 
   return {

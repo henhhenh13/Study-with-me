@@ -2,13 +2,12 @@ import { useCallback } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { UnitsDefinitions } from './interface';
-import { serializationUnit } from './serialize-unit';
 import { UNITS_SELECTOR, UNITS_STATE } from './unit-state';
 import { useUnitApi } from './use-unit-api';
 
 interface UseUnitManager {
   fetchUnit: () => Promise<void>;
-  unitList: UnitsDefinitions['UnitsSelector'];
+  units: UnitsDefinitions['UnitsSelector'];
 }
 
 export const useUnitManager = (): UseUnitManager => {
@@ -21,7 +20,7 @@ export const useUnitManager = (): UseUnitManager => {
 
     setUnitState((prevState) => {
       units.forEach((unit) => {
-        prevState.units.set(unit.unitId, serializationUnit(unit));
+        prevState.units.set(unit.unitId, unit);
       });
       return {
         ...prevState,
@@ -30,5 +29,5 @@ export const useUnitManager = (): UseUnitManager => {
     });
   }, [fetchUnits, setUnitState]);
 
-  return { fetchUnit, unitList: unitSelector };
+  return { fetchUnit, units: unitSelector };
 };
