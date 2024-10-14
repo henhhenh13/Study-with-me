@@ -3,7 +3,7 @@ import React, { useCallback, useState } from 'react';
 import { Button } from '../../elements/button';
 import { LoadingButton } from '../../elements/loading-button';
 import { useThemeManager } from '../../managers/themes/use-theme-manager';
-import { useToastManager } from '../../managers/toast-manager.tsx/use-toat-manager';
+import { useToastManager } from '../../managers/toasts.tsx/use-toast-manager';
 export const ThemeCardAdd = (): React.ReactElement => {
   const { addTheme } = useThemeManager();
   const { successToast, errorToast } = useToastManager();

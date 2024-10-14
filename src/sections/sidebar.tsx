@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useSectionManager } from '../managers/use-section-manager/use-section-manager';
+import { useSectionManager } from '../managers/sections/use-section-manager';
 
 export const Sidebar = (): React.ReactElement => {
   const { updateSection } = useSectionManager();

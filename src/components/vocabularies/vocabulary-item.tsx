@@ -2,11 +2,11 @@ import { useModal } from '@ebay/nice-modal-react';
 import React from 'react';
 
 import { Button } from '../../elements/button';
-import { SerializedVocabulary } from '../../managers/vocabularies/interface';
+import { Vocabulary } from '../../managers/vocabularies/interface';
 import { ModalVocabularyDetail } from '../modals/modal-vocabulary/modal-vocabulary-detail';
 
 interface VocabularyItemProps {
-  vocabularyProps: SerializedVocabulary;
+  vocabularyProps: Vocabulary;
 }
 export const VocabularyItem = ({
   vocabularyProps,

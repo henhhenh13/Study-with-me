@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { SerializedVocabulary } from '../../managers/vocabularies/interface';
+import { Vocabulary } from '../../managers/vocabularies/interface';
 import { VocabularyList } from '../vocabularies/vocabulary-list';
 
 interface ThemeCardProps {
   themeId: string;
   theme: string;
-  vocabularies: SerializedVocabulary[] | undefined;
+  vocabularies: Vocabulary[] | undefined;
 }
 export const ThemeCard = (props: ThemeCardProps): React.ReactElement => {
   const { theme, vocabularies } = props;
